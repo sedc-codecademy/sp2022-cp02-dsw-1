@@ -1,0 +1,53 @@
+{
+	"name": "client",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"contributors": [
+		{
+			"name": "Zoran Karbev",
+			"email": "zorankarbev@gmail.com"
+		},
+		{
+			"name": "Boris Stevanovic",
+			"email": "borisstevanovic0810@gmail.com"
+		},
+		{
+			"name": "Aleksandar Ichev",
+			"email": "ackowwokca@gmail.com"
+		},
+		{
+			"name": "Vedra Stojanovska",
+			"email": "vedrastojanovska@gmail.com"
+		},
+		{
+			"name": "Anastasija Dimkovska",
+			"email": "anastasijad53@gmail.com"
+		},
+		{
+			"name": "Hacci Korbayram",
+			"email": "hacci_mk@hotmail.com"
+		},
+		{
+			"name": "Gjorgji Dimitrov",
+			"email": "programmerJo95@gmail.com"
+		},
+		{
+			"name": "Dimitar Eftimov",
+			"email": "dimitar_eftimov@hotmail.com"
+		}
+	],
+	"scripts": {
+		"start": "webpack-dev-server --watch-content-base --open",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.27.2"
+	},
+	"devDependencies": {
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.0"
+	}
+}
