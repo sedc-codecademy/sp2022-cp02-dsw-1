@@ -1,5 +1,6 @@
 /* CSS Variables */
 :root {
+	--black: #000000;
 	--black-olive: #40423d;
 	--silver-chalice: #acada8;
 	--light-gray: #d5d5d3;
@@ -11,12 +12,12 @@
 /* CSS Reset */
 
 body {
-	background-color: var(--cultured);
-	color: var(--cultured);
 	font-family: 'Poppins', sans-serif;
 }
 
 #main-container {
+	background-color: var(--cultured);
+	color: var(--black);
 	width: 100%;
 	min-height: 84.5vh;
 	display: flex;
