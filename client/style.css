@@ -4,15 +4,20 @@
 	--black-olive: #40423d;
 	--silver-chalice: #acada8;
 	--light-gray: #d5d5d3;
+	--white: #ffffff;
 	--cultured: #f9f9f9;
 	--sage: #d4c893;
+	--nadeshiko-pink: #faa8c4;
 	--jazzberry-jam: #950952;
+
+	--body-font-family: 'Josefin Sans', sans-serif;
+	--headers-font-family: 'Joan', serif;
 }
 
 /* CSS Reset */
 
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: var(--body-font-family);
 }
 
 #main-container {
