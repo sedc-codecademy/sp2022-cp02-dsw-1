@@ -85,3 +85,24 @@ footer {
 /* Contact */
 /* Cart */
 /* Sign In Form */
+.form-sign-in {
+  margin-top: 2em;
+}
+.gradient-form {
+  background-color: #d5d5d3;
+  margin-top: 5em;
+}
+
+.log-in-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-logo {
+  background-color: #d4c893;
+}
+.buttons-create-new {
+  display: flex;
+  gap: 1em;
+}
