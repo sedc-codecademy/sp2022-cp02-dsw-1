@@ -1,49 +1,83 @@
 /* CSS Variables */
 :root {
-	--black: #000000;
-	--black-olive: #40423d;
-	--silver-chalice: #acada8;
-	--light-gray: #d5d5d3;
-	--white: #ffffff;
-	--cultured: #f9f9f9;
-	--sage: #d4c893;
-	--nadeshiko-pink: #faa8c4;
-	--jazzberry-jam: #950952;
-
-	--body-font-family: 'Josefin Sans', sans-serif;
-	--headers-font-family: 'Joan', serif;
+  --black: #000000;
+  --black-olive: #40423d;
+  --silver-chalice: #acada8;
+  --light-gray: #d5d5d3;
+  --white: #ffffff;
+  --cultured: #f9f9f9;
+  --sage: #d4c893;
+  --nadeshiko-pink: #faa8c4;
+  --jazzberry-jam: #950952;
+  --body-font-family: "Josefin Sans", sans-serif;
+  --headers-font-family: "Joan", serif;
 }
 
 /* CSS Reset */
 
 body {
-	font-family: var(--body-font-family);
+  font-family: var(--body-font-family);
 }
 
 #main-container {
-	background-color: var(--cultured);
-	color: var(--black);
-	width: 100%;
-	min-height: 84.5vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  background-color: #d5d5d3;
+  color: var(--black);
+  width: 100%;
+  min-height: 84.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Homepage */
+.frame-2 {
+  display: flex;
+  justify-content: center;
+}
+
+.rectangle-1 {
+  height: 50%;
+  margin-left: 30px;
+  margin-top: 48px;
+  object-fit: cover;
+  width: 30%;
+  filter: blur(2px);
+  border-radius: 40px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.616);
+}
+.rectangle-3 {
+  height: 307px;
+  height: 50%;
+  margin-left: 30px;
+  margin-top: 48px;
+  object-fit: cover;
+  width: 231px;
+  width: 30%;
+  border-radius: 40px;
+  filter: blur(2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.616);
+}
+
+.rectangle-1:hover {
+  filter: blur(0px);
+}
+.rectangle-3:hover {
+  filter: blur(0px);
+}
 /* Navbar*/
 
 /* Footer */
 footer {
-	width: 100%;
-	height: auto;
-	background-color: var(--black-olive);
-	color: var(--cultured);
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  height: 7em;
+  background-color: var(--black-olive);
+  color: var(--cultured);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* Categories */
 /* Products */
