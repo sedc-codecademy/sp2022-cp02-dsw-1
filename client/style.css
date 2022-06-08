@@ -31,40 +31,7 @@ body {
 }
 
 /* Homepage */
-.frame-2 {
-  display: flex;
-  justify-content: center;
-}
 
-.rectangle-1 {
-  height: 50%;
-  margin-left: 30px;
-  margin-top: 48px;
-  object-fit: cover;
-  width: 30%;
-  filter: blur(2px);
-  border-radius: 40px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.616);
-}
-.rectangle-3 {
-  height: 307px;
-  height: 50%;
-  margin-left: 30px;
-  margin-top: 48px;
-  object-fit: cover;
-  width: 231px;
-  width: 30%;
-  border-radius: 40px;
-  filter: blur(2px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.616);
-}
-
-.rectangle-1:hover {
-  filter: blur(0px);
-}
-.rectangle-3:hover {
-  filter: blur(0px);
-}
 /* Navbar*/
 
 /* Footer */
