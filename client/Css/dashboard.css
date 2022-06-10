@@ -224,7 +224,7 @@ body {
     width: 100%;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 30px;
 }
 
@@ -244,7 +244,7 @@ body {
     position: relative;
     font-weight: 500;
     font-size: 2.5em;
-    color: var(--black1);
+    color: var(--blue);
 }
 
 .cardBox .card .cardName {
@@ -259,7 +259,7 @@ body {
 }
 
 .cardBox .card:hover {
-    background-color: var(--black1);
+    background: var(--blue);
 }
 
 .cardBox .card:hover .numbers,
@@ -272,10 +272,10 @@ body {
     position: relative;
     width: 100%;
     padding: 20px;
-    display: grid;
-    grid-template-columns: 0.5fr;
+    /* display: grid; */
+    grid-template-columns: 2fr 1fr;
     grid-gap: 30px;
-    /* margin-top: 10px; */
+    margin-top: 10px;
 }
 
 .details .recentOrders {
@@ -298,6 +298,7 @@ body {
     font-weight: 600;
     color: var(--black1);
 }
+
 .btn {
     position: relative;
     padding: 5px 10px;
@@ -312,16 +313,17 @@ body {
     border-collapse: collapse;
     margin-top: 10px;
 }
-.details table thead td
-{
+
+.details table thead td {
     font-weight: 600;
 
 }
-.details .recentOrders table tr
-{
+
+.details .recentOrders table tr {
     color: var(--black1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .details .recentOrders table tr:last-child {
     border-bottom: none;
 }
@@ -330,6 +332,7 @@ body {
     background-color: var(--black1);
     color: var(--white);
 }
+
 .details .recentOrders table tr td {
     padding: 10px;
 }
@@ -338,14 +341,15 @@ body {
     text-align: end;
 
 }
-.details .recentOrders table tr td:nth-child(2)
-{
-text-align: end;
+
+.details .recentOrders table tr td:nth-child(2) {
+    text-align: end;
 }
-.details .recentOrders table tr td:nth-child(3)
-{
-text-align: center;
+
+.details .recentOrders table tr td:nth-child(3) {
+    text-align: center;
 }
+
 .status.delivered {
     padding: 2px 4px;
     background: #8de02c;
@@ -354,8 +358,8 @@ text-align: center;
     font-size: 14px;
     font-weight: 500;
 }
-.status.pending
-{
+
+.status.pending {
     padding: 2px 4px;
     background: #f9ca3f;
     color: var(--white);
@@ -363,8 +367,8 @@ text-align: center;
     font-size: 14px;
     font-weight: 500;
 }
-.status.return
-{
+
+.status.return {
     padding: 2px 4px;
     background: #f00;
     color: var(--white);
@@ -372,12 +376,40 @@ text-align: center;
     font-size: 14px;
     font-weight: 500;
 }
-.status.inprogress 
-{
+
+.status.inprogress {
     padding: 2px 4px;
     background: #1795ce;
     color: var(--white);
     border-radius: 4px;
     font-size: 14px;
     font-weight: 500;
+}
+@media (max-width: 480px)
+{
+.navigation
+{
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+}
+.navigation.active
+
+{
+width: 100%;
+left: 0;
+
+}
+.toggle
+{
+    z-index: 10001;
+}
+.main.active.toggle 
+{
+    position: fixed;
+    right: 0;
+    left: initial;
+color: var(--white);
+}
+
 }
