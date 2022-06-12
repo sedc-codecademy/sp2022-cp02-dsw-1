@@ -47,6 +47,20 @@ footer {
   align-items: center;
 }
 /* Categories */
+.categoryContainer{
+display: flex;
+}
+.card-img-top {
+  height: 15em;
+}
+.card-img-top:hover {
+  backdrop-filter: blur(10px);
+      filter: blur(4px);
+      transition: 0.5s ease;
+}
+.card{
+  margin: 1em;
+}
 /* Products */
 /* On Sale */
 .container {
