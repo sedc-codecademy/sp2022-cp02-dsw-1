@@ -50,15 +50,15 @@ footer {
 .categoryContainer{
 display: flex;
 }
-.card-img-top {
+.categoryCardImg {
   height: 15em;
 }
-.card-img-top:hover {
+.categoryCardImg:hover {
   backdrop-filter: blur(10px);
       filter: blur(4px);
       transition: 0.5s ease;
 }
-.card{
+.categoryCard{
   margin: 1em;
 }
 /* Products */
