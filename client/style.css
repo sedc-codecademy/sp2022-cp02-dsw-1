@@ -1,107 +1,178 @@
-/* CSS Variables */
+/*******************************************************/
+/****************    CSS Variables    *****************/
+/*******************************************************/
 :root {
-  --black: #000000;
-  --black-olive: #40423d;
-  --silver-chalice: #acada8;
-  --light-gray: #d5d5d3;
-  --white: #ffffff;
-  --cultured: #f9f9f9;
-  --sage: #d4c893;
-  --nadeshiko-pink: #faa8c4;
-  --jazzberry-jam: #950952;
-  --body-font-family: "Josefin Sans", sans-serif;
-  --headers-font-family: "Joan", serif;
+	--black: #000000;
+	--black-olive: #40423d;
+	--silver-chalice: #acada8;
+	--light-gray: #d5d5d3;
+	--white: #ffffff;
+	--cultured: #f9f9f9;
+	--sage: #d4c893;
+	--nadeshiko-pink: #faa8c4;
+	--jazzberry-jam: #950952;
+	--body-font-family: "Josefin Sans", sans-serif;
+	--headers-font-family: "Joan", serif;
 }
-
-/* CSS Reset */
-
+/*******************************************************/
+/*******************    CSS Reset    *******************/
+/*******************************************************/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
 body {
-  font-family: var(--body-font-family);
+	min-height: 100vh;
+	font-family: var(--body-font-family);
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
 }
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+/*******************************************************/
+/******************  Main Container  *******************/
+/*******************************************************/
 
 #main-container {
-  background-color: #d5d5d3;
-  color: var(--black);
-  width: 100%;
-  min-height: 84.5vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	background-color: var(--light-gray);
+	color: var(--black);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
+/*******************************************************/
+/********************    Navbar    *********************/
+/*******************************************************/
 
-/* Homepage */
-
-/* Navbar*/
-
-/* Footer */
+/*******************************************************/
+/********************    Footer    *********************/
+/*******************************************************/
 footer {
-  width: 100%;
-  height: 7em;
-  background-color: var(--black-olive);
-  color: var(--cultured);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	width: 100%;
+	height: 7em;
+	background-color: var(--black-olive);
+	color: var(--cultured);
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-/* Categories */
-.categoryContainer{
-display: flex;
+/*******************************************************/
+/********************    Homepage    *******************/
+/*******************************************************/
+
+/*******************************************************/
+/********************    Categories    *******************/
+/*******************************************************/
+.categoryContainer {
+	display: flex;
 }
 .categoryCardImg {
-  height: 15em;
+	height: 15em;
 }
 .categoryCardImg:hover {
-  backdrop-filter: blur(10px);
-      filter: blur(4px);
-      transition: 0.5s ease;
+	backdrop-filter: blur(10px);
+	filter: blur(4px);
+	transition: 0.5s ease;
 }
-.categoryCard{
-  margin: 1em;
+.categoryCard {
+	margin: 1em;
 }
-/* Products */
-/* On Sale */
+/*******************************************************/
+/*******************    Products    ********************/
+/*******************************************************/
+
+/*******************************************************/
+/****************  Products Details    *****************/
+/*******************************************************/
+
+/*******************************************************/
+/*******************    On Sale    *********************/
+/*******************************************************/
 .container {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
+	width: 100%;
+	padding-right: var(--bs-gutter-x, 0.75rem);
+	padding-left: var(--bs-gutter-x, 0.75rem);
+	margin-right: auto;
+	margin-left: auto;
 }
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border-radius: 0.25rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border-radius: 0.25rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-/* Contact */
-/* Cart */
-/* Sign In Form */
+/*******************************************************/
+/*******************    Cart    ************************/
+/*******************************************************/
+
+/*******************************************************/
+/*******************    Order   ***********************/
+/*******************************************************/
+
+/*******************************************************/
+/*******************    Sign In   **********************/
+/*******************************************************/
+
 .form-sign-in {
-  margin-top: 2em;
+	margin-top: 2em;
 }
 .gradient-form {
-  background-color: #d5d5d3;
-  margin-top: 5em;
+	background-color: var(--light-gray);
+	margin-top: 5em;
 }
 
 .log-in-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .card-logo {
-  background-color: #d4c893;
+	background-color: var(--sage);
 }
 .buttons-create-new {
-  display: flex;
-  gap: 1em;
+	display: flex;
+	gap: 1em;
 }
+/*******************************************************/
+/*******************    Register   *********************/
+/*******************************************************/
+
+/*******************************************************/
+/*******************    Contact    *********************/
+/*******************************************************/
