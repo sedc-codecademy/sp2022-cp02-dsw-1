@@ -26,6 +26,8 @@
 	margin: 0;
 }
 body {
+	background-color: var(--cultured);
+	color: var(--black);
 	min-height: 100vh;
 	font-family: var(--body-font-family);
 	line-height: 1.5;
@@ -36,8 +38,8 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
 	max-width: 100%;
+	height: auto;
 }
 input,
 button,
@@ -60,13 +62,13 @@ h6 {
 /*******************************************************/
 
 #main-container {
-	background-color: var(--light-gray);
+	/* background-color: var(--light-gray);
 	color: var(--black);
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: center; */
 }
 /*******************************************************/
 /********************    Navbar    *********************/
@@ -76,8 +78,9 @@ h6 {
 /********************    Footer    *********************/
 /*******************************************************/
 footer {
+	margin-top: 4em;
 	width: 100%;
-	height: 7em;
+	height: 5em;
 	background-color: var(--black-olive);
 	color: var(--cultured);
 	padding: 1rem;
@@ -89,7 +92,90 @@ footer {
 /*******************************************************/
 /********************    Homepage    *******************/
 /*******************************************************/
-
+.homepage-top-section__link {
+	position: relative;
+}
+.homepage-top-section img {
+	height: 95%;
+	margin-top: 1.8em;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+}
+.homepage-top-section__button-container {
+	position: absolute;
+	bottom: 1.5em;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.homepage-top-section__button {
+	display: inline-flex;
+	height: 3em;
+	width: 14em;
+	border: 2px solid var(--cultured);
+	margin: 0.125em 0.125em;
+	background-color: var(--black);
+	opacity: 0.85;
+	text-transform: uppercase;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+.homepage-top-section__link {
+	color: var(--cultured);
+	font-weight: 400;
+	text-decoration: none;
+	position: relative;
+	transition: all .25s ease-Out;
+}
+.homepage-top-section__button__slide {
+	width: 100%;
+	height: 100%;
+	left: -14em;
+	background: var(--cultured);
+	position: absolute;
+	transition: all .35s ease-Out;
+	bottom: 0;
+}
+.homepage-top-section__button:hover .homepage-top-section__button__slide {
+	left: 0;
+}
+.homepage-top-section__button:hover .homepage-top-section__link {
+	color: var(--black);
+}
+@media only screen and (min-width: 480px) {
+	.homepage-top-section__link {
+		font-weight: 700;
+	}
+	.homepage-top-section__button {
+		width: 18em;
+		margin: 1.25em 1.25em;
+	}
+	.homepage-top-section__button__slide {
+		left: -18em;
+	}
+}
+@media only screen and (min-width: 780px) {
+	.homepage-top-section__button-container {
+		bottom: 0;
+	}
+	.homepage-top-section__button {
+		width: 29vw;
+		padding: 2em 1em;
+	}
+	.homepage-top-section__button__slide {
+		left: -29vw;
+	}
+}
+@media only screen and (min-width: 1190px) {
+	.homepage-top-section__link {
+		font-size: 1.5rem;
+	}
+	.homepage-top-section__button {
+		width: 29vw;
+	}
+}
 /*******************************************************/
 /********************    Categories    *******************/
 /*******************************************************/
@@ -118,7 +204,7 @@ footer {
 /*******************************************************/
 /*******************    On Sale    *********************/
 /*******************************************************/
-.container {
+/* .container {
 	width: 100%;
 	padding-right: var(--bs-gutter-x, 0.75rem);
 	padding-left: var(--bs-gutter-x, 0.75rem);
@@ -135,7 +221,7 @@ footer {
 	background-clip: border-box;
 	border-radius: 0.25rem;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+} */
 /*******************************************************/
 /*******************    Cart    ************************/
 /*******************************************************/
@@ -152,7 +238,7 @@ footer {
 	margin-top: 2em;
 }
 .gradient-form {
-	background-color: var(--light-gray);
+	background-color: var(--cultured);
 	margin-top: 5em;
 }
 
