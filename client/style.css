@@ -61,15 +61,15 @@ h6 {
 /******************  Main Container  *******************/
 /*******************************************************/
 
-#main-container {
-  /* background-color: var(--light-gray);
+/* #main-container {
+  background-color: var(--light-gray);
 	color: var(--black);
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center; */
-}
+	align-items: center;
+} */
 /*******************************************************/
 /********************    Navbar    *********************/
 /*******************************************************/
@@ -543,7 +543,12 @@ footer {
 #contactBlockMessage4 {
   height: 8em;
 }
-
+.card-logo {
+  background-color: var(--sage);
+}
+#image-logo {
+  margin-bottom: 1em;
+}
 /*******************************************************/
 /*******************    Sign In   **********************/
 /*******************************************************/

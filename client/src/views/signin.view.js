@@ -31,14 +31,14 @@ export default class SigninView {
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1 log-in-button">
-                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 btn-lg" type="button">Log
+                      <button class="btn btn-primary btn-block fa-lg btn-dark mb-3 btn-lg" type="button">Log
                         in</button>
                       <a class="text-muted" href="#!">Forgot password?</a>
                     </div>
   
                     <div class="d-flex align-items-center justify-content-center pb-4 buttons-create-new">
                       <p class="mb-0 me-2">Don't have an account?</p>
-                      <button type="button" class="btn btn-outline-danger">Create new</button>
+                      <button type="button" class="btn btn-outline-dark">Create new</button>
                     </div>
                   </form>
   
