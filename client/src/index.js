@@ -6,6 +6,9 @@ import ContactView from "./views/contact.view.js";
 import CartView from "./views/cart.view.js";
 import SigninView from "./views/signin.view.js";
 import ErrorView from "./views/error.view.js";
+import DashboardView from "./views/dashboard.view.js";
+
+
 
 const routes = {
     "/": HomepageView,
@@ -15,6 +18,8 @@ const routes = {
     "/contact": ContactView,
     "/cart": CartView,
     "/signin": SigninView,
+    "/dashboard": DashboardView,
+
 }
 
 class App {
