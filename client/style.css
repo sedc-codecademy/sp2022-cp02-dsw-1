@@ -498,24 +498,37 @@ footer {
 /*******************************************************/
 /*******************    On Sale    *********************/
 /*******************************************************/
-/* .container {
-	width: 100%;
-	padding-right: var(--bs-gutter-x, 0.75rem);
-	padding-left: var(--bs-gutter-x, 0.75rem);
-	margin-right: auto;
-	margin-left: auto;
+@media (max-width: 1400px) {
+  .product-card__button--text-dissapear {
+    display: none;
+  }
 }
-.card {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	min-width: 0;
-	word-wrap: break-word;
-	background-color: #fff;
-	background-clip: border-box;
-	border-radius: 0.25rem;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-} */
+
+.product-card__badge {
+  background-color: var(--jazzberry-jam);
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  font-size: 0.75em;
+  font-weight: 700;
+
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-top-left-radius: 15%;
+  border-bottom-left-radius: 15%;
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 /*******************************************************/
 /*******************    Cart    ************************/
 /*******************************************************/
