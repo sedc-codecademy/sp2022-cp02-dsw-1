@@ -1,5 +1,3 @@
-import ExampleComponent from "../components/example.component.js";
-
 export default class SigninView {
   static render() {
     return `<section class="h-100 gradient-form">
