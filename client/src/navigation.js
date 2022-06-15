@@ -65,7 +65,7 @@ const navBlack = () => {
           <p>With code: ORYX20</p>
         </div>
         <div class="man-div-black dropdown" style="float:right;">
-          <a class="nav-link dropbtn" href="/#/man">MAN</a>
+          <a class="nav-link dropbtn" href="/#/men">MEN</a>
           <div class="dropdown-content" style="right:0;">
             <a href="#">Shirts</a>
             <a href="#">Blouses</a>

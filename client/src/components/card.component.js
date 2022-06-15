@@ -1,5 +1,5 @@
 export default class CardComponent {
-  static render() {
+   static render(product) {
     return `
   <div class="col mb-5">
     <div class="product-card h-100">
