@@ -492,8 +492,21 @@ footer {
 /*******************************************************/
 
 /*******************************************************/
-/****************  Products Details    *****************/
+/****************  Single Product Details    *****************/
 /*******************************************************/
+
+.singleProduct__name {
+  font-family: var(--headers-font-family);
+}
+
+.singleProduct__description {
+  font-family: var(--body-font-family);
+}
+
+.singleProduct__custom_img {
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 /*******************************************************/
 /*******************    On Sale    *********************/
@@ -536,7 +549,7 @@ footer {
 /*******************************************************/
 /*******************    Order   ***********************/
 /*******************************************************/
-.order-form{
+.order-form {
   width: 50%;
   text-align: center;
   justify-content: center;
