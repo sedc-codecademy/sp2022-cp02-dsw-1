@@ -5,7 +5,7 @@ import ContactView from "./views/contact.view.js";
 import CartView from "./views/cart.view.js";
 import SigninView from "./views/signin.view.js";
 import ErrorView from "./views/error.view.js";
-import OrderView  from "./views/order.view.js";
+import OrderView from "./views/order.view.js";
 import ProductsView from "./views/products.view.js";
 
 const routes = {
@@ -13,11 +13,11 @@ const routes = {
     "/men": ProductsView,
     "/women": ProductsView,
     // "/product/:id": ProductView,
-    "/sale": SaleView,
+    "/sale": ProductsView,
     "/contact": ContactView,
     "/cart": CartView,
     "/signin": SigninView,
-    "/order" : OrderView
+    "/order": OrderView
 }
 
 class App {
@@ -29,7 +29,8 @@ class App {
             (request.verb ? `/${request.verb}` : "");
         const view = routes[parseUrl] ? routes[parseUrl] : ErrorView;
         const main = document.getElementById('main-container');
-        main.innerHTML = await view.render();
+        main.innerHTML = await view.render(request.resource);
+        console.log("request resource", request.resource);
 
     }
     static init() {
