@@ -1,15 +1,17 @@
 export default class ProductCard {
-  static render({ image, name, brand, discountPrice, price, _id } = product) {
+  static render({ image, name, brand, discountPrice, price, _id, sale } = product) {
     return `
   <div class="col mb-5">
     <div class="product-card h-100">
-      <!-- Sale badge-->
-      <div
-        class="product-card__badge text-white position-absolute"
-        style="top: 0.5rem; right: 0rem"
-      >
-        Sale
-      </div>
+      ${sale ? `<!-- Sale badge-->
+        <div
+          class="product-card__badge text-white position-absolute"
+          style="top: 0.5rem; right: 0rem"
+        >
+          Sale
+        </div>`
+        : ""}
+      
     
       <img
         class="card-img-top"
