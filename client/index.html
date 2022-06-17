@@ -41,53 +41,45 @@
       <header>
         <nav class="navbar first-navbar">
           <div class="container-fluid first-container-fluid">
-            <div class="nav navbar-nav1 first-navbar-children">
-              <div class="free-shipping-text">
-                <a id="left-side-first" class="btn"
-                  >Free Shipping On Orders Over $150</a
-                >
-              </div>
-              <div class="women-div">
-                <a class="nav-link" href="/#/women">WOMEN</a>
-              </div>
-              <div class="spread-elements-first"></div>
-              <div class="man-div">
-                <a class="nav-link" href="/#/man">MAN</a>
-              </div>
-              <div class="spread-elements-second"></div>
-              <div class="sale-div">
-                <a class="nav-link nav-sale" href="/#/sale">Sale</a>
-              </div>
+            <div class="free-shipping-text">
+              <p id="left-side-first">Free Shipping On Orders Over $150</p>
             </div>
+            <div class="spread-elements-main"></div>
             <div class="imgDiv">
-              <span class="text-logo">
+              <div class="text-logo">
                 <a href="#">
                   <img
                     src="./images/logo/text-logo.svg"
-                    style="width: 270px; height: 90px"
+                    style="width: 190px; height: 50px"
                   />
                 </a>
-              </span>
+              </div>
             </div>
-            <div id="right-side-first" class="nav navbar-nav1">
-              <form class="d-flex search-bar" role="search">
-                <input
-                  class="form-control me-2 form-control-input"
-                  type="search"
-                  placeholder="Search here..."
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-light btn-outline" type="submit">
-                  <i class="fa fa-search"></i>
-                </button>
-              </form>
-            </div>
-            <div id="right-side-second" class="nav navbar-nav1">
-              <a href="/#/signin" class="btn"
-                ><span class="bi bi-person-circle"></span
-              ></a>
-              <div class="spread-elements-span"></div>
-              <a href="#" class="btn"><span class="bi bi-cart4"></span></a>
+            <div class="spread-elements-main second-main"></div>
+            <div class="nav navbar-nav1 right-side">
+              <div id="right-side-first" class="nav navbar-nav1">
+                <form class="d-flex search-bar" role="search">
+                  <input
+                    class="form-control me-2 form-control-input"
+                    type="search"
+                    placeholder="Search here..."
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn btn-outline-light btn-outline"
+                    type="submit"
+                  >
+                    <i class="fa fa-search"></i>
+                  </button>
+                </form>
+              </div>
+              <div id="right-side-second" class="nav navbar-nav1">
+                <a href="/#/signin" class="btn"
+                  ><span class="bi bi-person-circle"></span
+                ></a>
+                <div class="spread-elements-span"></div>
+                <a href="#" class="btn"><span class="bi bi-cart4"></span></a>
+              </div>
             </div>
           </div>
         </nav>
@@ -112,9 +104,6 @@
                 <a class="nav-link a-navbar" href="/#/">Home</a>
               </li>
               <li class="nav-item list-elements">
-                <a class="nav-link a-navbar" href="/#/categories">Categories</a>
-              </li>
-              <li class="nav-item list-elements">
                 <a class="nav-link a-navbar" href="/#/about">About</a>
               </li>
               <li class="nav-item list-elements">
@@ -125,13 +114,11 @@
                   >Privacy Policy</a
                 >
               </li>
-              <li class="nav-item list-elements">
-                <a class="nav-link a-navbar" href="/#/faq">FAQ</a>
+              <li class="nav-item list-elements list-sale">
+                <a class="nav-link" href="/#/sale">Sale</a>
               </li>
               <li class="nav-item list-elements">
-                <a class="nav-link a-navbar" href="/#/make-order"
-                  >Make an order</a
-                >
+                <a class="nav-link a-navbar" href="/#/faq">FAQ</a>
               </li>
             </ul>
             <div id="right-side-first" class="nav navbar-nav1">
@@ -143,7 +130,11 @@
                   placeholder="Search here..."
                   aria-label="Search"
                 />
-                <button class="btn btn-outline-light btn-outline" type="submit">
+                <button
+                  id="btn-col"
+                  class="btn btn-outline-light btn-outline"
+                  type="submit"
+                >
                   <i class="fa fa-search"></i>
                 </button>
               </form>
@@ -164,6 +155,6 @@
       <footer>Copyright © 2022</footer>
     </div>
     <script src="main.js"></script>
-    <script src="./src/navigation.js"></script>
+    <script src="./src/utils/navigation.js"></script>
   </body>
 </html>
