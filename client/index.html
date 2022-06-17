@@ -23,122 +23,135 @@
     defer></script>
   <body>
     <div>
-      <!-- Header -->
-      <header>
-        <nav class="navbar first-navbar">
-          <div class="container-fluid first-container-fluid">
-            <div class="free-shipping-text">
-              <p id="left-side-first">Free Shipping On Orders Over $150</p>
-            </div>
-            <div class="spread-elements-main"></div>
-            <div class="imgDiv">
-              <div class="text-logo">
-                <a href="#">
-                  <img
-                    src="./images/logo/text-logo.svg"
-                    style="width: 190px; height: 50px"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="spread-elements-main second-main"></div>
-            <div class="nav navbar-nav1 right-side">
-              <div id="right-side-first" class="nav navbar-nav1">
-                <form class="d-flex search-bar" role="search">
-                  <input
-                    class="form-control me-2 form-control-input"
-                    type="search"
-                    placeholder="Search here..."
-                    aria-label="Search"
-                  />
-                  <button
-                    class="btn btn-outline-light btn-outline"
-                    type="submit"
-                  >
-                    <i class="fa fa-search"></i>
-                  </button>
-                </form>
-              </div>
-              <div id="right-side-second" class="nav navbar-nav1">
-                <a href="/#/signin" class="btn"
-                  ><span class="bi bi-person-circle"></span
-                ></a>
-                <div class="spread-elements-span"></div>
-                <a href="#" class="btn"><span class="bi bi-cart4"></span></a>
-              </div>
-            </div>
+    </header>
+    <!-- Navbar Sticky-->
+    <nav id="nav2" class="navbar navbar-expand-lg navbar-dark bg-dark nav2">
+      <div class="container-fluid second-container-fluid">
+        <button
+          class="navbar-toggler toggler-btn"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse collpase-nav" id="navbarColor01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item list-elements">
+              <a class="nav-link a-navbar" href="/#/">Home</a>
+            </li>
+            <li class="nav-item list-elements">
+              <a class="nav-link a-navbar" href="/#/about">About</a>
+            </li>
+            <li class="nav-item list-elements">
+              <a class="nav-link a-navbar" href="/#/contact">Contact</a>
+            </li>
+            <li class="nav-item list-elements">
+              <a class="nav-link a-navbar" href="/#/privacy-policy"
+                >Privacy Policy</a
+              >
+            </li>
+            <li class="nav-item list-elements list-sale">
+              <a class="nav-link" href="/#/sale">Sale</a>
+            </li>
+            <li class="nav-item list-elements">
+              <a class="nav-link a-navbar" href="/#/faq">FAQ</a>
+            </li>
+          </ul>
+          <div id="right-side-first" class="nav navbar-nav1">
+            <form class="d-flex search-bar" role="search">
+              <input
+                id="input-form"
+                class="form-control me-2 form-control-input"
+                type="search"
+                placeholder="Search here..."
+                aria-label="Search"
+              />
+              <button
+                id="btn-col"
+                class="btn btn-outline-light btn-outline"
+                type="submit"
+              >
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
           </div>
-        </nav>
-      </header>
-      <!-- Navbar Sticky-->
-      <nav id="nav2" class="navbar navbar-expand-lg navbar-dark bg-dark nav2">
-        <div class="container-fluid second-container-fluid">
-          <button
-            class="navbar-toggler toggler-btn"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarColor01"
-            aria-controls="navbarColor01"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse collpase-nav" id="navbarColor01">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item list-elements">
-                <a class="nav-link a-navbar" href="/#/">Home</a>
-              </li>
-              <li class="nav-item list-elements">
-                <a class="nav-link a-navbar" href="/#/about">About</a>
-              </li>
-              <li class="nav-item list-elements">
-                <a class="nav-link a-navbar" href="/#/contact">Contact</a>
-              </li>
-              <li class="nav-item list-elements">
-                <a class="nav-link a-navbar" href="/#/privacy-policy"
-                  >Privacy Policy</a
-                >
-              </li>
-              <li class="nav-item list-elements list-sale">
-                <a class="nav-link" href="/#/sale">Sale</a>
-              </li>
-              <li class="nav-item list-elements">
-                <a class="nav-link a-navbar" href="/#/faq">FAQ</a>
-              </li>
-            </ul>
-            <div id="right-side-first" class="nav navbar-nav1">
-              <form class="d-flex search-bar" role="search">
-                <input
-                  id="input-form"
-                  class="form-control me-2 form-control-input"
-                  type="search"
-                  placeholder="Search here..."
-                  aria-label="Search"
-                />
-                <button
-                  id="btn-col"
-                  class="btn btn-outline-light btn-outline"
-                  type="submit"
-                >
-                  <i class="fa fa-search"></i>
-                </button>
-              </form>
-            </div>
-            <div id="right-side-second" class="nav navbar-nav1">
-              <a href="/#/signin" class="btn"
-                ><span class="bi bi-person-circle"></span
-              ></a>
-              <div class="spread-elements"></div>
-              <a href="#" class="btn"><span class="bi bi-cart4"></span></a>
-            </div>
+          <div id="right-side-second" class="nav navbar-nav1">
+            <a href="/#/signin" class="btn"
+              ><span class="bi bi-person-circle"></span
+            ></a>
+            <div class="spread-elements"></div>
+            <a href="#" class="btn"><span class="bi bi-cart4"></span></a>
           </div>
         </div>
-      </nav>
-      <!-- Dark Header Sticky -->
-      <div id="black-header-div"></div>
-      <main id="main-container"></main>
-      <footer>Copyright © 2022</footer>
+      </div>
+    </nav>
+    <!-- Dark Header Sticky -->
+    <div id="black-header-div"></div>
+    <main id="main-container"></main>
+        </main>
+        <footer class="section bg-footer">
+            <div class="container">  
+                <div class="row">  
+                  <div class="col-lg-3">  
+                    <div class="">  
+                      <h6 class="footer-heading text-uppercase text-white">Navigate</h6>  
+                      <ul class="list-unstyled footer-link mt-4">  
+                        <li><a href="/#/">Store</a></li>  
+                        <li><a href="/#/">Home</a></li>  
+                        <li><a href="/#/">Privacy Policy</a></li>  
+                        <li><a href="/#/sale">Sale</a></li>  
+                        <li><a href="/#/contact">Contact</a></li>  
+                        <li><a href="/#/cart">Go to Cart</a></li>  
+                      </ul>  
+                    </div>  
+                  </div>  
+                  <div class="col-lg-3">  
+                    <div class="">  
+                      <h6 class="footer-heading text-uppercase text-white">Categories</h6>  
+                      <ul class="list-unstyled footer-link mt-4">  
+                        <li><a href="/#/men">Men</a></li>  
+                        <li><a href="/#/women">Women</a></li>  
+                        <li><a href="/#/dresses">Dresses</a></li>  
+                        <li><a href="/#/viewall"><i><b>View all</b></i></a></li>  
+                      </ul>  
+                    </div>  
+                  </div>  
+                  <div class="col-lg-2">  
+                    <div class="">  
+                      <h6 class="footer-heading text-uppercase text-white">Help</h6>  
+                      <ul class="list-unstyled footer-link mt-4">  
+                        <li><a href="/#/signin">Sign in </a></li>  
+                        <li><a href="/#/login">Login</a></li>  
+                        <li><a href="/#/termsOfServices">Terms of Services</a></li>  
+                        <li><a href="/#/pp">Privacy Policy</a></li>  
+                      </ul>  
+                    </div>  
+                  </div>  
+                  <div class="col-lg-4">  
+                    <div class="">  
+                      <h6 class="footer-heading text-uppercase text-white">Contact Us</h6>  
+                      <p class="contact-info mt-4">Contact us if need help with anything</p>  
+                      <p class="contact-info">project.hope@gmail.com</p>  
+                      <div class="mt-5">  
+                        <ul class="list-inline">  
+                          <li class="list-inline-item" id="facebook"><a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook' ></i></a></li> 
+                          <li class="list-inline-item" id="github"><a href="https://github.com/" target="_blank"><i class='bx bxl-github' ></i></a></li>   
+                          <li class="list-inline-item" id="apple"><a href="https://www.apple.com/" target="_blank"><i class='bx bxl-apple' ></i></a></li>  
+                          <li class="list-inline-item" id="google"><a href="https://www.google.com/?/links" target="_blank"><i class='bx bxl-google' ></i></a></li>  
+                        </ul>  
+                      </div>  
+                    </div>  
+                  </div>  
+                </div>  
+              </div>  
+              <div class="text-center mt-5">  
+                <p class="footer-alt mb-0 f-14"><i>@ 2022 ORYX | All Rights Reserved</i></p>  
+              </div>  
+        </footer>
     </div>
     <script src="main.js"></script>
     <script src="./src/utils/navigation.js"></script>
