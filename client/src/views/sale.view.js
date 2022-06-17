@@ -1,16 +1,16 @@
 export default class SaleView {
   static render() {
     return `
-        <section class="py-5">
+        <section style="width: 100%;" class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
           <div
             class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
           >
             <div class="col mb-5">
-              <div class="card h-100">
+              <div class="product-card h-100">
                 <!-- Sale badge-->
                 <div
-                  class="badge text-white position-absolute"
+                  class="product-card__badge text-white position-absolute"
                   style="top: 0.5rem; right: 0rem"
                 >
                   Sale
@@ -42,13 +42,13 @@ export default class SaleView {
                 >
                   <div class="text-center">
                     <a class="btn btn-outline-dark d-flex mt-auto" href="#"
-                      ><div class="me-1 text-dissapear">View</div>
+                      ><div class="me-1 product-card__button--text-dissapear">View</div>
                       <i class="bi bi-search"></i
                     ></a>
                   </div>
                   <div class="text-center">
                     <a class="btn btn-outline-dark d-flex mt-auto" href="#"
-                      ><div class="me-1 text-dissapear">Add to</div>
+                      ><div class="me-1 product-card__button--text-dissapear">Add to</div>
                       <i class="bi-cart-fill me-1"></i
                     ></a>
                   </div>
