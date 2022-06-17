@@ -29,7 +29,7 @@ body {
 /* Navbar*/
 
 /* Footer */
-footer {
+/* footer {
 	width: 100%;
 	height: auto;
 	background-color: var(--black-olive);
@@ -39,7 +39,46 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
+} */
+
+.bg-footer {  
+	background-color: var(--black);  
+	padding: 50px 0 30px;  
+  }  
+
+  .footer-heading {  
+	letter-spacing: 2px;  
+  }  
+  .footer-link a {  
+	color: var(--light-gray);  
+	line-height: 40px;  
+	font-size: 14px;  
+	transition: all 0.5s;  
+  }  
+  .footer-link a:hover {  
+	color: var(--sage);  
+  }  
+  .contact-info {  
+	color: var(--light-gray);  
+	font-size: 14px;  
+  }  
+  .footer-alt {  
+	color: var(--silver-chalice);  
+  }  
+  .footer-heading {  
+	position: relative;  
+	padding-bottom: 12px;  
+  }  
+  .footer-heading:after {  
+	content: '';  
+	width: 25px;  
+	border-bottom: 1px solid var(--silver-chalice);  
+	position: absolute;  
+	left: 0;  
+	bottom: 0;  
+	display: block;  
+	border-bottom: 1px solid var(--sage);  
+  }  
 /* Categories */
 /* Products */
 /* On Sale */
