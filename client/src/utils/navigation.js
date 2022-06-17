@@ -63,22 +63,8 @@ const navBlack = () => {
           <p>NEW HERE? Get 20% off everything*</p>
           <p>With code: ORYX20</p>
         </div>
-<<<<<<< HEAD:client/src/utils/navigation.js
         <div class="man-div-black">
           <a class="nav-link nav-a" href="/#/men">MEN</a>          
-=======
-        <div class="man-div-black dropdown" style="float:right;">
-          <a class="nav-link dropbtn" href="/#/men">MEN</a>
-          <div class="dropdown-content" style="right:0;">
-            <a href="#">Shirts</a>
-            <a href="#">Blouses</a>
-            <a href="#">Sweatshirt</a>
-            <a href="#">Jackets</a>
-            <a href="#">Trousers</a>
-            <a href="#">Shorts</a>
-            <a href="#">Jeans</a>
-          </div>
->>>>>>> develop:client/src/navigation.js
         </div>
       </div>
   </nav>
