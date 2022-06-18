@@ -7,6 +7,8 @@ import ErrorView from "./views/error.view.js";
 import OrderView from "./views/order.view.js";
 import ProductsView from "./views/products.view.js";
 import SingleProductView from "./views/singleproduct.view.js";
+import PrivacyPolicyView from "./views/privacy-policy.view.js";
+import AboutView from "./views/about.view.js";
 
 const routes = {
     "/": HomepageView,
@@ -18,7 +20,9 @@ const routes = {
     "/product": SingleProductView, //temporary
     "/cart": CartView,
     "/signin": SigninView,
-    "/order": OrderView
+    "/order": OrderView,
+    "/privacy-policy": PrivacyPolicyView,
+    "/about": AboutView
 }
 
 class App {
