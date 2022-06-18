@@ -8,3 +8,14 @@ export const parseRequestUrl = () => {
         verb: request[3],
     };
 };
+
+export const getAllProducts = async () => {
+    try {
+        const response = await fetch('../data/clothes.json');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error);
+        // To do something with the error
+    }
+}
