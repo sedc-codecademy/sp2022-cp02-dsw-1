@@ -1,6 +1,5 @@
-import { parseRequestUrl } from "./utils/utils.js";
+import { parseRequestUrl, getAllProducts } from "./utils/utils.js";
 import HomepageView from "./views/homepage.view.js";
-import SaleView from "./views/sale.view.js";
 import ContactView from "./views/contact.view.js";
 import CartView from "./views/cart.view.js";
 import SigninView from "./views/signin.view.js";
@@ -30,9 +29,9 @@ class App {
             (request.id ? `/:id` : "") +
             (request.verb ? `/${request.verb}` : "");
         const view = routes[parseUrl] ? routes[parseUrl] : ErrorView;
+        const resource = request.resource
         const main = document.getElementById('main-container');
-        main.innerHTML = await view.render(request.resource);
-        console.log("request resource", request.resource);
+        main.innerHTML = await view.render(resource, getAllProducts());
 
     }
     static init() {

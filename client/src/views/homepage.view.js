@@ -1,9 +1,10 @@
 export default class HomepageView {
-    static render() {
-        return `
+  static async render(resource, data) {
+
+    return /*html*/`
         <!-- Homepage Top Section -->
         <section class="homepage-top-section">
-          <div class="container">
+            <div class="container">
             <div class="row">
               <div class="col-12 col-md-6 homepage-top-section__link position-relative">
                 <a href="/#/women">
@@ -32,5 +33,5 @@ export default class HomepageView {
         </section>
         <!-- End of Homepage Top Section -->
         `;
-    }
+  }
 }
