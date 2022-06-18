@@ -3,12 +3,12 @@ import HomepageView from "./views/homepage.view.js";
 import ContactView from "./views/contact.view.js";
 import CartView from "./views/cart.view.js";
 import SigninView from "./views/signin.view.js";
-import ErrorView from "./views/error.view.js";
 import OrderView from "./views/order.view.js";
 import ProductsView from "./views/products.view.js";
 import SingleProductView from "./views/singleproduct.view.js";
 import PrivacyPolicyView from "./views/privacy-policy.view.js";
 import AboutView from "./views/about.view.js";
+import Error404View from "./views/error404.view.js";
 
 const routes = {
     "/": HomepageView,
@@ -32,10 +32,13 @@ class App {
             (request.resource ? `/${request.resource}` : "/") +
             (request.id ? `/:id` : "") +
             (request.verb ? `/${request.verb}` : "");
-        const view = routes[parseUrl] ? routes[parseUrl] : ErrorView;
-        const resource = request.resource
+        const view = routes[parseUrl] ? routes[parseUrl] : Error404View;
         const main = document.getElementById('main-container');
-        main.innerHTML = await view.render(resource, getAllProducts());
+        const options = {
+            resource: request.resource,
+            data: getAllProducts()
+        }
+        main.innerHTML = await view.render(options);
 
     }
     static init() {
