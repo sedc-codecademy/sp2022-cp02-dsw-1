@@ -1,7 +1,7 @@
 export default class HomepageView {
   static async render(resource, data) {
 
-    return /*html*/`
+    return `
         <!-- Homepage Top Section -->
         <section class="homepage-top-section">
             <div class="container">
