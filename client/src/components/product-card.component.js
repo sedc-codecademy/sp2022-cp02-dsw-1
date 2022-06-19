@@ -9,7 +9,7 @@ export default class ProductCard {
       </div>`
         : ""}
       <a href="/#/product/${_id}">
-        <img class="card-img-top" src="${image}" alt="${name}"/>
+        <img class="card-img-top" src="${image}" alt="${name}" width="500" height="600"/>
       </a>
       <!-- Product details-->
       <div class="card-body p-4">

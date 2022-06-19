@@ -8,7 +8,7 @@ export default class HomepageView {
             <div class="row">
               <div class="col-12 col-md-6 homepage-top-section__link position-relative">
                 <a href="/#/women">
-                  <img src="../images/main-woman-medium.jpg" alt="female model">
+                  <img src="../images/main-woman-medium.jpg" alt="female model" width="1800" height="2000">
                 </a>
                 <div class="homepage-top-section__button-container">
                   <div class="homepage-top-section__button">
