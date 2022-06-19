@@ -5,16 +5,17 @@ import CartView from "./views/cart.view.js";
 import SigninView from "./views/signin.view.js";
 import OrderView from "./views/order.view.js";
 import ProductsView from "./views/products.view.js";
-import SingleProductView from "./views/singleproduct.view.js";
+import SingleProductView from "./views/product-details.view.js";
 import PrivacyPolicyView from "./views/privacy-policy.view.js";
 import AboutView from "./views/about.view.js";
 import Error404View from "./views/error404.view.js";
+import ProductDetailsView from "./views/product-details.view.js";
 
 const routes = {
     "/": HomepageView,
     "/men": ProductsView,
     "/women": ProductsView,
-    // "/product/:id": ProductView,
+    "/product/:id": ProductDetailsView,
     "/sale": ProductsView,
     "/contact": ContactView,
     "/product": SingleProductView, //temporary
@@ -22,7 +23,8 @@ const routes = {
     "/signin": SigninView,
     "/order": OrderView,
     "/privacy-policy": PrivacyPolicyView,
-    "/about": AboutView
+    "/about": AboutView,
+    // "/product-details": ProductDetailsView
 }
 
 class App {
@@ -32,10 +34,11 @@ class App {
             (request.resource ? `/${request.resource}` : "/") +
             (request.id ? `/:id` : "") +
             (request.verb ? `/${request.verb}` : "");
+        console.log(parseUrl)
         const view = routes[parseUrl] ? routes[parseUrl] : Error404View;
         const main = document.getElementById('main-container');
         const options = {
-            resource: request.resource,
+            request: request,
             data: getAllProducts()
         }
         main.innerHTML = await view.render(options);
