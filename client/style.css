@@ -86,44 +86,44 @@ h6 {
 
 /* Footer */
 
-.bg-footer {  
-	background-color: var(--black);  
-	padding: 50px 0 30px;  
-  }  
+.bg-footer {
+  background-color: var(--black);
+  padding: 50px 0 30px;
+}
 
-  .footer-heading {  
-	letter-spacing: 2px;  
-  }  
-  .footer-link a {  
-	color: var(--light-gray);  
-	line-height: 40px;  
-	font-size: 14px;  
-	transition: all 0.5s;  
-  }  
-  .footer-link a:hover {  
-	color: var(--sage);  
-  }  
-  .contact-info {  
-	color: var(--light-gray);  
-	font-size: 14px;  
-  }  
-  .footer-alt {  
-	color: var(--silver-chalice);  
-  }  
-  .footer-heading {  
-	position: relative;  
-	padding-bottom: 12px;  
-  }  
-  .footer-heading:after {  
-	content: '';  
-	width: 25px;  
-	border-bottom: 1px solid var(--silver-chalice);  
-	position: absolute;  
-	left: 0;  
-	bottom: 0;  
-	display: block;  
-	border-bottom: 1px solid var(--sage);  
-  }  
+.footer-heading {
+  letter-spacing: 2px;
+}
+.footer-link a {
+  color: var(--light-gray);
+  line-height: 40px;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+.footer-link a:hover {
+  color: var(--sage);
+}
+.contact-info {
+  color: var(--light-gray);
+  font-size: 14px;
+}
+.footer-alt {
+  color: var(--silver-chalice);
+}
+.footer-heading {
+  position: relative;
+  padding-bottom: 12px;
+}
+.footer-heading:after {
+  content: "";
+  width: 25px;
+  border-bottom: 1px solid var(--silver-chalice);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  border-bottom: 1px solid var(--sage);
+}
 /* Categories */
 /* Products */
 /* On Sale */
@@ -735,6 +735,13 @@ h6 {
 #image-logo {
   margin-bottom: 1em;
 }
+.text-company {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  text-align: center;
+}
 /*******************************************************/
 /*******************    Sign In   **********************/
 /*******************************************************/
@@ -754,11 +761,24 @@ h6 {
 }
 
 .card-logo {
-  background-color: var(--sage);
+  background-color: var(--jazzberry-jam);
 }
 .buttons-create-new {
   display: flex;
   gap: 1em;
+}
+.form-control:focus {
+  border: 1px solid var(--jazzberry-jam);
+  box-shadow: var(--jazzberry-jam) 0 1px 4px 0px;
+}
+.btn-lg {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+.btn-create-new:hover {
+  border-color: #343a40;
 }
 /*******************************************************/
 /*******************    Register   *********************/

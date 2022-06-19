@@ -10,10 +10,9 @@ export default class SigninView {
                 <div class="card-body p-md-5 mx-md-4">
   
                   <div class="text-center">
-                  <object data="images/logo/full-logo.svg" width="100em" height="100em"> </object>
+                  <h4 class="mb-4">Please login to your account</h4>
                   </div>
                   <form class="form-sign-in">
-                    <p>Please login to your account</p>
   
                     <div class="form-floating mb-4">
                       <input type="email" id="email" class="form-control"
@@ -29,25 +28,27 @@ export default class SigninView {
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1 log-in-button">
-                      <button class="btn btn-primary btn-block fa-lg btn-dark mb-3 btn-lg" type="button">Log
+                      <button class="btn btn-block fa-lg mb-3 btn-lg btn btn-outline-dark" type="button">Log
                         in</button>
                       <a class="text-muted" href="#!">Forgot password?</a>
                     </div>
   
                     <div class="d-flex align-items-center justify-content-center pb-4 buttons-create-new">
                       <p class="mb-0 me-2">Don't have an account?</p>
-                      <button type="button" class="btn btn-outline-dark">Create new</button>
+                      <button type="button" class="btn btn-outline-light btn-dark btn-create-new">Create new</button>
                     </div>
                   </form>
-  
                 </div>
               </div>
               <div class="col-lg-6 d-flex align-items-center card-logo">
                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <div class="text-company">
+                <object data="images/logo/white-logo.svg" width="100em" height="100em"> </object>
                   <h4 class="mb-4">We are more than just a company</h4>
                   <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
                 </div>
               </div>
             </div>

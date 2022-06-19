@@ -11,7 +11,6 @@ export default class ContactView {
                 <div class="card-body p-md-5 mx-md-4">
   
                   <div class="text-center">
-                  <object id="image-logo" data="images/logo/full-logo.svg" width="100em" height="100em"> </object>
                   
                   <h4 class="mb-4">Contact us</h4>
                   <p>We're happy to answer questions or help you with returns.
@@ -39,18 +38,20 @@ export default class ContactView {
                         <textarea class="form-control" id="contactBlockMessage4" rows="4" placeholder="Enter Message"></textarea>
                         <label class="form-label" for="contactBlockMessage4">Message</label>
                       </div>
-                      <button type="button" class="btn btn-dark btn-block">Send message</button>
+                      <button type="button" class="btn btn-outline-light btn-dark btn-lg btn-create-new">Send message</button>
                     </form>
-
                 </div>
                 </div>
               </div>
               <div class="col-lg-6 d-flex align-items-center card-logo">
                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <div class="text-company">
+                <object id="image-logo" data="images/logo/white-logo.svg" width="100em" height="100em"> </object>
                   <h4 class="mb-4">We are more than just a company</h4>
                   <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
                 </div>
               </div>
             </div>
