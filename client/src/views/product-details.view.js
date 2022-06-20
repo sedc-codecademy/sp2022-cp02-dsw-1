@@ -1,7 +1,17 @@
+import Error404View from "./error404.view";
+
 export default class ProductDetailsView {
+  static async after_render({ request: { id } }) {
+    const addToCartBtn = document.querySelector(".cart__btn-add-to-cart");
+    if (!addToCartBtn) return;
+    addToCartBtn.addEventListener("click", () => {
+      document.location.hash = `/cart/${id}`
+    })
+  }
   static async render({ request: { id }, data }) {
     const products = await data;
     const foundProduct = products.find(product => product._id === +id); //PAZI NA + -ot za bekend
+    if (!foundProduct) return Error404View.render();
     const { image, name, brand, description, discountPrice, price, sale } = foundProduct;
     return `
       <section class="py-5">
@@ -46,7 +56,7 @@ export default class ProductDetailsView {
                   <option value="l">L</option>
                   <option value="xl">XL</option>
                 </select>
-                <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                <button class="btn btn-outline-dark flex-shrink-0 cart__btn-add-to-cart" type="button">
                   <i class="bi-cart-fill me-1"></i>
                   Add to cart
                 </button>

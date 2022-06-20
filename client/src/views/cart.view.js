@@ -1,5 +1,43 @@
+import { getCartItems, setCartItems } from "../local-storage";
+import Error404View from "./error404.view";
+
+const addToCart = (item, forceUpdate = false) => {
+    let cartItems = getCartItems();
+    const existItem = cartItems.find(cartItem => cartItem.id === item.id);
+    if (existItem) {
+        cartItems = cartItems.map(
+            (cartItem) => cartItem.id === existItem.id ? item : cartItem
+        );
+    } else {
+        cartItems = [...cartItems, item];
+    }
+    setCartItems(cartItems);
+};
 export default class CartView {
-    static render() {
+    static async after_render() {
+
+    }
+    static async render({ request: { id }, data }) {
+        console.log("Cart ID ", id);
+        const products = await data;
+        console.log(products)
+        if (id) {
+            const foundProduct = products.find(product => product._id === +id);
+            if (!foundProduct) return Error404View.render(); //PAZI NA + -ot za bekend
+            console.log("FOUND PRODUCT", foundProduct)
+            addToCart({
+                id: foundProduct._id,
+                name: foundProduct.name,
+                brand: foundProduct.brand,
+                image: foundProduct.image,
+                sale: foundProduct.sale,
+                price: foundProduct.price,
+                discountPrice: foundProduct.discountPrice,
+                stock: foundProduct.stock,
+                quantity: 1
+            })
+        }
+        console.log("Number of Cart items", getCartItems().length)
         return /*html*/`
         <div class="shopping-cart__card container">
         <div class="row">
