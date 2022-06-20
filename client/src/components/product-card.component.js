@@ -35,7 +35,7 @@ export default class ProductCard {
           </a>
         </div>
         <div class="text-center data-id=${_id}">
-          <a class="btn btn-outline-dark d-flex mt-auto" href="#">
+          <a class="btn btn-outline-dark d-flex mt-auto" href="/#/cart/${_id}">
             <div class="me-1 product-card__button--text-dissapear">Add to</div>
             <i class="bi-cart-fill me-1"></i>
           </a>

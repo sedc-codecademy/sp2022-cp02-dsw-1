@@ -6,10 +6,10 @@ export default class ProductsView {
         try {
             const mainCategory = resource === "men" ? "male" : resource === "women" ? "female" : "sale";
             const products = await data;
+            console.log(products);
             const filteredProducts = products
                 .filter(product => mainCategory === "sale" ? product.sale : product.gender === mainCategory)
                 .map(product => {
-                    console.log(product);
                     return ProductCard.render(product);
                 });
             return `
