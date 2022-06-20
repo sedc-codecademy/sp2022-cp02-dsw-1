@@ -494,6 +494,12 @@ h6 {
 .homepage-top-section__button:hover .homepage-top-section__link {
   color: var(--black);
 }
+.homepage__about h3 {
+	font-family: var(--headers-font-family);
+}
+.homepage__offers_H2 {
+	font-family: var(--headers-font-family);
+}
 @media only screen and (min-width: 480px) {
   .homepage-top-section__link {
     font-weight: 700;
