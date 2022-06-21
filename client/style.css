@@ -495,10 +495,10 @@ h6 {
   color: var(--black);
 }
 .homepage__about h3 {
-	font-family: var(--headers-font-family);
+  font-family: var(--headers-font-family);
 }
 .homepage__offers_H2 {
-	font-family: var(--headers-font-family);
+  font-family: var(--headers-font-family);
 }
 @media only screen and (min-width: 480px) {
   .homepage-top-section__link {
@@ -585,6 +585,31 @@ h6 {
   .product-card__button--text-dissapear {
     display: none;
   }
+}
+
+.row__products {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  width: 100%;
+}
+
+.row__products > * {
+  flex-shrink: 0;
+  width: 270px;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+  justify-content: center;
+}
+
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  height: 330px;
+  object-fit: cover;
 }
 
 .product-card__badge {
