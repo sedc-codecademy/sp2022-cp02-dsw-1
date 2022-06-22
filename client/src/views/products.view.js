@@ -16,7 +16,8 @@ export default class ProductsView {
         )
         .map((product) => {
           return ProductCard.render(product);
-        });
+        })
+        .join("");
       let filterCategory = new Set();
       let filterArr = products
         .filter((product) => {
@@ -26,7 +27,8 @@ export default class ProductsView {
         })
         .map((product) => {
           return ProductCard.category(product);
-        });
+        })
+        .join("");
 
       return `
       <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
