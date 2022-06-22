@@ -35,6 +35,12 @@ window.addEventListener("load", () => {
 //   }
 // });
 
+window.addEventListener("hashchange", () => {
+  window.scrollTo({
+    top: 0,
+  });
+});
+
 const navBlack = () => {
   return `<header class="black-header">
   <nav class="navbar first-navbar dark-nav">
