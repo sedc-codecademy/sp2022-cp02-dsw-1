@@ -33,17 +33,17 @@ export default class ProductCard {
         </div>
       </div>
       <!-- Product actions-->
-      <div class="card-body d-flex justify-content-around p-4 pt-0 border-top-0 bg-transparent">
-        <div class="text-center data-id=${_id}">
-          <a class="btn btn-outline-dark d-flex mt-auto" href="/#/product/${_id}">
-            <div class="me-1 product-card__button--text-dissapear">View</div>
-            <i class="bi bi-search"></i>
-          </a>
-        </div>
-        <div class="text-center data-id=${_id}">
+      <div class="card-body__buttons d-flex justify-content-around p-4 pt-0 border-top-0 bg-transparent">
+      <div class="text-center data-id=${_id}">
           <a class="btn btn-outline-dark d-flex mt-auto" href="/#/cart/${_id}">
             <div class="me-1 product-card__button--text-dissapear">Add to</div>
             <i class="bi-cart-fill me-1"></i>
+          </a>
+        </div>  
+      <div class="text-center data-id=${_id}">
+          <a class="btn btn-outline-dark d-flex mt-auto" href="/#/product/${_id}">
+            <div class="me-1 product-card__button--text-dissapear">View</div>
+            <i class="bi bi-search"></i>
           </a>
         </div>
       </div>
