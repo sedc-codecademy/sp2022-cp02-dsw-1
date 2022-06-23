@@ -82,7 +82,7 @@ export default class FaqView {
               <div class="col-lg-6 d-flex align-items-center card-logo-faq">
                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                 <div class="text-company text-faq">
-                <object id="image-logo" class="black-logo" data="images/logo/white-logo.svg" width="100em" height="100em"> </object>
+                <object data="images/logo/white-logo.svg" width="100em" height="100em"> </object>
                   <h4 class="mb-4">We are more than just a company</h4>
                   <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud

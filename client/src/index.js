@@ -44,6 +44,7 @@ class App {
     main.innerHTML = await view.render(options);
     await ProductDetailsView.after_render(options);
     await CartView.after_render(options);
+    await ProductsView.after_render(options);
   }
   static init() {
     window.addEventListener("load", this.router);

@@ -19,7 +19,7 @@ export default class ProductsView {
         })
         .join("");
       let filterCategory = new Set();
-      let filterArr = products
+      let filteredButtons = products
         .filter((product) => {
           const isPresentInSet = filterCategory.has(product.category);
           filterCategory.add(product.category);
@@ -36,28 +36,59 @@ export default class ProductsView {
         <a href="#" class="nav-link h3 text-white my-2">
           Products
         </a>
-        ${filterArr}
+        ${filteredButtons}
         
       </ul>
-
-      <span href="#" class="nav-link h4 w-100 mb-5">
-        <a href=""><i class="bx bxl-instagram-alt text-white"></i></a>
-        <a href=""><i class="bx bxl-twitter px-2 text-white"></i></a>
-        <a href=""><i class="bx bxl-facebook text-white"></i></a>
-      </span>
-    </div>
     </div>
             <section style="width: 100% ;" class="py-5">
+            <button class="btn btn-primary" id="selected-btn">Click</button>
                 <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5 mt-5'>
                     <div class="row__products gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
                         ${filteredProducts}
                     </div>
                 </div>
-            </section>       
+            </section>    
+              
        `;
     } catch (error) {
       console.log(error);
       return ErrorView.render();
     }
+  }
+  static async after_render({ request: { resource }, data }) {
+    let getData = await data;
+    const mainCategory =
+      resource === "men" ? "male" : resource === "women" ? "female" : "sale";
+    let buttons = document.getElementsByClassName("btn-category-filter");
+    [...buttons].forEach((btn) => {
+      let btnValue = btn.innerHTML;
+      btn.addEventListener("click", () => {
+        const filteredData = getData
+          .filter((product) => {
+            return product.category === btnValue;
+          })
+          .filter((product) =>
+            mainCategory === "sale"
+              ? product.sale
+              : product.gender === mainCategory
+          )
+          .map((product) => {
+            console.log(product);
+            return ProductCard.render(product);
+          })
+          .join("");
+
+        //problem - ne saka da se prikaze na screen
+        return `
+                <section style="width: 100% ;" class="py-5">
+                    <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5 mt-5'>
+                        <div class="row__products gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
+                            ${filteredData}
+                        </div>
+                    </div>
+                </section>
+           `;
+      });
+    });
   }
 }

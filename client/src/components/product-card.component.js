@@ -52,9 +52,8 @@ export default class ProductCard {
   `;
   }
   static category({ category }) {
-    return ` <li href="#" class="nav-link">
-              <i class="bx bx-user-check"></i>
-              <span class="mx-2">${category}</span>
-            </li>`;
+    return ` 
+    <button type="button" class="btn btn-category-filter">${category}</button>
+    `;
   }
 }
