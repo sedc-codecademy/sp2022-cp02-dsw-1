@@ -10,6 +10,8 @@ import PrivacyPolicyView from "./views/privacy-policy.view.js";
 import AboutView from "./views/about.view.js";
 import Error404View from "./views/error404.view.js";
 import ProductDetailsView from "./views/product-details.view.js";
+import AdminView from "./views/admin.view.js";
+import adminproductView from "./views/adminproduct.view.js";
 
 const routes = {
     "/": HomepageView,
@@ -25,6 +27,8 @@ const routes = {
     "/privacy-policy": PrivacyPolicyView,
     "/about": AboutView,
     // "/product-details": ProductDetailsView
+    "/admin": AdminView,
+    "/product": adminproductView
 }
 
 class App {
