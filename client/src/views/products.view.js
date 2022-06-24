@@ -55,39 +55,12 @@ export default class ProductsView {
       return ErrorView.render();
     }
   }
-  static async after_render({ request: { resource }, data }) {
-    let getData = await data;
-    const mainCategory =
-      resource === "men" ? "male" : resource === "women" ? "female" : "sale";
+  static async after_render({ request: { resource } }) {
     let buttons = document.getElementsByClassName("btn-category-filter");
     [...buttons].forEach((btn) => {
       let btnValue = btn.innerHTML;
       btn.addEventListener("click", () => {
-        const filteredData = getData
-          .filter((product) => {
-            return product.category === btnValue;
-          })
-          .filter((product) =>
-            mainCategory === "sale"
-              ? product.sale
-              : product.gender === mainCategory
-          )
-          .map((product) => {
-            console.log(product);
-            return ProductCard.render(product);
-          })
-          .join("");
-
-        //problem - ne saka da se prikaze na screen
-        return `
-                <section style="width: 100% ;" class="py-5">
-                    <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5 mt-5'>
-                        <div class="row__products gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
-                            ${filteredData}
-                        </div>
-                    </div>
-                </section>
-           `;
+        document.location.hash = `/${resource}/${btnValue}`;
       });
     });
   }
