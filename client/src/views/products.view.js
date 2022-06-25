@@ -41,7 +41,7 @@ export default class ProductsView {
       </ul>
     </div>
             <section style="width: 100% ;" class="py-5">
-            <button class="btn btn-primary" id="selected-btn">Click</button>
+
                 <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5 mt-5'>
                     <div class="row__products gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
                         ${filteredProducts}

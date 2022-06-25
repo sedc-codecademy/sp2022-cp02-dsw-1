@@ -2,7 +2,6 @@ import RandomProductRendering from "../components/random.product_rendering.compo
 
 export default class HomepageView {
   static async render(resource, data) {
-
     const randomProduct = await RandomProductRendering.render(resource, data);
 
     return `
