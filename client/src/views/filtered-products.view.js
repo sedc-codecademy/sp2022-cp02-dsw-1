@@ -35,6 +35,17 @@ export default class FilteredProductsView {
       })
       .join("");
 
+    $(document).ready(function () {
+      $(".product-card").slice(0, 24).show();
+      $("#loadMore").on("click", function (e) {
+        e.preventDefault();
+        $(".product-card:hidden").slice(0, 24).slideDown();
+        if ($(".product-card:hidden").length === 0) {
+          $("#loadMore").hide();
+        }
+      });
+    });
+
     return `
       <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
       <ul class="nav flex-column text-white w-100">
@@ -52,6 +63,7 @@ export default class FilteredProductsView {
                         ${filteredData}
                     </div>
                 </div>
+                <div class="container load-more-btn"><a href="#" id="loadMore"><button type="button" class="btn btn-outline-light btn-dark btn-create-new">Load More</button></a></div>
                
             </section>    
               

@@ -4,6 +4,10 @@ export default class HomepageView {
   static async render(resource, data) {
     const randomProduct = await RandomProductRendering.render(resource, data);
 
+    $(document).ready(function () {
+      $(".product-card").slice(0, 4).show();
+    });
+
     return `
         <!-- Homepage Top Section -->
         <section class="homepage-top-section">
