@@ -705,18 +705,19 @@ h6 {
   border-bottom-left-radius: 15%;
 }
 
-.product-card {
+/* eve go drugiot problem, happy coding */
+/* .product-card {
   position: relative;
   /* display: flex; */
-  display: none;
+/* display: none;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border-radius: 0.25rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+/* } */
 .load-more-btn {
   display: flex;
   justify-content: center;
