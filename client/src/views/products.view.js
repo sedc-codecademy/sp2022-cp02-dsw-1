@@ -30,17 +30,16 @@ export default class ProductsView {
         })
         .join("");
 
-      //Acko sredi si go ova xd i vo style.css imash zakomentirano
-      // $(document).ready(function () {
-      //   $(".product-card").slice(0, 24).show();
-      //   $("#loadMore").on("click", function (e) {
-      //     e.preventDefault();
-      //     $(".product-card:hidden").slice(0, 24).slideDown();
-      //     if ($(".product-card:hidden").length === 0) {
-      //       $("#loadMore").hide();
-      //     }
-      //   });
-      // });
+      $(document).ready(function () {
+        $(".product-card").slice(0, 24).show();
+        $("#loadMore").on("click", function (e) {
+          e.preventDefault();
+          $(".product-card:hidden").slice(0, 24).slideDown();
+          if ($(".product-card:hidden").length === 0) {
+            $("#loadMore").hide();
+          }
+        });
+      });
 
       return `
       <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">

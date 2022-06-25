@@ -191,7 +191,7 @@ h6 {
   content: "";
   position: absolute;
   width: 100%;
-  height: 4px;
+  height: 2px;
   background-color: var(--sage);
   bottom: 0;
   left: 0;
@@ -429,49 +429,6 @@ h6 {
     box-shadow: none;
   }
 }
-
-/* Navbar*/
-
-/* Footer */
-
-.bg-footer {
-  background-color: var(--black);
-  padding: 50px 0 30px;
-}
-
-.footer-heading {
-  letter-spacing: 2px;
-}
-.footer-link a {
-  color: var(--light-gray);
-  line-height: 40px;
-  font-size: 14px;
-  transition: all 0.5s;
-}
-.footer-link a:hover {
-  color: var(--sage);
-}
-.contact-info {
-  color: var(--light-gray);
-  font-size: 14px;
-}
-.footer-alt {
-  color: var(--silver-chalice);
-}
-.footer-heading {
-  position: relative;
-  padding-bottom: 12px;
-}
-.footer-heading:after {
-  content: "";
-  width: 25px;
-  border-bottom: 1px solid var(--silver-chalice);
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  border-bottom: 1px solid var(--sage);
-}
 /* Categories */
 /* Products */
 /* On Sale */
@@ -482,7 +439,75 @@ h6 {
 /*******************************************************/
 /********************    Footer    *********************/
 /*******************************************************/
-
+.my-5 {
+  margin-bottom: 0 !important;
+}
+footer {
+  background-color: var(--black);
+}
+.footer-top {
+  background-color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  align-items: center;
+}
+.footer-links img {
+  width: 100px;
+  height: 100px;
+}
+.footer-div-img {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer-spread {
+  background-color: var(--sage);
+  height: 1px;
+}
+.text-white {
+  text-decoration: none;
+}
+.col-md-2 a {
+  position: relative;
+}
+.col-md-2 a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--sage);
+  bottom: 0;
+  left: 0;
+  top: 20px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.col-md-2 a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.col-md-3 a {
+  position: relative;
+}
+.col-md-3 a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--sage);
+  bottom: 0;
+  left: 0;
+  top: 20px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.col-md-3 a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
 /*******************************************************/
 /********************    Homepage    *******************/
 /*******************************************************/
@@ -705,19 +730,18 @@ h6 {
   border-bottom-left-radius: 15%;
 }
 
-/* eve go drugiot problem, happy coding */
-/* .product-card {
+.product-card {
   position: relative;
   /* display: flex; */
-/* display: none;
+  display: none;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border-radius: 0.25rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-/* } */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .load-more-btn {
   display: flex;
   justify-content: center;
