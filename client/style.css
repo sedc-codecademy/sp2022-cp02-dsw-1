@@ -178,9 +178,14 @@ h6 {
 }
 .list-elements a {
   position: relative;
+  color: var(--white);
+}
+.list-elements a:focus {
+  color: var(--white);
 }
 .a-navbar:hover {
-  color: var(--cultured) !important;
+  color: var(--cultured);
+  background-color: var(--black-olive) !important;
 }
 .a-navbar::before {
   content: "";
@@ -197,6 +202,9 @@ h6 {
 .a-navbar:hover::before {
   transform-origin: left;
   transform: scaleX(1);
+}
+.a-navbar:focus {
+  background-color: var(--black-olive) !important;
 }
 .first-container-fluid {
   display: flex;
@@ -221,7 +229,7 @@ h6 {
 .form-control-input {
   width: 200px;
   height: 5.5vh;
-  font-size: 0.75em;
+  font-size: 1em;
   border: none;
   border-bottom-style: outset;
 }
@@ -283,6 +291,9 @@ h6 {
   display: flex;
   justify-content: center;
 }
+.women-div-black a:focus {
+  background-color: transparent;
+}
 .text-div-black {
   color: white;
   font-weight: 700;
@@ -319,9 +330,13 @@ h6 {
   display: flex;
   justify-content: center;
 }
+.man-div-black a:focus {
+  background-color: transparent;
+}
 .women-div-black a:hover,
 .man-div-black a:hover {
   color: var(--sage);
+  background-color: transparent;
 }
 @media only screen and (max-width: 991.2px) {
   .collpase-nav ul {
@@ -692,7 +707,8 @@ h6 {
 
 .product-card {
   position: relative;
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
@@ -700,6 +716,14 @@ h6 {
   background-clip: border-box;
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.load-more-btn {
+  display: flex;
+  justify-content: center;
+}
+.load-more-btn button:focus {
+  background-color: #212529;
+  color: var(--white);
 }
 /*******************************************************/
 /*******************    Cart    ************************/
