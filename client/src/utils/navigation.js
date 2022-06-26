@@ -29,11 +29,6 @@ window.addEventListener("resize", () => {
 window.addEventListener("load", () => {
   nav3.innerHTML += navBlack();
 });
-// window.addEventListener("scroll", () => {
-//   if (window.scrollY > 100) {
-//     nav3.style.position = "sticky";
-//   }
-// });
 
 window.addEventListener("hashchange", () => {
   window.scrollTo({
@@ -60,3 +55,21 @@ const navBlack = () => {
   </nav>
 </header>`;
 };
+
+//Social icons logic
+const btnEl = document.querySelector(".social-btn");
+
+const toggleOptions = () => {
+  const wrapperEl = document.querySelector(".social-wrapper");
+  const iconEl = btnEl.querySelector("i");
+
+  wrapperEl.classList.toggle("active");
+
+  if (iconEl.classList.contains("ri-share-line")) {
+    iconEl.classList.replace("ri-share-line", "ri-close-line");
+  } else {
+    iconEl.classList.replace("ri-close-line", "ri-share-line");
+  }
+};
+
+btnEl.addEventListener("click", toggleOptions);
