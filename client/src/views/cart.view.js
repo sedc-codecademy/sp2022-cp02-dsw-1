@@ -47,6 +47,8 @@ export default class CartView {
     });
     console.log(filteredPrice);
     console.log("Cart Items", cartItems);
+
+    document.getElementById("cart-items-number").innerText = cartItems.length;
     return /*html*/ `
         <div class="shopping-cart__card container">
         <div class="row">
@@ -67,7 +69,7 @@ export default class CartView {
                     </div >
                 </div >
     ${cartItems.map((cartItem) => `${CartItem.render(cartItem)}`).join("")}
-
+    
 <div class="cart__back-to-shop-link"><a href="/# ">&leftarrow;<span class="text-muted">Back to shop</span></a></div>
             </div >
     <div class="col-md-4 cart__summary">
