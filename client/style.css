@@ -884,7 +884,6 @@ header{
     background-color: var(--black-olive);
     color: var(--white);
 	
-	
 }
 
 .details .recentOrders table tr td {
@@ -940,20 +939,21 @@ header{
     font-size: 14px;
     font-weight: 500;
 } 
-.form-group.div button{
-	color: black;
-}
-.btn.btn-secondary{
-	text-align: center;
-	margin: 9px;
-}
 
-.panel-default{
-  background-color: var(--silver-chalice);
+.form-admin-product {
+	margin-top: 2em;
+}
+.buttons-save-cancel {
+	display: flex;
+	gap: 1em;
+}
+.text-admin {
+	color: var(--white);
+}
+.card-logo-admin {
+	background-color: var(--jazzberry-jam);
+}
+.black-logo {
+	background-color: var(--black);
 
 }
-.form-group{
-	margin: 10px 5px;
-  color: var(--black);
-  align-items: center;
-} 
