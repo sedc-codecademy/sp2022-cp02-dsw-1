@@ -37,6 +37,9 @@ export default class FilteredProductsView {
 
     $(document).ready(function () {
       $(".product-card").slice(0, 24).show();
+      if ($(".product-card").length < 24) {
+        $("#loadMore").hide();
+      }
       $("#loadMore").on("click", function (e) {
         e.preventDefault();
         $(".product-card:hidden").slice(0, 24).slideDown();
