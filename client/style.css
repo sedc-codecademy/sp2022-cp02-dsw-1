@@ -771,29 +771,29 @@ h6 {
 /*******************    ADMIN DASHBOARD    *********************/
 /*******************************************************/
 
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #40423D;
-  }
-  
-  li {
-	float: left;
-  }
-  
-  li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 10px 15px;
-	text-decoration: none;
-  }
-  
-  li a:hover {
-	background-color: var(black);
-  }
+    .admin__row {
+      width: 100%;
+      font-size: 0;
+        background: var(--sage);
+    }
+    
+    .admin-navbar {
+      display: inline-block;
+      vertical-align: bottom;
+      font-size: 1.2rem;
+     
+    }
+    
+    .admin-navbar_nav-item-active {
+      display: block;
+      text-decoration: none;
+      padding: 0.6rem;
+      color: var(--black);
+      font-weight: 500;
+      -webkit-transition: .3s;
+              transition: .3s;
+
+    }
   .cardBox {
     position: relative;
     width: 100%;
@@ -861,10 +861,10 @@ header{
 	width: 100%;
 	text-align: center;
 }
-.a{
+/* .admin-navbar_nav-item-active .a{
 	width: 100%;
 	text-align: right;
-}
+} */
 .details table thead td {
     font-weight: 600;
 
@@ -947,6 +947,13 @@ header{
 	text-align: center;
 	margin: 9px;
 }
+
+.panel-default{
+  background-color: var(--silver-chalice);
+
+}
 .form-group{
 	margin: 10px 5px;
+  color: var(--black);
+  align-items: center;
 } 

@@ -28,7 +28,7 @@ const routes = {
     "/about": AboutView,
     // "/product-details": ProductDetailsView
     "/admin": AdminView,
-    "/product": adminproductView
+    "/admin-product": adminproductView
 }
 
 class App {
