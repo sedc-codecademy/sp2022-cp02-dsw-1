@@ -63,6 +63,7 @@ class App {
         e.preventDefault();
         let searchKeyword = document.getElementById("q").value;
         document.location.hash = `/search/${searchKeyword}`;
+        console.log(searchKeyword);
         document.getElementById("q").value = "";
       });
     window.addEventListener("load", this.router);
