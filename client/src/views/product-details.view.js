@@ -2,6 +2,9 @@ import Error404View from "./error404.view";
 
 export default class ProductDetailsView {
   static async after_render({ request: { id } }) {
+    window.scrollTo({
+      top: 0,
+    });
     const addToCartBtn = document.querySelector(".cart__btn-add-to-cart");
     if (!addToCartBtn) return;
     addToCartBtn.addEventListener("click", () => {
