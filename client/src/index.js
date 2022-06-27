@@ -1,4 +1,5 @@
 import { parseRequestUrl, getAllProducts } from "./utils/utils.js";
+import { getCartItems } from "./local-storage"
 import HomepageView from "./views/homepage.view.js";
 import ContactView from "./views/contact.view.js";
 import CartView from "./views/cart.view.js";
@@ -34,7 +35,7 @@ const routes = {
   "/faq": FaqView,
 };
 
-class App {
+export default class App {
   static async router() {
     const request = parseRequestUrl();
     const parseUrl =
@@ -66,8 +67,20 @@ class App {
         console.log(searchKeyword);
         document.getElementById("q").value = "";
       });
+
     window.addEventListener("load", this.router);
     window.addEventListener("hashchange", this.router);
+    this.counterLoader();
+  }
+  static counterLoader() {
+    const counters = [...document.getElementsByClassName("shopping-cart-navbar-items")];
+    const cartItems = getCartItems();
+    // if (!cartItems) return;
+    cartItems.length > 0 ? cartItems.reduce((a, c) => a + c.quantity, 0) : 0;
+    counters.forEach(counter => {
+      counter.innerHTML = cartItems.length;
+      cartItems.length < 1 ? counter.style.visibility = "hidden" : counter.style.visibility = "visible";
+    });
   }
 }
 
