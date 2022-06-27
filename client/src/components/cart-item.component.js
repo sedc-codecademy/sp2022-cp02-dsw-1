@@ -21,7 +21,7 @@ export default class CartItem {
               <button class="page-link counter__plus" onClick="increaseNumber('counter')">
               <i class="fas fa-plus"></i></button>
           </div>
-          <div class="col">$${discountPrice ? discountPrice : price} <span class="cart__close-btn id="${itemId}">&#10005;</span></div>
+          <div class="col d-flex">$${discountPrice ? discountPrice : price} <span class="cart__close-btn id="${itemId}">&#10005;</span></div>
       </div>
   </div>
     `;
