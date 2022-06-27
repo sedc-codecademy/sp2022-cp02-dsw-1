@@ -53,6 +53,7 @@ export default class ProductCard {
   }
   static category({ category }) {
     return ` 
+    
     <button type="button" class="btn btn-category-filter">${category}</button>
     `;
   }

@@ -1,6 +1,6 @@
-export default class SigninView {
-  static render() {
-    return `<section class="h-100 gradient-form">
+export default class RegisterView {
+    static render() {
+        return `<section class="h-100 gradient-form">
     <div class="container py-5 h-100 shadow-lg p-3 mb-5 bg-body rounded">
       <div class="row d-flex justify-content-center align-items-center h-100 ">
         <div class="col-xl-10">
@@ -10,14 +10,19 @@ export default class SigninView {
                 <div class="card-body p-md-5 mx-md-4">
   
                   <div class="text-center">
-                  <h4 class="mb-4">Please login to your account</h4>
+                  <h4 class="mb-4">Create your account</h4>
                   </div>
                   <form class="form-sign-in">
-  
+                  <div class="form-floating mb-4">
+                  <input type="text" id="fullName" class="form-control"
+                    placeholder="Phone number or email address" />
+                  <label class="form-label" for="fullName">Full Name</label>
+                </div>
+
                     <div class="form-floating mb-4">
                       <input type="email" id="email" class="form-control"
                         placeholder="Phone number or email address" />
-                      <label class="form-label" for="email">Username</label>
+                      <label class="form-label" for="email">Email</label>
                     </div>
   
                   
@@ -28,15 +33,14 @@ export default class SigninView {
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1 log-in-button">
-                      <button class="btn btn-block fa-lg mb-3 btn-lg btn btn-outline-dark" type="button">Log
-                        in</button>
-                      <a class="text-muted" href="#!">Forgot password?</a>
-                    </div>
+                      <button class="btn btn-block fa-lg mb-3 btn-lg btn btn-outline-dark" type="button">Sign Up</button>
+                     </div>
   
                     <div class="d-flex align-items-center justify-content-center pb-4 buttons-create-new">
-                      <p class="mb-0 me-2">Don't have an account?</p>
-                      <a href="/#/register" class="btn btn-outline-light btn-dark btn-create-new">Create new</a>
-                      </div>
+                      <p class="mb-0 me-2">Already have an account?</p>
+                      <a href="/#/signin" class="btn btn-outline-light btn-dark btn-create-new">Sign in</a>
+                     
+                    </div>
                   </form>
                 </div>
               </div>
@@ -57,5 +61,5 @@ export default class SigninView {
       </div>
     </div>
   </section>`;
-  }
+    }
 }

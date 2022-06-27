@@ -91,7 +91,7 @@ export default class CartView {
                 <div class="col text-right">$ 
                 ${filteredPrice.reduce((a, c) => a + c, 0)}</div>
             </div>
-            <button class="cart__summary__form__btn">ORDER NOW</button>
+            <a href="/#/order" class="order-now-link link-light" ><button class="cart__summary__form__btn">ORDER NOW</button></a>
     </div>
         </div >
         
