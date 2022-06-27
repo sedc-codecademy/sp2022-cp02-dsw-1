@@ -1,3 +1,4 @@
+import App from "..";
 import CartItem from "../components/cart-item.component";
 import { getCartItems, setCartItems } from "../local-storage";
 import Error404View from "./error404.view";
@@ -15,15 +16,12 @@ const addToCart = (item, forceUpdate = false) => {
   setCartItems(cartItems);
 };
 export default class CartView {
-  static async after_render() {}
+  static async after_render() { }
   static async render({ request: { id }, data }) {
-    console.log("Cart ID ", id);
     const products = await data;
-    console.log(products);
     if (id) {
       const foundProduct = products.find((product) => product._id === +id);
       if (!foundProduct) return Error404View.render(); //PAZI NA + -ot za bekend
-      console.log("FOUND PRODUCT", foundProduct);
       addToCart({
         id: foundProduct._id,
         name: foundProduct.name,
@@ -36,7 +34,6 @@ export default class CartView {
         quantity: 1,
       });
     }
-    console.log("Number of Cart items", getCartItems().length);
     const cartItems = getCartItems();
     const filteredPrice = cartItems.map((x) => {
       if (x.discountPrice == null) {
@@ -45,10 +42,9 @@ export default class CartView {
         return x.discountPrice;
       }
     });
-    console.log(filteredPrice);
-    console.log("Cart Items", cartItems);
 
-    document.getElementById("cart-items-number").innerText = cartItems.length;
+    App.counterLoader();
+
     return /*html*/ `
         <div class="shopping-cart__card container">
         <div class="row">
@@ -57,14 +53,13 @@ export default class CartView {
                     <div class="row">
                         <div class="col"><h4><b>Shopping Cart</b></h4></div>
                         <div class="col align-self-center text-right text-muted">
-                            ${
-                              cartItems.length > 0
-                                ? `${cartItems.reduce(
-                                    (a, c) => a + c.quantity,
-                                    0
-                                  )} items`
-                                : "Empty"
-                            } 
+                            ${cartItems.length > 0
+        ? `${cartItems.reduce(
+          (a, c) => a + c.quantity,
+          0
+        )} items`
+        : "Empty"
+      } 
                         </div>
                     </div >
                 </div >
@@ -77,13 +72,13 @@ export default class CartView {
         <hr>
             <div class="row">
                 <div class="col" style="padding-left:0;">ITEMS ${cartItems.reduce(
-                  (a, c) => a + c.quantity,
-                  0
-                )}</div>
+        (a, c) => a + c.quantity,
+        0
+      )}</div>
                 <div class="col text-right">$${filteredPrice.reduce(
-                  (a, c) => a + c,
-                  0
-                )}</div>
+        (a, c) => a + c,
+        0
+      )}</div>
             </div>
             <form class="cart__summary__form">
                 <p>SHIPPING</p>

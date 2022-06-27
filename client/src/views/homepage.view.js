@@ -1,9 +1,8 @@
 import RandomProductRendering from "../components/random.product_rendering.component";
-
 export default class HomepageView {
   static async render(resource, data) {
     const randomProduct = await RandomProductRendering.render(resource, data);
-
+    if (!randomProduct) return;
     $(document).ready(function () {
       $(".product-card").slice(0, 4).show();
     });
