@@ -46,7 +46,7 @@ export default class CartView {
     App.counterLoader();
 
     return /*html*/ `
-        <div class="shopping-cart__card container">
+        <div class="shopping-cart__card container mt-5">
         <div class="row">
             <div class="col-md-8 cart">
                 <div class="cart__title">
@@ -70,8 +70,8 @@ export default class CartView {
     <div class="col-md-4 cart__summary">
         <div><h5><b>Summary</b></h5></div>
         <hr>
-            <div class="row">
-                <div class="col" style="padding-left:0;">ITEMS ${cartItems.reduce(
+            <div class="row" >
+                <div class="col" style="padding-left:2vh;">ITEMS ${cartItems.reduce(
         (a, c) => a + c.quantity,
         0
       )}</div>

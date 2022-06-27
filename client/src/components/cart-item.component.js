@@ -4,14 +4,15 @@ export default class CartItem {
         return `
       <div class="row">
       <div class="row cart__main align-items-center">
-          <div class="col-2"><a href="/#/product/${itemId}"><img class="img-fluid" src="${image}" alt="${name}"></a></div>
+          <div class="col-2"><a href="/#/product/${itemId}" class="shopping-cart__first-link"><img class="shopping-cart__img" src="${image}" alt="${name}"></a></div>
           <div class="col">
               <div class="row text-muted">${brand}</div>
               <div class="row">
-                <a href="/#/product/${itemId}">
+                <a href="/#/product/${itemId}" class="shopping-cart__link">
                     ${name}
                 </a>
               </div>
+              <div class="row text-muted">Size: L</div>
           </div>
           <div class="col d-flex justify-content-start">
               <button class="page-link" onClick="decreaseNumber('counter')">
