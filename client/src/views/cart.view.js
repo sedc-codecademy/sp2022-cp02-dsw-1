@@ -52,7 +52,7 @@ export default class CartView {
                 <div class="cart__title">
                     <div class="row">
                         <div class="col"><h4><b>Shopping Cart</b></h4></div>
-                        <div class="col align-self-center text-right text-muted">
+                        <div class="col align-self-center text-end text-muted">
                             ${cartItems.length > 0
         ? `${cartItems.reduce(
           (a, c) => a + c.quantity,
