@@ -41,14 +41,14 @@ export default class HomepageView {
         <!-- End of Homepage Top Section -->
 
         <!-- Homepage Offers -->
-        <section style="width: 100% ;" class="py-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <section class="container py-5">
+        <div class="row  justify-content-center">
             <div class="col">
             <p class="text-center mt-5">Sneak peek to some of our SALE products</p>
             <h2 class="text-center homepage__offers_H2">FUTURE TREND</h2>
           </div>
           </div>
-          <div class='container px-4 px-lg-5 mt-3'>
+          <div class= "mt-3">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             ${randomProduct[0]}
             ${randomProduct[1]}
