@@ -8,9 +8,12 @@ export default class AboutView {
                 </div>
                 <div class="row row-cols-lg-2">
                     <div class="d-flex justify-content-center flex-column ps-4">
-                        <h2 class="align-self-center mb-4 h_element">
-                        <strong>ORYX</strong> – Fashion
+                        <h2 class="align-self-center h_element mb-3">
+                        <strong>O R Y X</strong>
                         </h2>
+                        <h4 class="align-self-center mb-5">
+                        We are more than just a company
+                        </h4>
                         <p>
                             <strong>ORYX</strong> is an online shopping destination for men and women’s clothing. 
                             Our edit makes it possible for you to choose from the finest 
@@ -36,7 +39,7 @@ export default class AboutView {
                             to provide the perfect space that caters to all your shopping desires.
                         </p>
                     </div>
-                    <div class="p-4">
+                    <div class="p-5">
                         <img src="./images/logo/full-logo.svg" alt="logo-svg">
                     </div>                    
                 </div>
