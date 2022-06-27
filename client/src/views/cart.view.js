@@ -16,7 +16,7 @@ const addToCart = (item, forceUpdate = false) => {
   setCartItems(cartItems);
 };
 export default class CartView {
-  static async after_render() {}
+  static async after_render() { }
   static async render({ request: { id }, data }) {
     const products = await data;
     if (id) {
@@ -44,22 +44,22 @@ export default class CartView {
     });
 
     App.counterLoader();
+
     return /*html*/ `
-        <div class="shopping-cart__card container">
+        <div class="shopping-cart__card container mt-5">
         <div class="row">
             <div class="col-md-8 cart">
                 <div class="cart__title">
                     <div class="row">
                         <div class="col"><h4><b>Shopping Cart</b></h4></div>
                         <div class="col align-self-center text-right text-muted">
-                            ${
-                              cartItems.length > 0
-                                ? `${cartItems.reduce(
-                                    (a, c) => a + c.quantity,
-                                    0
-                                  )} items`
-                                : "Empty"
-                            } 
+                            ${cartItems.length > 0
+        ? `${cartItems.reduce(
+          (a, c) => a + c.quantity,
+          0
+        )} items`
+        : "Empty"
+      } 
                         </div>
                     </div >
                 </div >
@@ -70,14 +70,12 @@ export default class CartView {
     <div class="col-md-4 cart__summary">
         <div><h5><b>Summary</b></h5></div>
         <hr>
-            <div class="row">
-                <div class="col" style="padding-left:0;">ITEMS ${cartItems.reduce(
-                  (a, c) => a + c.quantity,
-                  0
-                )}</div>
-                <div class="col text-right">$${filteredPrice
-                  .reduce((a, c) => a + c, 0)
-                  .toFixed(2)}</div>
+            <div class="row" >
+                <div class="col" style="padding-left:2vh;">ITEMS ${cartItems.reduce(
+        (a, c) => a + c.quantity,
+        0
+      )}</div>
+                <div class="col text-right">$${filteredPrice.reduce((a, c) => a + c, 0).toFixed(2)}</div>
             </div>
             <form class="cart__summary__form">
                 <p>SHIPPING</p>
