@@ -46,7 +46,7 @@ export default class CartView {
     App.counterLoader();
 
     return /*html*/ `
-        <div class="shopping-cart__card container mt-5">
+        <div class="shopping-cart__card container mt-5 rounded-3">
         <div class="row">
             <div class="col-md-8 cart">
                 <div class="cart__title">
@@ -65,7 +65,7 @@ export default class CartView {
                 </div >
     ${cartItems.map((cartItem) => `${CartItem.render(cartItem)}`).join("")}
     
-<div class="cart__back-to-shop-link"><a href="/#">&leftarrow;<span class="text-muted">Back to shop</span></a></div>
+<div><a href="/#" class="cart__back-to-shop-link">Back to shop</a></div>
             </div >
     <div class="col-md-4 cart__summary">
         <div><h5><b>Summary</b></h5></div>
