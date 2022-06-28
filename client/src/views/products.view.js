@@ -29,7 +29,6 @@ export default class ProductsView {
           return ProductCard.category(product);
         })
         .join("");
-
       $(document).ready(function () {
         $(".product-card").slice(0, 24).show();
         $("#loadMore").on("click", function (e) {
@@ -42,15 +41,10 @@ export default class ProductsView {
       });
 
       return `
-      <input type="checkbox" id="slide" name="" value="" />
-	<div class="container">
-		<label for="slide" class="toggle">☰</label>
-		<nav class="sidebar"> 
-			<ul>
-		<li>	${filteredButtons} </li>
-			</ul>
-		</nav>
-	</div>
+          <div class="filtered_buttons_products mt-5">
+          ${filteredButtons}
+         
+          </div>
               <section style="width: 100% ;" class="py-5">
 
                 <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5 mt-5'>
