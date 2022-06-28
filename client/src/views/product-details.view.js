@@ -36,12 +36,11 @@ export default class ProductDetailsView {
               ${name}
               </h1>
               <div class="fs-5 mb-5">
-              $${
-                discountPrice
-                  ? `${discountPrice} 
+              $${discountPrice
+        ? `${discountPrice} 
               <span class="text-muted text-decoration-line-through"><small>$${price}</small></span>`
-                  : price
-              }
+        : price
+      }
               </div>
               <p class="lead singleProduct__description">
                 ${description}
