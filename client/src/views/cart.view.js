@@ -31,7 +31,6 @@ export default class CartView {
         price: foundProduct.price,
         discountPrice: foundProduct.discountPrice,
         stock: foundProduct.stock,
-        gender: foundProduct.gender,
         quantity: 1,
       });
     }
@@ -43,9 +42,6 @@ export default class CartView {
         return x.discountPrice;
       }
     });
-
-    const lastShoppingCartItem = cartItems[cartItems.length - 1];
-    const lastShoppingCartItemPath = lastShoppingCartItem.gender === "female" ? "women" : "men";
 
     App.counterLoader();
 
@@ -69,7 +65,7 @@ export default class CartView {
                 </div >
     ${cartItems.map((cartItem) => `${CartItem.render(cartItem)}`).join("")}
     
-<div class="cart__back-to-shop-link"><a href="/#/${lastShoppingCartItemPath}">&leftarrow;<span class="text-muted">Back to shop</span></a></div>
+<div class="cart__back-to-shop-link"><a href="/#">&leftarrow;<span class="text-muted">Back to shop</span></a></div>
             </div >
     <div class="col-md-4 cart__summary">
         <div><h5><b>Summary</b></h5></div>
