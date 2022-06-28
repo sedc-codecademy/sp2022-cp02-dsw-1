@@ -1188,68 +1188,68 @@ footer {
 /* ****************************************************
 /* ***************************************************** */
 /* ******************    FAQ    ******************** */
-/* *****************************************************
+/* ***************************************************** */
 .faq-list {
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 }
 .faq-list li {
-	margin-bottom: 10px;
-	border-radius: 10px;
-	padding: 10px 40px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px 40px;
 }
 .faq-list a {
-	display: block;
-	position: relative;
-	font-size: 16px;
-	font-weight: 600;
-	text-decoration: none;
-	color: var(--black);
+  display: block;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--black);
 }
 .faq-list i {
-	font-size: 16px;
-	position: absolute;
-	left: -25px;
-	top: 6px;
-	transition: 1s;
+  font-size: 16px;
+  position: absolute;
+  left: -25px;
+  top: 6px;
+  transition: 1s;
 }
 .faq-title {
-	text-align: center;
-	font-size: 17px;
-	padding-top: 2em;
-	margin-bottom: 30px;
-	padding-bottom: 10px;
-	color: var(--white);
-	font-weight: 800;
+  text-align: center;
+  font-size: 17px;
+  padding-top: 2em;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  color: var(--white);
+  font-weight: 800;
 }
 .faq-list p {
-	padding-top: 5px;
-	margin-bottom: 20px;
-	font-size: 15px;
-	color: var(--white);
+  padding-top: 5px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: var(--white);
 }
 .collapsed i.fas.fa-arrow-up {
-	transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .bg-primary {
-	--bs-bg-opacity: none;
+  --bs-bg-opacity: none;
 }
 .aos-init a {
-	padding-top: 4px;
-	text-decoration: none;
-	color: var(--white);
+  padding-top: 4px;
+  text-decoration: none;
+  color: var(--white);
 }
 .faq-list li {
-	background-color: #343a40;
+  background-color: #343a40;
 }
 .text-faq {
-	color: var(--white);
+  color: var(--white);
 }
 .card-logo-faq {
-	background-color: var(--jazzberry-jam);
+  background-color: var(--jazzberry-jam);
 }
 .black-logo {
-	background-color: var(--black);
+  background-color: var(--black);
 }
 /* SideBar */
 .side-navbar {
