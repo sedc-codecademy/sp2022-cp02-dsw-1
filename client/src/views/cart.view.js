@@ -46,13 +46,13 @@ export default class CartView {
     App.counterLoader();
 
     return /*html*/ `
-        <div class="shopping-cart__card container">
+        <div class="shopping-cart__card container mt-5">
         <div class="row">
             <div class="col-md-8 cart">
                 <div class="cart__title">
                     <div class="row">
                         <div class="col"><h4><b>Shopping Cart</b></h4></div>
-                        <div class="col align-self-center text-right text-muted">
+                        <div class="col align-self-center text-end text-muted">
                             ${cartItems.length > 0
         ? `${cartItems.reduce(
           (a, c) => a + c.quantity,
@@ -65,20 +65,17 @@ export default class CartView {
                 </div >
     ${cartItems.map((cartItem) => `${CartItem.render(cartItem)}`).join("")}
     
-<div class="cart__back-to-shop-link"><a href="/# ">&leftarrow;<span class="text-muted">Back to shop</span></a></div>
+<div class="cart__back-to-shop-link"><a href="/#">&leftarrow;<span class="text-muted">Back to shop</span></a></div>
             </div >
     <div class="col-md-4 cart__summary">
         <div><h5><b>Summary</b></h5></div>
         <hr>
-            <div class="row">
-                <div class="col" style="padding-left:0;">ITEMS ${cartItems.reduce(
+            <div class="row" >
+                <div class="col" style="padding-left:2vh;">ITEMS ${cartItems.reduce(
         (a, c) => a + c.quantity,
         0
       )}</div>
-                <div class="col text-right">$${filteredPrice.reduce(
-        (a, c) => a + c,
-        0
-      )}</div>
+                <div class="col text-right">$${filteredPrice.reduce((a, c) => a + c, 0).toFixed(2)}</div>
             </div>
             <form class="cart__summary__form">
                 <p>SHIPPING</p>
@@ -89,7 +86,7 @@ export default class CartView {
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
                 <div class="col text-right">$ 
-                ${filteredPrice.reduce((a, c) => a + c, 0)}</div>
+                ${filteredPrice.reduce((a, c) => a + c, 0).toFixed(2)}</div>
             </div>
             <a href="/#/order" class="order-now-link link-light" ><button class="cart__summary__form__btn">ORDER NOW</button></a>
     </div>

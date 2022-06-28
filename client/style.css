@@ -430,6 +430,7 @@ h6 {
 /* .shopping-cart-link {
 	position: relative;
 } */
+
 .shopping-cart-navbar-items {
 	background-color: var(--jazzberry-jam);
 	color: var(--cultured);
@@ -998,9 +999,30 @@ footer {
 	margin-left: auto;
 	font-size: 0.7rem;
 }
-/* img {
-	width: 3.5rem;
-} */
+.shopping-cart__img {
+	width: 6rem;
+	height: 7rem;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+}
+.shopping-cart__first-link:focus {
+	outline-color: var(--jazzberry-jam);
+}
+.shopping-cart__link {
+	color: var(--jazzberry-jam);
+	font-weight: 700;
+	padding-left: 0;
+	text-decoration: none;
+	cursor: pointer;
+}
+.shopping-cart__link:hover,
+.shopping-cart__link:active,
+.shopping-cart__link:visited,
+.shopping-cart__link:focus {
+	color: var(--jazzberry-jam);
+	opacity: 0.9;
+	outline-color: var(--nadeshiko-pink);
+}
 .cart__back-to-shop-link {
 	margin-top: 4.5rem;
 }
@@ -1058,10 +1080,15 @@ footer {
 /* ***************************************************** */
 /* ******************    Order   ********************** */
 /* ***************************************************** */
-.order-form {
-	width: 50%;
-	text-align: center;
+.delivery-day {
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	margin-bottom: 1em;
+	gap: 0.2em;
+}
+.btn-radio-day:hover {
+	border: darkblue;
 }
 /* ***************************************************** */
 /* ******************    Contact   ********************* */
