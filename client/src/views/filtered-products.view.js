@@ -36,14 +36,14 @@ export default class FilteredProductsView {
       .join("");
 
     $(document).ready(function () {
-      $(".product-card").slice(0, 24).show();
-      if ($(".product-card").length < 24) {
+      $(".card-container").slice(0, 24).show();
+      if ($(".card-container").length < 24) {
         $("#loadMore").hide();
       }
       $("#loadMore").on("click", function (e) {
         e.preventDefault();
-        $(".product-card:hidden").slice(0, 24).slideDown();
-        if ($(".product-card:hidden").length === 0) {
+        $(".card-container:hidden").slice(0, 24).slideDown();
+        if ($(".card-container:hidden").length === 0) {
           $("#loadMore").hide();
         }
       });
