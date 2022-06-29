@@ -4,7 +4,7 @@ export default class HomepageView {
     const randomProduct = await RandomProductRendering.render(resource, data);
     if (!randomProduct) return;
     $(document).ready(function () {
-      $(".product-card").slice(0, 4).show();
+      $(".card-container").slice(0, 4).show();
     });
 
     return `

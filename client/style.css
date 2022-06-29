@@ -948,8 +948,7 @@ footer {
 }
 .product-card {
   position: relative;
-  /* display: flex; */
-  display: none;
+  display: flex;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
@@ -957,6 +956,9 @@ footer {
   background-clip: border-box;
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card-container {
+  display: none;
 }
 .load-more-btn {
   display: flex;

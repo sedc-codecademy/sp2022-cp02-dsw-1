@@ -1,7 +1,7 @@
 export default class ProductCard {
   static render({ image, name, brand, discountPrice, price, _id, sale }) {
     return `
-  <div class="col mb-5" data-id="${_id}">
+  <div class="col mb-5 card-container" data-id="${_id}">
     <div class="product-card h-100">
       ${
         sale
