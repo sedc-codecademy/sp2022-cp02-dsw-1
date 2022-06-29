@@ -1,7 +1,7 @@
 export default class AboutView {
   static render() {
     return `
-        <section class="container-fluid d-flex justify-content-center">
+        <section class="container-fluid d-flex justify-content-center mt-5">
             <div class="row ">
                 <div class="d-flex justify-content-center mt-5">
                     <h1 class="py-4 h_element"><strong>About</strong></h1>
