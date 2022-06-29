@@ -21,26 +21,23 @@ export default class ProductDetailsView {
       <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">
           <div class="row gx-4 gx-lg-5 align-items-center">
-            <div style="text-align: center;" class="col-md-6">
-              <img
+            <div style="text-align: center;" class="col-md-6 img-fluid">
+              <img 
                 class="mb-5 mb-md-0 singleProduct__custom_img"
                 src="${image}"
                 alt="${name}"
               />
             </div>
             <div class="col-md-6">
-              <h5 class="fw-bolder">
+              <h5 class="fw-bolder fs-2">
               ${brand}
               </h5>
               <h1 class="display-5 fw-bolder singleProduct__name">
               ${name}
               </h1>
-              <div class="fs-5 mb-5">
-              $${discountPrice
-        ? `${discountPrice} 
-              <span class="text-muted text-decoration-line-through"><small>$${price}</small></span>`
-        : price
-      }
+              <div class="fs-1 mb-3">
+              $${discountPrice ? `${discountPrice} 
+              <span class="text-muted text-decoration-line-through"><small>$${price}</small></span>` : price}
               </div>
               <p class="lead singleProduct__description">
                 ${description}
