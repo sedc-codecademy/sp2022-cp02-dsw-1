@@ -862,20 +862,17 @@ footer {
 }
 /* ***************************************************** */
 /* ***************  Single Product Details    **************** */
-/* ****************************************************
+/* **************************************************** */
 .singleProduct__name {
-	font-family: var(--headers-font-family);
-}
-.singleProduct__description {
-	font-family: var(--body-font-family);
+	color: var(--jazzberry-jam);
 }
 .singleProduct__custom_img {
-	height: 500px;
-	border-radius: 0.25rem;
+	height: 700px;
+	width: 500px;
+	border-radius: 0.4px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	object-fit: cover;
 }
-
 .form-select__singleProduct {
 	padding: 0.375rem 2.25rem 0.375rem 0.75rem;
 	font-size: 1rem;
@@ -887,7 +884,6 @@ footer {
 	background-position: right 0.75rem center;
 	background-size: 16px 12px;
 	background-color: rgba(0, 0, 0, 0);
-
 	border: 1px solid #212529;
 	border-radius: 0.3rem;
 	appearance: none;
