@@ -41,18 +41,20 @@ export default class HomepageView {
 
         <!-- Homepage Offers -->
         <section class="container py-5">
-        <div class="row  justify-content-center">
-            <div class="col">
-            <p class="text-center mt-5">Sneak peek to some of our SALE products</p>
-            <h2 class="text-center homepage__offers_H2">FUTURE TREND</h2>
-          </div>
-          </div>
-          <div class= "mt-3">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            ${randomProduct[0]}
-            ${randomProduct[1]}
-            ${randomProduct[2]}
-            ${randomProduct[3]}
+          <div class="container">
+            <div class="row  justify-content-center">
+              <div class="col">
+                <h2 class="text-center homepage__offers_H2 mt-4 mb-2">BUY NOW OR CRY LATER</h2>
+                <p class="text-center fs-5 mt-2 mb-5">Sneak peek to some of our TREND products</p>
+              </div>
+            </div>
+            <div class= "mt-3">
+              <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+              ${randomProduct[0]}
+              ${randomProduct[1]}
+              ${randomProduct[2]}
+              ${randomProduct[3]}
+              </div>
             </div>
           </div>
         </section>

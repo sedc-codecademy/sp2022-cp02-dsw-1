@@ -60,9 +60,8 @@ h6 {
 /*******************************************************/
 /******************  Main Container  *******************/
 /*******************************************************/
-
 #main-container {
-	min-height: 100vh;
+	min-height: 80vh;
 	/* display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -777,6 +776,8 @@ footer {
 }
 .homepage__offers_H2 {
 	font-family: var(--headers-font-family);
+	font-size: 3.4rem;
+	letter-spacing: 3px;
 }
 @media only screen and (min-width: 480px) {
 	.homepage-top-section__link {
