@@ -3,14 +3,9 @@ import { getCartItems, setCartItems } from "../local-storage"
 
 const addToCart = (item, forceUpdate = false) => {
   let cartItems = getCartItems();
-  const existItem = cartItems.find((cartItem) => cartItem.id === item.id);
-  if (existItem) {
-    cartItems = cartItems.map((cartItem) =>
-      cartItem.id === existItem.id ? item : cartItem
-    );
-  } else {
-    cartItems = [...cartItems, item];
-  }
+  const existItem = cartItems.find((cartItem) => cartItem._id === item.id);
+  console.log("exist item", existItem)
+  if (existItem) cartItems = [...cartItems, item];
   setCartItems(cartItems);
 };
 
@@ -21,7 +16,8 @@ export default class ProductDetailsView {
     });
     const addToCartBtn = document.querySelector(".cart__btn-add-to-cart");
     if (!addToCartBtn) return;
-    addToCartBtn.addEventListener("click", () => {
+    addToCartBtn.addEventListener("click", (e) => {
+      e.preventDefault()
       document.location.hash = `/cart/${id}`;
     });
 
@@ -35,7 +31,17 @@ export default class ProductDetailsView {
       if (!selectSize) return;
       selectSize.addEventListener("change", (e) => {
         foundProduct.size = e.target.value;
-        addToCart(foundProduct)
+        if (!foundProduct.size) {
+          console.log("foundproduct.size", foundProduct.size)
+          return
+        } else {
+          console.log("foundproduct.size", foundProduct.size)
+
+          addToCart(foundProduct)
+          let cartItems = getCartItems();
+          cartItems = [...cartItems, foundProduct]
+          setCartItems(cartItems)
+        }
       })
 
       addToCart({
@@ -47,6 +53,7 @@ export default class ProductDetailsView {
         price: foundProduct.price,
         discountPrice: foundProduct.discountPrice,
         stock: foundProduct.stock,
+        sale: foundProduct.sale || "",
         quantity: 1,
       });
     }
@@ -86,12 +93,13 @@ export default class ProductDetailsView {
               </p>
               <br />
               <div class="d-flex">
+              <form>
               <button class="page-link" onClick="decreaseNumber('counter')">
               <i class="fas fa-minus"></i></button>
               <input style="text-align:center;" type="text" name="" class="page-link" value=1 id="counter" >
               <button class="page-link counter__plus" onClick="increaseNumber('counter')">
               <i class="fas fa-plus"></i></button>
-              <select style="width: 5rem" class="form-select__singleProduct me-3 ">
+              <select style="width: 5rem" class="form-select__singleProduct me-3 " required>
                 <option value="" disabled selected>Size</option>
                 ${size.map(s => `<option value="${s}">${s}</option>`)}
               </select>
@@ -99,6 +107,7 @@ export default class ProductDetailsView {
               <i class="bi-cart-fill me-1"></i>
               Add to cart
               </button>
+              </form>
               </div>
             </div>
           </div>
