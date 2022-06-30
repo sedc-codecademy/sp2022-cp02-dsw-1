@@ -1,43 +1,27 @@
-import ProductCard from "./product-card.component";
+// import ProductCard from "./product-card.component";
 
-export default class RandomProductRendering {
-    static async render({ request: { resource }, data }) {
+// export default class RandomProductRendering {
+//   static async render({ request: { resource }, data }) {
+//     const products = await data;
+//     console.log("Products", products)
 
-      const count = 4;
-      const products = await data;
-      const randomSaleProducts = [];
+//     const random12Products = [...Array(products.length).keys()].sort(() => 0.5 - Math.random()).slice(0, 12).map(index => products[index]);
+//     console.log("random12Products", random12Products)
+//     random12Products.map((product) => {
+//       // console.log(ProductCard.render(product))
+//       return ProductCard.render(product);
+//     })
+//       .join("");
 
-      const min = 1;
-      const max = products.length;
-      const randomNumbers = [];
+//     return `
+//       <section style="width: 100% ;" class="py-5">
+//         <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5 mt-5'>
+//           <div class="row__products gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
+//               ${random12Products}
+//           </div>
+//         </div>
+//       </section>
+//     `
 
-      for (let i = 0; i < count; i++) {
-        let n =  Math.floor(Math.random() * max) + min;
-        let check = randomNumbers.includes(n);
- 
-        if(!check) {
-          randomNumbers.push(n);
-        } else {
-          while(check){
-            n = Math.floor(Math.random() * max) + min;
-            check = randomNumbers.includes(n);
-              if(!check){
-                randomNumbers.push(n);
-              }
-            }
-          }
-        }
- 
-        randomNumbers.forEach(n => randomSaleProducts.push(products[n]));
-
-        const product1 = ProductCard.render(randomSaleProducts[0]);
-        const product2 = ProductCard.render(randomSaleProducts[1]);
-        const product3 = ProductCard.render(randomSaleProducts[2]);
-        const product4 = ProductCard.render(randomSaleProducts[3]); 
-        
-        return [product1, product2, product3, product4];
-
-    }
-
-    
-}
+//   }
+// }
