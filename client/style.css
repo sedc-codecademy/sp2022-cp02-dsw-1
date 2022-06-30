@@ -828,7 +828,6 @@ footer {
 .categoryContainer {
 	display: flex;
 }
-
 .categoryCardImg {
 	height: 15em;
 }
@@ -1352,4 +1351,17 @@ footer {
 /* ***************************************************** */
 .h_element {
 	font-family: var(--headers-font-family);
+}
+/* *****************************************************
+/* ***************   Scroll Animation    *************** */
+/* ***************************************************** */
+.reveal {
+	position: relative;
+	transform: translateY(30px);
+	opacity: 0;
+	transition: 0.8s all ease;
+}
+.reveal.active {
+	transform: translateY(0);
+	opacity: 1;
 }

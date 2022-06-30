@@ -1,23 +1,14 @@
-import RandomProductRendering from "../components/random.product_rendering.component";
 import ProductCard from "../components/product-card.component";
 export default class HomepageView {
   static async render({ request, data }) {
-    // const randomProduct = await RandomProductRendering.render(resource, data);
-    // if (!randomProduct) return;
-    $(document).ready(function () {
-      $(".card-container").slice(0, 4).show();
-    });
-
     const products = await data;
-    console.log("Products", products)
-
-    const random12Products = [...Array(products.length).keys()].sort(() => 0.5 - Math.random()).slice(0, 12).map(index => products[index]);
-    console.log("random12Products", random12Products)
+    const random12Products = [...Array(products.length).keys()]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 12)
+      .map(index => products[index]);
     const random12ProductCards = random12Products.map((product) => {
-      // console.log(ProductCard.render(product))
       return ProductCard.render(product);
-    })
-      .join("");
+    }).join("");
 
     $(document).ready(function () {
       $(".card-container").slice(0, 24).show();
@@ -64,32 +55,30 @@ export default class HomepageView {
           </div>
         </section>
         <!-- End of Homepage Top Section -->
-
-        <!-- Homepage Offers -->
-        <section class="container py-3">
+        <!-- Homepage Middle Section -->
+        <section class="homepage-middle-section container py-3">
           <div class="container">
-            <div class="row  justify-content-center">
+            <div class="row  justify-content-center reveal">
               <div class="col">
                 <h2 class="text-center homepage__offers_H2 mt-4 mb-2">BUY NOW OR CRY LATER</h2>
                 <p class="text-center fs-5 mt-2 mb-5">Sneak peek to some of our TREND products</p>
               </div>
             </div>
             <div class= "mt-3">
-              <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+              <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center reveal">
               ${random12ProductCards}
               </div>
             </div>
           </div>
         </section>
-        <!--End of Homepage Offers -->
-
+        <!--End of Homepage Middle Section -->
         <!-- Homepage About  -->
         <section>
-          <div class="container homepage__about pb-5 d-flex gap-3">
+          <div class="container homepage__about pb-5 d-flex gap-3 reveal">
               <div class="row justify-content-around">
                 <div class="container col-12 col-lg-6 justify-content-center" >
                     <h3 class="text-center my-4">WHAT WE ARE ALL ABOUT</h3>
-                    <div class="text-center pl-5" >
+                    <div class="text-center pl-5">
                     <p>
                       ORYX caters to thoughtful shoppers who appreciate unique designs and top quality pieces
                       you just can’t find anywhere else. We are constantly curating fresh new collections
