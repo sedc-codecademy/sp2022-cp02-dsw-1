@@ -11,7 +11,7 @@ export default class CartItem {
                     ${name}
                 </a>
               </div>
-              <div class="row text-muted">Size: ${size.toUpperCase()} </div>
+              <div class="row text-muted">Size: ${size} </div>
           </div>
           <div class="col d-flex justify-content-start">
               <button class="page-link" onClick="decreaseNumber('counter')">
