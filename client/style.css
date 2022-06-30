@@ -819,12 +819,16 @@ footer {
 		left: -400px;
 	}
 }
+.homepage__about__img {
+	object-fit: cover;
+}
 /* ***************************************************** */
 /* *******************    Categories    ****************** */
 /* ***************************************************** */
 .categoryContainer {
 	display: flex;
 }
+
 .categoryCardImg {
 	height: 15em;
 }
