@@ -1,5 +1,5 @@
 export default class CartItem {
-    static render({ id: itemId, name, brand, image, sale, price, discountPrice, stock, quantity, gender }) {
+    static render({ id: itemId, name, brand, image, sale, price, discountPrice, stock, quantity, gender, size }) {
         return `
       <div class="row">
       <div class="row cart__main align-items-center">
@@ -11,7 +11,7 @@ export default class CartItem {
                     ${name}
                 </a>
               </div>
-              <div class="row text-muted">Size: L</div>
+              <div class="row text-muted">Size: ${size.toUpperCase()} </div>
           </div>
           <div class="col d-flex justify-content-start">
               <button class="page-link" onClick="decreaseNumber('counter')">

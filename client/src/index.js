@@ -74,16 +74,6 @@ export default class App {
     window.addEventListener("scroll", reveal);
     navbarCounter();
   }
-  // static counterLoader() {
-  //   const counters = [...document.getElementsByClassName("shopping-cart-navbar-items")];
-  //   const cartItems = getCartItems();
-  //   // if (!cartItems) return;
-  //   cartItems.length > 0 ? cartItems.reduce((a, c) => a + c.quantity, 0) : 0;
-  //   counters.forEach(counter => {
-  //     counter.innerHTML = cartItems.length;
-  //     cartItems.length < 1 ? counter.style.visibility = "hidden" : counter.style.visibility = "visible";
-  //   });
-  // }
 }
 
 App.init();

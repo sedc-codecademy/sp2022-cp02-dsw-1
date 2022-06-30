@@ -1,7 +1,21 @@
 import Error404View from "./error404.view";
+import { getCartItems, setCartItems } from "../local-storage"
+
+const addToCart = (item, forceUpdate = false) => {
+  let cartItems = getCartItems();
+  const existItem = cartItems.find((cartItem) => cartItem.id === item.id);
+  if (existItem) {
+    cartItems = cartItems.map((cartItem) =>
+      cartItem.id === existItem.id ? item : cartItem
+    );
+  } else {
+    cartItems = [...cartItems, item];
+  }
+  setCartItems(cartItems);
+};
 
 export default class ProductDetailsView {
-  static async after_render({ request: { id } }) {
+  static async after_render({ request: { id }, data }) {
     window.scrollTo({
       top: 0,
     });
@@ -10,13 +24,41 @@ export default class ProductDetailsView {
     addToCartBtn.addEventListener("click", () => {
       document.location.hash = `/cart/${id}`;
     });
+
+    const products = await data;
+
+    if (id) {
+      const foundProduct = products.find((product) => product._id === +id);
+      if (!foundProduct) return Error404View.render(); //PAZI NA + -ot za bekend
+
+      const selectSize = document.querySelector(".form-select__singleProduct");
+      if (!selectSize) return;
+      selectSize.addEventListener("change", (e) => {
+        foundProduct.size = e.target.value;
+        addToCart(foundProduct)
+      })
+
+      addToCart({
+        _id: foundProduct._id,
+        name: foundProduct.name,
+        brand: foundProduct.brand,
+        image: foundProduct.image,
+        sale: foundProduct.sale,
+        price: foundProduct.price,
+        discountPrice: foundProduct.discountPrice,
+        stock: foundProduct.stock,
+        quantity: 1,
+      });
+    }
   }
+
   static async render({ request: { id }, data }) {
     const products = await data;
     const foundProduct = products.find((product) => product._id === +id); //PAZI NA + -ot za bekend
     if (!foundProduct) return Error404View.render();
-    const { image, name, brand, description, discountPrice, price, sale } =
+    const { image, name, brand, description, discountPrice, price, sale, size } =
       foundProduct;
+
     return `
       <section class="py-5">
         <div class="container px-4 px-lg-5">
@@ -50,12 +92,8 @@ export default class ProductDetailsView {
               <button class="page-link counter__plus" onClick="increaseNumber('counter')">
               <i class="fas fa-plus"></i></button>
               <select style="width: 5rem" class="form-select__singleProduct me-3 ">
-                 <option value="" disabled selected>Size</option>
-                 <option value="xs">XS</option>
-                 <option value="s">S</option>
-                 <option value="m">M</option>
-                 <option value="l">L</option>
-                 <option value="xl">XL</option>
+                <option value="" disabled selected>Size</option>
+                ${size.map(s => `<option value="${s}">${s}</option>`)}
               </select>
               <button class="btn btn-outline-dark flex-shrink-0 cart__btn-add-to-cart" type="button">
               <i class="bi-cart-fill me-1"></i>
