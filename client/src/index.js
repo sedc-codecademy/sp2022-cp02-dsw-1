@@ -1,4 +1,4 @@
-import { parseRequestUrl, getAllProducts } from "./utils/utils.js";
+import { parseRequestUrl, getAllProducts, reveal } from "./utils/utils.js";
 import { getCartItems } from "./local-storage"
 import HomepageView from "./views/homepage.view.js";
 import ContactView from "./views/contact.view.js";
@@ -47,7 +47,6 @@ export default class App {
     console.log("REQUEST", request);
     console.log("parseURL", parseUrl);
     const view = routes[parseUrl] ? routes[parseUrl] : Error404View;
-    console.log("VIEW", view);
     const main = document.getElementById("main-container");
     const options = {
       request: request,
@@ -72,6 +71,7 @@ export default class App {
 
     window.addEventListener("load", this.router);
     window.addEventListener("hashchange", this.router);
+    window.addEventListener("scroll", reveal);
     this.counterLoader();
   }
   static counterLoader() {
