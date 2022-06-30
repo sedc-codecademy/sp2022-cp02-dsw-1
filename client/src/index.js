@@ -14,7 +14,7 @@ import FaqView from "./views/faq.view.js";
 import FilteredProductsView from "./views/filtered-products.view.js";
 import SearchFilteredProductsView from "./views/search-filtered-products.view.js";
 import RegisterView from "./views/register.view.js";
-
+import ErrorView from "./views/error.view.js";
 const routes = {
   "/": HomepageView,
   "/search/:id": SearchFilteredProductsView,
@@ -35,6 +35,7 @@ const routes = {
   // "/product-details": ProductDetailsView
   "/faq": FaqView,
   "/register": RegisterView,
+  "/error" :ErrorView
 };
 
 export default class App {
