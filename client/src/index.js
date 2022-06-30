@@ -1,4 +1,4 @@
-import { parseRequestUrl, getAllProducts, reveal } from "./utils/utils.js";
+import { parseRequestUrl, getAllProducts, reveal, navbarCounter } from "./utils/utils.js";
 import { getCartItems } from "./local-storage"
 import HomepageView from "./views/homepage.view.js";
 import ContactView from "./views/contact.view.js";
@@ -72,18 +72,18 @@ export default class App {
     window.addEventListener("load", this.router);
     window.addEventListener("hashchange", this.router);
     window.addEventListener("scroll", reveal);
-    this.counterLoader();
+    navbarCounter();
   }
-  static counterLoader() {
-    const counters = [...document.getElementsByClassName("shopping-cart-navbar-items")];
-    const cartItems = getCartItems();
-    // if (!cartItems) return;
-    cartItems.length > 0 ? cartItems.reduce((a, c) => a + c.quantity, 0) : 0;
-    counters.forEach(counter => {
-      counter.innerHTML = cartItems.length;
-      cartItems.length < 1 ? counter.style.visibility = "hidden" : counter.style.visibility = "visible";
-    });
-  }
+  // static counterLoader() {
+  //   const counters = [...document.getElementsByClassName("shopping-cart-navbar-items")];
+  //   const cartItems = getCartItems();
+  //   // if (!cartItems) return;
+  //   cartItems.length > 0 ? cartItems.reduce((a, c) => a + c.quantity, 0) : 0;
+  //   counters.forEach(counter => {
+  //     counter.innerHTML = cartItems.length;
+  //     cartItems.length < 1 ? counter.style.visibility = "hidden" : counter.style.visibility = "visible";
+  //   });
+  // }
 }
 
 App.init();

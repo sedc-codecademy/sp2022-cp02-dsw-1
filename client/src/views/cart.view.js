@@ -1,7 +1,7 @@
-import App from "..";
 import CartItem from "../components/cart-item.component";
 import { getCartItems, setCartItems } from "../local-storage";
 import Error404View from "./error404.view";
+import { navbarCounter } from "../utils/utils"
 
 const addToCart = (item, forceUpdate = false) => {
   let cartItems = getCartItems();
@@ -43,7 +43,7 @@ export default class CartView {
       }
     });
 
-    App.counterLoader();
+    navbarCounter();
 
     return /*html*/ `
         <div class="shopping-cart__card container mt-5 rounded-3">

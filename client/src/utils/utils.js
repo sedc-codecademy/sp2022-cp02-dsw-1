@@ -1,3 +1,5 @@
+import { getCartItems } from "../local-storage";
+
 export const parseRequestUrl = () => {
     const url = document.location.hash.toLowerCase();
     const request = url.split('/');
@@ -32,4 +34,15 @@ export const reveal = () => {
             reveals[i].classList.remove("active");
         }
     }
+}
+
+export const navbarCounter = () => {
+    const counters = [...document.getElementsByClassName("shopping-cart-navbar-items")];
+    const cartItems = getCartItems();
+    // if (!cartItems) return;
+    cartItems.length > 0 ? cartItems.reduce((a, c) => a + c.quantity, 0) : 0;
+    counters.forEach(counter => {
+        counter.innerHTML = cartItems.length;
+        cartItems.length < 1 ? counter.style.visibility = "hidden" : counter.style.visibility = "visible";
+    });
 }
