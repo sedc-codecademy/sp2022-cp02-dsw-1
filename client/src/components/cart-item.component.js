@@ -1,5 +1,6 @@
 export default class CartItem {
     static render({ _id: itemId, name, brand, image, sale, price, discountPrice, stock, quantity, gender, size }) {
+        console.log("itemId = ", itemId, "SALE = ", sale)
         return `
       <div class="row">
       <div class="row cart__main align-items-center">

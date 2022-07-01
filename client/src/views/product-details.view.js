@@ -1,11 +1,16 @@
 import Error404View from "./error404.view";
 import { getCartItems, setCartItems } from "../local-storage"
 
-const addToCart = (item, forceUpdate = false) => {
+const addToCart = (item) => {
   let cartItems = getCartItems();
-  const existItem = cartItems.find((cartItem) => cartItem._id === item.id);
-  console.log("exist item", existItem)
-  if (existItem) cartItems = [...cartItems, item];
+  const existItem = cartItems.find((cartItem) => cartItem._id === item._id);
+  if (existItem) {
+    cartItems = cartItems.map((cartItem) =>
+      cartItem._id === existItem._id ? item : cartItem
+    );
+  } else {
+    cartItems = [...cartItems, item];
+  }
   setCartItems(cartItems);
 };
 
@@ -14,36 +19,25 @@ export default class ProductDetailsView {
     window.scrollTo({
       top: 0,
     });
+
+    const products = await data;
+    const foundProduct = products.find((product) => product._id === +id);
+    if (!foundProduct) return Error404View.render(); //PAZI NA + -ot za bekend
+
+    const selectSize = document.querySelector(".form-select__singleProduct");
+    if (!selectSize) return;
+    selectSize.addEventListener("change", (e) => {
+
+      foundProduct.size = e.target.value;
+      console.log("foundproduct.size", foundProduct.size)
+
+      if (!foundProduct.size) return;
+    })
+
     const addToCartBtn = document.querySelector(".cart__btn-add-to-cart");
     if (!addToCartBtn) return;
     addToCartBtn.addEventListener("click", (e) => {
-      e.preventDefault()
-      document.location.hash = `/cart/${id}`;
-    });
-
-    const products = await data;
-
-    if (id) {
-      const foundProduct = products.find((product) => product._id === +id);
-      if (!foundProduct) return Error404View.render(); //PAZI NA + -ot za bekend
-
-      const selectSize = document.querySelector(".form-select__singleProduct");
-      if (!selectSize) return;
-      selectSize.addEventListener("change", (e) => {
-        foundProduct.size = e.target.value;
-        if (!foundProduct.size) {
-          console.log("foundproduct.size", foundProduct.size)
-          return
-        } else {
-          console.log("foundproduct.size", foundProduct.size)
-
-          addToCart(foundProduct)
-          let cartItems = getCartItems();
-          cartItems = [...cartItems, foundProduct]
-          setCartItems(cartItems)
-        }
-      })
-
+      e.preventDefault();
       addToCart({
         _id: foundProduct._id,
         name: foundProduct.name,
@@ -53,10 +47,13 @@ export default class ProductDetailsView {
         price: foundProduct.price,
         discountPrice: foundProduct.discountPrice,
         stock: foundProduct.stock,
+        size: foundProduct.size,
         sale: foundProduct.sale || "",
         quantity: 1,
       });
-    }
+      document.location.hash = `/cart/${id}`;
+    });
+
   }
 
   static async render({ request: { id }, data }) {
@@ -93,7 +90,6 @@ export default class ProductDetailsView {
               </p>
               <br />
               <div class="d-flex">
-              <form>
               <button class="page-link" onClick="decreaseNumber('counter')">
               <i class="fas fa-minus"></i></button>
               <input style="text-align:center;" type="text" name="" class="page-link" value=1 id="counter" >
@@ -107,7 +103,6 @@ export default class ProductDetailsView {
               <i class="bi-cart-fill me-1"></i>
               Add to cart
               </button>
-              </form>
               </div>
             </div>
           </div>
