@@ -1128,6 +1128,7 @@ footer {
 .cart__close-btn {
 	margin-left: auto;
 	margin-right: 1rem;
+	cursor: pointer;
 }
 .shopping-cart__img {
 	width: 6rem;
@@ -1494,7 +1495,6 @@ footer {
 .writing .topbar div.red {
 	background-color: red;
 }
-
 .writing .topbar div.yellow {
 	background-color: #e6c015;
 }
@@ -1547,20 +1547,17 @@ footer {
 	-webkit-transition: .3s ease;
 	transition: .3s ease;
 }
-
 .error {
 	width: 400px;
 	padding: 40px;
 	text-align: center;
 }
-
 .error h1 {
 	font-size: 125px;
 	padding: 0;
 	margin: 0;
 	font-weight: 700;
 }
-
 .error h2 {
 	margin: -30px 0 0 0;
 	padding: 0px;
@@ -1653,7 +1650,6 @@ footer {
 		transform: scale(.75);
 	}
 }
-
 @media screen and (max-width: 775px) {
 	.container-error {
 		-ms-flex-wrap: wrap-reverse;
