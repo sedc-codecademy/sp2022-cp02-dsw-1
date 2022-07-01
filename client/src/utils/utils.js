@@ -1,4 +1,4 @@
-import { getCartItems } from "../local-storage";
+import { getCartItems, setCartItems } from "../local-storage";
 
 export const parseRequestUrl = () => {
     const url = document.location.hash.toLowerCase();
@@ -45,4 +45,22 @@ export const navbarCounter = () => {
         counter.innerHTML = cartItems.length;
         cartItems.length < 1 ? counter.style.visibility = "hidden" : counter.style.visibility = "visible";
     });
+}
+
+export const deleteCartItem = (view) => {
+    const deleteButtons = [...document.querySelectorAll(".cart__close-btn")];
+    if (!deleteButtons) return;
+    deleteButtons.forEach(deleteButton => {
+        deleteButton.addEventListener("click", (ev) => {
+            const cartItems = getCartItems();
+            const filteredProducts = cartItems.filter(cartItem => cartItem._id != ev.target.id)
+            setCartItems(filteredProducts);
+            rerender(view);
+        })
+    })
+}
+
+export const rerender = async (component) => {
+    document.getElementById("main-container").innerHTML = await component.render();
+    await component.after_render();
 }
