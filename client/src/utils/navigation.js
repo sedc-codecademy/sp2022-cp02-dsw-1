@@ -21,3 +21,22 @@ const toggleOptions = () => {
 };
 
 btnEl.addEventListener("click", toggleOptions);
+
+const decrement = (element) => {
+  let numberFromProduct = parseInt(
+    document.getElementById(`counter${element}`).innerHTML
+  );
+  if (numberFromProduct > 1) {
+    let incremented = (numberFromProduct -= 1);
+    return (document.getElementById(`counter${element}`).innerHTML =
+      incremented.toString());
+  }
+};
+const increment = (element) => {
+  let numberFromProduct = parseInt(
+    document.getElementById(`counter${element}`).innerHTML
+  );
+  let incremented = (numberFromProduct += 1);
+  return (document.getElementById(`counter${element}`).innerHTML =
+    incremented.toString());
+};
