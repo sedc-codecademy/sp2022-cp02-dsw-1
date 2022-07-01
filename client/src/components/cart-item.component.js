@@ -1,5 +1,5 @@
 export default class CartItem {
-    static render({ id: itemId, name, brand, image, sale, price, discountPrice, stock, quantity, gender, size }) {
+    static render({ _id: itemId, name, brand, image, sale, price, discountPrice, stock, quantity, gender, size }) {
         return `
       <div class="row">
       <div class="row cart__main align-items-center">
