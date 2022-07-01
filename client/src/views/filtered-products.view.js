@@ -37,7 +37,7 @@ export default class FilteredProductsView {
 
     $(document).ready(function () {
       $(".card-container").slice(0, 24).show();
-      if ($(".card-container").length < 24) {
+      if ($(".card-container").length <= 24) {
         $("#loadMore").hide();
       }
       $("#loadMore").on("click", function (e) {
