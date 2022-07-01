@@ -27,10 +27,20 @@
 <body>
   <div>
     <!-- Navbar top -->
-    <nav class="navbar first-navbar">
-      <div class="container first-container-fluid">
-        <div class="free-shipping-text">
-          <p id="left-side-first">Free Shipping On Orders Over $150</p>
+    <nav class="navbar navbar-expand-lg nav2 sticky-top first-navbar">
+      <div class="container ">
+        <div class="collapse navbar-collapse collpase-nav col-nav" id="navbarColor01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item nav-li ">
+              <a class="nav-link " href="/#">Home</a>
+            </li>
+            <li class="nav-item nav-li">
+              <a class="nav-link " href="/#/sale">Sale</a>
+            </li>
+            <li class="nav-item nav-li">
+              <a class="nav-link " href="/#/contact">Contact</a>
+            </li>
+          </ul>  
         </div>
         <div class="imgDiv">
           <div class="text-logo">
@@ -39,97 +49,94 @@
             </a>
           </div>
         </div>
-        <div id="right-side-second" class="nav navbar-nav1 display-span">
-          <a href="/#/signin" class="btn"><span class="bi bi-person-circle"></span></a>
-          <div class="spread-elements-span"></div>
-          <a href="/#/cart" class="btn">
-            <span class="bi bi-cart4">
-              <div class="shopping-cart-navbar-items" id="cart-items-number"></div>
-            </span>
-
-          </a>
-        </div>
-        <div class="spread-elements-main second-main"></div>
         <div class="nav navbar-nav1 right-side">
-          <div id="right-side-first" class="nav navbar-nav1">
+          <div id="right-side-first" class="form-none">
             <form class="d-flex search-bar" id="search-bar" role="search">
-              <input class="form-control me-2 form-control-input" type="text" name="q" id="q"
-                placeholder="Search here..." aria-label="Search" />
+              <input class="form-control me-2 form-control-input fci" type="text" name="q" id="q"
+                placeholder="Search products here..." aria-label="Search" />
               <button class="btn btn-outline-light btn-outline" type="submit">
                 <i class="fa fa-search"></i>
               </button>
             </form>
           </div>
-          <div id="right-side-second" class="nav navbar-nav1">
+          <div id="right-side-second" class="rs-first">
             <a href="/#/signin" class="btn"><span class="bi bi-person-circle"></span></a>
             <div class="spread-elements-span"></div>
             <a href="/#/cart" class="btn shopping-cart-link">
               <span class="bi bi-cart4">
                 <div class="shopping-cart-navbar-items" id="cart-items-number"></div>
               </span>
-
             </a>
           </div>
         </div>
       </div>
     </nav>
-    <!-- Navbar middle Sticky-->
-    <nav id="nav2" class="navbar navbar-expand-lg navbar-dark bg-dark nav2 sticky-top">
-      <div class="container second-container-fluid">
-        <button class="navbar-toggler toggler-btn" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse collpase-nav" id="navbarColor01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item list-elements">
-              <a class="nav-link a-navbar" href="/#">Home</a>
+    <!--Hidden navbar-->
+    <nav class="hidden-nav">
+      <div class="container spread-elements-container">
+        <div class="spread-elements-main second-main"></div>
+      </div>
+      <div class="container form-container">
+        <div class="container-nav-2" id="navbarColor01" >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-two">
+            <li class="nav-item nav-li ">
+              <a class="nav-link " href="/#">Home</a>
             </li>
-            <li class="nav-item list-elements">
-              <a class="nav-link a-navbar" href="/#/about">About</a>
+            <li class="nav-item nav-li">
+              <a class="nav-link " href="/#/sale">Sale</a>
             </li>
-            <li class="nav-item list-elements">
-              <a class="nav-link a-navbar" href="/#/contact">Contact</a>
+            <li class="nav-item nav-li">
+              <a class="nav-link " href="/#/contact">Contact</a>
             </li>
-            <li class="nav-item list-elements">
-              <a class="nav-link a-navbar" href="/#/privacy-policy">Privacy Policy</a>
-            </li>
-            <li class="nav-item list-elements">
-              <a class="nav-link a-navbar" href="/#/sale">Sale</a>
-            </li>
-            <li class="nav-item list-elements">
-              <a class="nav-link a-navbar" href="/#/faq">FAQ</a>
-            </li>
-          </ul>
-          <div id="right-side-first" class="nav navbar-nav1">
+          </ul>  
+        </div>
+      </div>  
+      <div class="container spread-elements-container">
+        <div class="spread-elements-main second-main"></div>
+      </div>
+      <div class="container form-container form-container-second">
+        <div class="form-div-second">
+          <div id="right-side" >
             <form class="d-flex search-bar" id="search-bar" role="search">
               <input class="form-control me-2 form-control-input" type="text" name="q" id="q"
-                placeholder="Search here..." aria-label="Search" />
+                placeholder="Search products here..." aria-label="Search" />
               <button class="btn btn-outline-light btn-outline" type="submit">
                 <i class="fa fa-search"></i>
               </button>
             </form>
           </div>
-          <div id="right-side-second" class="nav navbar-nav1">
+          <div id="right-side-second" class="rs-second">
             <a href="/#/signin" class="btn"><span class="bi bi-person-circle"></span></a>
-            <div class="spread-elements"></div>
-            <a href="/#/cart" class="btn">
+            <div class="spread-elements-span"></div>
+            <a href="/#/cart" class="btn shopping-cart-link">
               <span class="bi bi-cart4">
                 <div class="shopping-cart-navbar-items" id="cart-items-number"></div>
               </span>
-
             </a>
           </div>
         </div>
       </div>
-    </nav>
-    <!-- Dark Navbar Sticky -->
-    <div id="black-header-div"></div>
-
+    </nav>  
+    <!-- Navbar middle Sticky Dark-->
+    <header class="black-header">
+      <nav class="navbar first-navbar dark-nav">
+        <div class="container black-container">
+          <div class="nav navbar-nav1">
+            <div class="women-div-black">
+              <a class="nav-link nav-a" href="/#/women">WOMEN</a>         
+            </div>
+            <div class="text-div-black">
+              <p>NEW HERE? Get 20% off everything*</p>
+              <p>With code: ORYX20</p>
+            </div>
+            <div class="man-div-black">
+              <a class="nav-link nav-a" href="/#/men">MEN</a>          
+            </div>
+          </div>
+      </nav>
+    </header>
     <!-- Main Container -->
     <main id="main-container"></main>
-
     <!-- Footer -->
     <div class="mt-1">
       <footer class="text-center text-lg-start text-white">
@@ -204,7 +211,7 @@
                 </p>
               </div>
               <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 useful-links">
                 <!-- Links -->
                 <h6 class="text-uppercase fw-bold">Useful Links</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto"
@@ -221,12 +228,9 @@
                 <p>
                   <a href="/#/cart" class="text-white">Go to cart</a>
                 </p>
-                <p>
-                  <a href="/#/viewall" class="text-white">View all</a>
-                </p>
               </div>
               <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 links">
                 <!-- Links -->
                 <h6 class="text-uppercase fw-bold">Navigate</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto"
@@ -248,7 +252,7 @@
                 </p>
               </div>
               <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 legal">
                 <!-- Links -->
                 <h6 class="text-uppercase fw-bold">Legal</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto"
