@@ -5,7 +5,26 @@ import Error404View from "./error404.view";
 import { navbarCounter } from "../utils/utils"
 
 export default class CartView {
-  static async after_render() { }
+  static async after_render({ request: { id }, data }) {
+    const products = await data;
+    const foundProduct = products.find((product) => product._id === +id);
+    if (!foundProduct) return Error404View.render(); //PAZI NA + -ot za bekend
+
+    const deleteButtons = [...document.querySelectorAll(".cart__close-btn")];
+    console.log(deleteButtons)
+    if (!deleteButtons) return;
+    deleteButtons.forEach(deleteButton => {
+      deleteButton.addEventListener("click", (ev) => {
+        console.log("DeleteBtn clicked", deleteButton, " on product id = ", ev.target.id)
+        const cartItems = getCartItems();
+        const filteredProducts = cartItems.filter(cartItem => cartItem._id != ev.target.id)
+
+        setCartItems(filteredProducts);
+        // this.CartView.render();
+        // document.location.hash = `/cart/`
+      })
+    })
+  }
   static async render({ request: { id }, data }) {
     const cartItems = getCartItems();
     const filteredPrice = cartItems.map((x) => {

@@ -15,11 +15,12 @@ export default class CartItem {
               <div class="row text-muted">Size: ${size} </div>
           </div>
           <div class="col d-flex justify-content-start">
-              <button class="page-link" onClick="decreaseNumber('counter')">
-              <i class="fas fa-minus"></i></button>
-              <input style="text-align:center;" type="text" name="" class="page-link" value=1 id="counter" >
-              <button class="page-link counter__plus" onClick="increaseNumber('counter')">
-              <i class="fas fa-plus"></i></button>
+          <button class="page-link">
+          <i onClick="decrement(${itemId})" class="fas fa-minus"></i></button>
+          <div style="display:flex; align-items: center; justify-content: center;" class="page-link" id="counter${itemId}" > 1 </div>
+          <button class="page-link counter__plus">
+          <i onClick="increment(${itemId})" class="fas fa-plus"></i>
+          </button> 
           </div>
           <div class="col d-flex">$${discountPrice ? discountPrice : price}<i class="bi bi-trash cart__close-btn" id="${itemId}"></i></div>
       </div>
