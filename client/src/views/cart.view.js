@@ -1,39 +1,12 @@
-import App from "..";
+
 import CartItem from "../components/cart-item.component";
 import { getCartItems, setCartItems } from "../local-storage";
 import Error404View from "./error404.view";
+import { navbarCounter } from "../utils/utils"
 
-const addToCart = (item, forceUpdate = false) => {
-  let cartItems = getCartItems();
-  const existItem = cartItems.find((cartItem) => cartItem.id === item.id);
-  if (existItem) {
-    cartItems = cartItems.map((cartItem) =>
-      cartItem.id === existItem.id ? item : cartItem
-    );
-  } else {
-    cartItems = [...cartItems, item];
-  }
-  setCartItems(cartItems);
-};
 export default class CartView {
   static async after_render() { }
   static async render({ request: { id }, data }) {
-    const products = await data;
-    if (id) {
-      const foundProduct = products.find((product) => product._id === +id);
-      if (!foundProduct) return Error404View.render(); //PAZI NA + -ot za bekend
-      addToCart({
-        id: foundProduct._id,
-        name: foundProduct.name,
-        brand: foundProduct.brand,
-        image: foundProduct.image,
-        sale: foundProduct.sale,
-        price: foundProduct.price,
-        discountPrice: foundProduct.discountPrice,
-        stock: foundProduct.stock,
-        quantity: 1,
-      });
-    }
     const cartItems = getCartItems();
     const filteredPrice = cartItems.map((x) => {
       if (x.discountPrice == null) {
@@ -43,9 +16,9 @@ export default class CartView {
       }
     });
 
-    App.counterLoader();
+    navbarCounter();
 
-    return /*html*/ `
+    return `
         <div class="shopping-cart__card container mt-5 rounded-3">
         <div class="row">
             <div class="col-md-8 cart">

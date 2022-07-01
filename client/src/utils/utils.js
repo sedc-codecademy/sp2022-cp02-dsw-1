@@ -1,3 +1,5 @@
+import { getCartItems } from "../local-storage";
+
 export const parseRequestUrl = () => {
     const url = document.location.hash.toLowerCase();
     const request = url.split('/');
@@ -18,4 +20,29 @@ export const getAllProducts = async () => {
         console.log(error);
         // To do something with the error
     }
+}
+
+export const reveal = () => {
+    const reveals = document.querySelectorAll(".reveal")
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 70;
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        } else {
+            reveals[i].classList.remove("active");
+        }
+    }
+}
+
+export const navbarCounter = () => {
+    const counters = [...document.getElementsByClassName("shopping-cart-navbar-items")];
+    const cartItems = getCartItems();
+    // if (!cartItems) return;
+    cartItems.length > 0 ? cartItems.reduce((a, c) => a + c.quantity, 0) : 0;
+    counters.forEach(counter => {
+        counter.innerHTML = cartItems.length;
+        cartItems.length < 1 ? counter.style.visibility = "hidden" : counter.style.visibility = "visible";
+    });
 }

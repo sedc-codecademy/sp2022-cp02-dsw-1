@@ -1,15 +1,32 @@
-import RandomProductRendering from "../components/random.product_rendering.component";
+import ProductCard from "../components/product-card.component";
 export default class HomepageView {
-  static async render(resource, data) {
-    const randomProduct = await RandomProductRendering.render(resource, data);
-    if (!randomProduct) return;
+  static async render({ request, data }) {
+    const products = await data;
+    const random12Products = [...Array(products.length).keys()]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 12)
+      .map(index => products[index]);
+    const random12ProductCards = random12Products.map((product) => {
+      return ProductCard.render(product);
+    }).join("");
+
     $(document).ready(function () {
-      $(".card-container").slice(0, 4).show();
+      $(".card-container").slice(0, 24).show();
+      if ($(".card-container").length < 24) {
+        $("#loadMore").hide();
+      }
+      $("#loadMore").on("click", function (e) {
+        e.preventDefault();
+        $(".card-container:hidden").slice(0, 24).slideDown();
+        if ($(".card-container:hidden").length === 0) {
+          $("#loadMore").hide();
+        }
+      });
     });
 
     return `
         <!-- Homepage Top Section -->
-        <section class="homepage-top-section">
+        <section class="homepage-top-section mb-4">
             <div class="container">
             <div class="row">
               <div class="col-12 col-md-6 homepage-top-section__link position-relative">
@@ -38,60 +55,54 @@ export default class HomepageView {
           </div>
         </section>
         <!-- End of Homepage Top Section -->
-
-        <!-- Homepage Offers -->
-        <section class="container py-5">
-        <div class="row  justify-content-center">
-            <div class="col">
-            <p class="text-center mt-5">Sneak peek to some of our SALE products</p>
-            <h2 class="text-center homepage__offers_H2">FUTURE TREND</h2>
-          </div>
-          </div>
-          <div class= "mt-3">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            ${randomProduct[0]}
-            ${randomProduct[1]}
-            ${randomProduct[2]}
-            ${randomProduct[3]}
+        <!-- Homepage Middle Section -->
+        <section class="homepage-middle-section container py-3">
+          <div class="container">
+            <div class="row  justify-content-center reveal">
+              <div class="col">
+                <h2 class="text-center homepage__offers_H2 mt-4 mb-2">BUY NOW OR CRY LATER</h2>
+                <p class="text-center fs-5 mt-2 mb-5">Sneak peek to some of our TREND products</p>
+              </div>
+            </div>
+            <div class= "mt-3">
+              <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center reveal">
+              ${random12ProductCards}
+              </div>
             </div>
           </div>
         </section>
-        <!--End of Homepage Offers -->
-
+        <!--End of Homepage Middle Section -->
         <!-- Homepage About  -->
         <section>
-          <div class="container homepage__about">
+          <div class="container homepage__about pb-5 d-flex gap-3 reveal">
               <div class="row justify-content-around">
-                  <div class="container col-12 col-lg-6 justify-content-center" >
+                <div class="container col-12 col-lg-6 justify-content-center" >
                     <h3 class="text-center my-4">WHAT WE ARE ALL ABOUT</h3>
-                    <p class="text-center px-4">
-                    Pellentesque vulputate porttitor malesuada. Nulla ut pharetra neque. 
-                    Phasellus quis dui est. Etiam mattis dui ullamcorper sapien sollicitudin accumsan. 
-                    Etiam vehicula nibh purus, vel lobortis tellus congue consequat. In hendrerit augue 
-                    ipsum, at scelerisque lorem tincidunt at. Vivamus tempus risus ac condimentum ullamcorper. 
-                    Ut id ipsum efficitur, dignissim metus ac, imperdiet enim. In maximus elementum porta. 
-                    Ut libero dolor, eleifend quis odio eget, luctus tempor nulla. Duis consectetur arcu sit 
-                    amet placerat auctor. Sed in tortor justo. Nunc feugiat ligula ut lacinia sollicitudin.
-                    Sed ut interdum nisl.
-                    Morbi commodo semper faucibus. Donec blandit nibh dolor, sed ornare metus hendrerit eu. 
-                    Sed vitae posuere ante. Mauris ac dictum purus. Curabitur ac ligula vel sapien gravida 
-                    facilisis sit amet a nibh. Morbi lobortis erat in malesuada iaculis. Nullam dictum lectus 
-                    ac facilisis convallis. Fusce varius ante tempus nisl scelerisque, sed ultrices ipsum 
-                    fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed ornare augue. 
-                    Nulla quis ante sem. Morbi nec est risus. Aliquam porttitor imperdiet velit, sed mattis mauris 
-                    porttitor id. Maecenas laoreet felis mattis venenatis porta. Vestibulum sapien neque, imperdiet 
-                    at sem sit amet, efficitur ultricies magna.
-                    </p>                   
+                    <div class="text-center pl-5">
+                    <p>
+                      ORYX caters to thoughtful shoppers who appreciate unique designs and top quality pieces
+                      you just can’t find anywhere else. We are constantly curating fresh new collections
+                      and looking for the next big thing our customers will love. Founded in London in 2016, 
+                      we are proud to be your Online Clothing Shop that you can rely on for our expert service
+                      and care.
+                    </p>
+                    <p>
+                      Our Mission is to make a difference through our branding by staying ahead of the fashion
+                      trends, defining style and giving customers what they want.
+                    </p>
+                    <p>                    
+                      Our Vision is to change the way our society connects with the fashion industry by 
+                      providing our customers with products that are ethically and responsibly sourced.
+                    </p> 
+                    </div>                  
                   </div>
-
-                  <div class="homepage__about__img__div col-12 col-lg-6 d-flex justify-content-center pt-5">
-                    <img class="rounded-3  shadow-lg mb-5 bg-body rounded" src=https://images.unsplash.com/photo-1531629685690-9137e85a4c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 alt="WHAT WE ARE ALL ABOUT" >
-                  </div>
+                  <div class="homepage__about__img__div col-12 col-lg-6 d-flex justify-content-center pt-4">
+                    <img class="rounded-1 shadow-lg mb-5 bg-body homepage__about__img" src=https://images.unsplash.com/photo-1531629685690-9137e85a4c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 alt="WHAT WE ARE ALL ABOUT" >
+                  </div>  
               </div>
           </div>
         </section>
         <!--End of Homepage About -->
-        
         `;
   }
 }

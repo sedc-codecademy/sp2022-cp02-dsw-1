@@ -1,4 +1,4 @@
-import { parseRequestUrl, getAllProducts } from "./utils/utils.js";
+import { parseRequestUrl, getAllProducts, reveal, navbarCounter } from "./utils/utils.js";
 import { getCartItems } from "./local-storage"
 import HomepageView from "./views/homepage.view.js";
 import ContactView from "./views/contact.view.js";
@@ -14,7 +14,7 @@ import FaqView from "./views/faq.view.js";
 import FilteredProductsView from "./views/filtered-products.view.js";
 import SearchFilteredProductsView from "./views/search-filtered-products.view.js";
 import RegisterView from "./views/register.view.js";
-
+import ErrorView from "./views/error.view.js";
 const routes = {
   "/": HomepageView,
   "/search/:id": SearchFilteredProductsView,
@@ -35,6 +35,7 @@ const routes = {
   // "/product-details": ProductDetailsView
   "/faq": FaqView,
   "/register": RegisterView,
+  "/error" :ErrorView
 };
 
 export default class App {
@@ -47,7 +48,6 @@ export default class App {
     console.log("REQUEST", request);
     console.log("parseURL", parseUrl);
     const view = routes[parseUrl] ? routes[parseUrl] : Error404View;
-    console.log("VIEW", view);
     const main = document.getElementById("main-container");
     const options = {
       request: request,
@@ -72,17 +72,8 @@ export default class App {
 
     window.addEventListener("load", this.router);
     window.addEventListener("hashchange", this.router);
-    this.counterLoader();
-  }
-  static counterLoader() {
-    const counters = [...document.getElementsByClassName("shopping-cart-navbar-items")];
-    const cartItems = getCartItems();
-    // if (!cartItems) return;
-    cartItems.length > 0 ? cartItems.reduce((a, c) => a + c.quantity, 0) : 0;
-    counters.forEach(counter => {
-      counter.innerHTML = cartItems.length;
-      cartItems.length < 1 ? counter.style.visibility = "hidden" : counter.style.visibility = "visible";
-    });
+    window.addEventListener("scroll", reveal);
+    navbarCounter();
   }
 }
 
