@@ -1,5 +1,5 @@
 import Error404View from "./error404.view";
-import { getCartItems, setCartItems } from "../local-storage"
+import { getCartItems, setCartItems } from "../local-storage";
 
 const addToCart = (item) => {
   let cartItems = getCartItems();
@@ -27,12 +27,11 @@ export default class ProductDetailsView {
     const selectSize = document.querySelector(".form-select__singleProduct");
     if (!selectSize) return;
     selectSize.addEventListener("change", (e) => {
-
       foundProduct.size = e.target.value;
-      console.log("foundproduct.size", foundProduct.size)
+      console.log("foundproduct.size", foundProduct.size);
 
       if (!foundProduct.size) return;
-    })
+    });
 
     const addToCartBtn = document.querySelector(".cart__btn-add-to-cart");
     if (!addToCartBtn) return;
@@ -53,15 +52,22 @@ export default class ProductDetailsView {
       });
       document.location.hash = `/cart/${id}`;
     });
-
   }
 
   static async render({ request: { id }, data }) {
     const products = await data;
     const foundProduct = products.find((product) => product._id === +id); //PAZI NA + -ot za bekend
     if (!foundProduct) return Error404View.render();
-    const { image, name, brand, description, discountPrice, price, sale, size } =
-      foundProduct;
+    const {
+      image,
+      name,
+      brand,
+      description,
+      discountPrice,
+      price,
+      sale,
+      size,
+    } = foundProduct;
 
     return `
       <section class="py-5">
@@ -82,22 +88,27 @@ export default class ProductDetailsView {
               ${name}
               </h1>
               <div class="fs-1 mb-3">
-              $${discountPrice ? `${discountPrice} 
-              <span class="text-muted text-decoration-line-through"><small>$${price}</small></span>` : price}
+              $${
+                discountPrice
+                  ? `${discountPrice} 
+              <span class="text-muted text-decoration-line-through"><small>$${price}</small></span>`
+                  : price
+              }
               </div>
               <p class="lead singleProduct__description">
                 ${description}
               </p>
               <br />
               <div class="d-flex">
-              <button class="page-link" onClick="decreaseNumber('counter')">
-              <i class="fas fa-minus"></i></button>
-              <input style="text-align:center;" type="text" name="" class="page-link" value=1 id="counter" >
-              <button class="page-link counter__plus" onClick="increaseNumber('counter')">
-              <i class="fas fa-plus"></i></button>
+          <button class="page-link">
+          <i onClick="decrement(${id})" class="fas fa-minus"></i></button>
+          <div style="display:flex; align-items: center; justify-content: center;" class="page-link" id="counter${id}" > 1 </div>
+          <button class="page-link counter__plus">
+          <i onClick="increment(${id})" class="fas fa-plus"></i>
+          </button>
               <select style="width: 5rem" class="form-select__singleProduct me-3 " required>
                 <option value="" disabled selected>Size</option>
-                ${size.map(s => `<option value="${s}">${s}</option>`)}
+                ${size.map((s) => `<option value="${s}">${s}</option>`)}
               </select>
               <button class="btn btn-outline-dark flex-shrink-0 cart__btn-add-to-cart" type="button">
               <i class="bi-cart-fill me-1"></i>
