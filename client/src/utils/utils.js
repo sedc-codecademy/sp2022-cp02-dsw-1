@@ -20,7 +20,7 @@ export const getAllProducts = async () => {
         console.log(error);
         // To do something with the error
     }
-}
+};
 
 export const reveal = () => {
     const reveals = document.querySelectorAll(".reveal")
@@ -34,18 +34,17 @@ export const reveal = () => {
             reveals[i].classList.remove("active");
         }
     }
-}
+};
 
 export const navbarCounter = () => {
     const counters = [...document.getElementsByClassName("shopping-cart-navbar-items")];
     const cartItems = getCartItems();
-    // if (!cartItems) return;
     const navbarItems = cartItems.length > 0 ? cartItems.reduce((a, c) => a + c.quantity, 0) : 0;
     counters.forEach(counter => {
         counter.innerHTML = navbarItems;
         navbarItems < 1 ? counter.style.visibility = "hidden" : counter.style.visibility = "visible";
     });
-}
+};
 
 export const deleteCartItem = (view) => {
     const deleteButtons = [...document.querySelectorAll(".cart__close-btn")];
@@ -58,9 +57,15 @@ export const deleteCartItem = (view) => {
             rerender(view);
         })
     })
-}
+};
 
 export const rerender = async (component) => {
     document.getElementById("main-container").innerHTML = await component.render();
     await component.after_render();
-}
+};
+
+export const shoppingCartBackRoute = () => {
+    const cartItems = getCartItems();
+    const lastCartItemGender = cartItems[cartItems.length - 1].gender;
+    return lastCartItemGender === "male" ? "men" : "women";
+};

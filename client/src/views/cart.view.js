@@ -1,11 +1,10 @@
-
 import CartItem from "../components/cart-item.component";
-import { getCartItems, setCartItems } from "../local-storage";
-import { deleteCartItem, navbarCounter, rerender } from "../utils/utils"
+import { getCartItems } from "../local-storage";
+import { deleteCartItem, navbarCounter, shoppingCartBackRoute } from "../utils/utils"
 
 export default class CartView {
   static async after_render() {
-    deleteCartItem(CartView)
+    deleteCartItem(CartView);
   }
   static async render() {
     const cartItems = getCartItems();
@@ -16,7 +15,9 @@ export default class CartView {
         return x.discountPrice * x.quantity;
       }
     });
+
     navbarCounter();
+
     return `
       <div class="shopping-cart__card container mt-5 rounded-3">
         <div class="row">
@@ -31,7 +32,7 @@ export default class CartView {
               </div >
             </div >
             ${cartItems.map((cartItem) => `${CartItem.render(cartItem)}`).join("")}
-            <div><a href="/#" class="cart__back-to-shop-link">Back to shop</a></div>
+            <div class="cart__back-to-shop"><a href="/#/${shoppingCartBackRoute() || ''}" class="cart__back-to-shop-link nav-link">Back to shop</a></div>
           </div >
           <div class="col-md-4 cart__summary">
             <div><h5><b>Summary</b></h5></div>

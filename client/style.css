@@ -1139,12 +1139,16 @@ footer {
 .shopping-cart__first-link:focus {
 	outline-color: var(--jazzberry-jam);
 }
+.cart__back-to-shop {
+	width: 6.55rem;
+}
 .shopping-cart__link {
 	color: var(--jazzberry-jam);
 	font-weight: 700;
 	padding-left: 0;
 	text-decoration: none;
 	cursor: pointer;
+	width: 6.55rem;
 }
 .shopping-cart__link:hover,
 .shopping-cart__link:active,
@@ -1159,9 +1163,28 @@ footer {
 .cart__back-to-shop-link:hover,
 .cart__back-to-shop-link:focus,
 .cart__back-to-shop-link:visited {
+	position: relative;
 	margin-top: 1.5rem;
 	color: var(--black-olive);
 	text-decoration: none !important;
+}
+.cart__back-to-shop-link::before {
+	content: "";
+	position: absolute;
+	width: 6.55rem;
+	height: 2px;
+	background-color: var(--jazzberry-jam);
+	bottom: 0;
+	left: -0.5rem;
+	top: 1.5rem;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
+}
+.cart__back-to-shop-link:hover::before {
+	transform-origin: left;
+	transform: scaleX(1);
+	width: 6.55rem;
 }
 .cart__summary__form {
 	padding: 2vh 0;
@@ -1564,7 +1587,6 @@ footer {
 	font-size: 47px;
 	letter-spacing: 12px;
 }
-
 .perspec {
 	-webkit-perspective: 1000px;
 	perspective: 1000px;
