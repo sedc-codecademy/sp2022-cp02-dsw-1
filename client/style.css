@@ -61,7 +61,7 @@ h6 {
 /******************  Main Container  *******************/
 /*******************************************************/
 #main-container {
-	min-height: 80vh;
+	min-height: 84vh;
 	/* display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -819,14 +819,25 @@ footer {
 /* ***************************************************** */
 /* *******************    Homepage    ****************** */
 /* ***************************************************** */
+.homepage-top-section {
+}
 .homepage-top-section__link {
 	position: relative;
+	animation: fade-in 1.2s ease-in-out;
 }
 .homepage-top-section img {
 	height: 95%;
 	margin-top: 1.8em;
 	aspect-ratio: 1/1;
 	object-fit: cover;
+}
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 .homepage-top-section__button-container {
 	position: absolute;
