@@ -152,8 +152,9 @@ export const shippingPrice = () => {
   // if (!shippingOptions) return;
   if (shippingOptions) {
     shippingOptions.addEventListener("change", (e) => {
-      const products = getCartItems();
-      let filteredPrice = products.map((x) => {
+      const cartItems = getCartItems();
+      if (cartItems.length < 1) return;
+      let filteredPrice = cartItems.map((x) => {
         if (x.discountPrice == null) {
           return x.price * x.quantity;
         } else {
@@ -162,8 +163,8 @@ export const shippingPrice = () => {
       });
       let totalPrice = Number(filteredPrice.reduce((a, c) => a + c, 0).toFixed(2))
       let selectedOption = e.target.value
-      let selectedPrice = selectedOption === "standard" ? 5 : selectedOption === "express" ? 10 : null;
-      let updatedPrice = (selectedPrice + totalPrice).toFixed(2)
+      let selectedShippingPrice = selectedOption === "standard" ? 5 : selectedOption === "express" ? 10 : null;
+      let updatedPrice = (selectedShippingPrice + totalPrice).toFixed(2)
       document.querySelector(".total-order-price").innerHTML = `$${updatedPrice}`
     })
   }
