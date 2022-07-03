@@ -143,6 +143,10 @@ export const rerender = async (component) => {
 
 export const shoppingCartBackRoute = () => {
   const cartItems = getCartItems();
+  if (cartItems.length < 1) return "";
   const lastCartItemGender = cartItems[cartItems.length - 1].gender;
+
   return lastCartItemGender === "male" ? "men" : "women";
+
+
 };

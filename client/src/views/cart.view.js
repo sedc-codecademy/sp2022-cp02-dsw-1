@@ -45,8 +45,8 @@ export default class CartView {
             ${cartItems
         .map((cartItem) => `${CartItem.render(cartItem)}`)
         .join("")}
-            <div class="cart__back-to-shop"><a href="/#/${shoppingCartBackRoute() || ""
-      }" class="cart__back-to-shop-link nav-link">Back to shop</a></div>
+            <div class="cart__back-to-shop"><a href="/#/${shoppingCartBackRoute() || ""}" 
+            class="cart__back-to-shop-link nav-link">Back to shop</a></div>
           </div >
           <div class="col-md-4 cart__summary">
             <div><h5><b>Summary</b></h5></div>
