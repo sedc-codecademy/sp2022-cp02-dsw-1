@@ -84,7 +84,7 @@ export const counterPlus = (view) => {
         );
         let helper =
           cartItems[indexOfUpdate].quantity ===
-          cartItems[indexOfUpdate].stock - 1;
+          cartItems[indexOfUpdate].stock;
         if (!helper) {
           cartItems[indexOfUpdate].quantity += 1;
           setCartItems(cartItems);
