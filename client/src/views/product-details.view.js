@@ -1,5 +1,6 @@
 import Error404View from "./error404.view";
 import { getCartItems, setCartItems } from "../local-storage";
+import { shoppingCartBackRoute } from "../utils/utils"
 
 export default class ProductDetailsView {
   static async after_render({ request: { id }, data }) {
@@ -130,6 +131,7 @@ export default class ProductDetailsView {
       sale,
       size,
       quantity,
+      stock
     } = foundProduct;
 
     const cartItems = getCartItems();
@@ -139,7 +141,7 @@ export default class ProductDetailsView {
     if (existItem) {
       quantity = existItem.quantity;
     }
-
+    console.log("Quantity", quantity)
     return `
       <section class="py-5">
         <div class="container px-4 px-lg-5">
@@ -159,26 +161,28 @@ export default class ProductDetailsView {
               ${name}
               </h1>
               <div class="fs-1 mb-3">
-                $${
-                  discountPrice
-                    ? `${discountPrice} 
+                ${!stock ? `<span class="text-muted text-decoration-line-through">
+                <small>$${price}</small>
+              </span>` : discountPrice
+        ? `$${discountPrice} 
                 <span class="text-muted text-decoration-line-through">
                   <small>$${price}</small>
                 </span>`
-                    : price
-                }
+        : `$${price}`
+      }
               </div>
               <p class="lead singleProduct__description">
                 ${description}
               </p>
               <br />
-              <div class="d-flex">
+              <div class="d-flex"> 
+              ${!stock ? `<div class="out-of-stock"><h2>Out of Stock</h2><a href="/#/${shoppingCartBackRoute() || ""}" 
+                        class="cart__back-to-shop-link nav-link">Back to shop</a></div>`
+        : ` 
                 <button class="page-link">
                   <i class="fas fa-minus fa-minus${id}"></i>
                 </button>
-                <div style="display:flex; align-items: center; justify-content: center;" class="page-link" id="counter${id}" > ${
-      quantity ? quantity : 1
-    } </div>
+                <div style="display:flex; align-items: center; justify-content: center;" class="page-link" id="counter${id}" > ${quantity ? quantity : 1}</div>
                 <button class="page-link counter__plus">
                   <i" class="fas fa-plus fa-plus${id}"></i>
                 </button>
@@ -189,7 +193,7 @@ export default class ProductDetailsView {
                 <button class="btn btn-outline-dark flex-shrink-0 cart__btn-add-to-cart" type="button">
                   <i class="bi-cart-fill me-1"></i>
                   Add to cart
-                </button>
+                </button>`}
               </div>
             </div>
           </div>

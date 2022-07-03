@@ -34,21 +34,19 @@ export default class CartView {
               <div class="row">
                 <div class="col"><h4><b>Shopping Cart</b></h4></div>
                 <div class="col align-self-center text-end text-muted">
-                  ${
-                    cartItems.length > 0
-                      ? `${cartItems.reduce((a, c) => a + c.quantity, 0)} 
+                  ${cartItems.length > 0
+        ? `${cartItems.reduce((a, c) => a + c.quantity, 0)} 
                   items`
-                      : "Empty"
-                  } 
+        : "Empty"
+      } 
                 </div>
               </div >
             </div >
             ${cartItems
-              .map((cartItem) => `${CartItem.render(cartItem)}`)
-              .join("")}
-            <div class="cart__back-to-shop"><a href="/#/${
-              shoppingCartBackRoute() || ""
-            }" class="cart__back-to-shop-link nav-link">Back to shop</a></div>
+        .map((cartItem) => `${CartItem.render(cartItem)}`)
+        .join("")}
+            <div class="cart__back-to-shop"><a href="/#/${shoppingCartBackRoute() || ""
+      }" class="cart__back-to-shop-link nav-link">Back to shop</a></div>
           </div >
           <div class="col-md-4 cart__summary">
             <div><h5><b>Summary</b></h5></div>
@@ -58,8 +56,8 @@ export default class CartView {
                 ITEMS ${cartItems.reduce((a, c) => a + c.quantity, 0)}
               </div>
               <div class="col text-right">$${filteredPrice
-                .reduce((a, c) => a + c, 0)
-                .toFixed(2)}</div>
+        .reduce((a, c) => a + c, 0)
+        .toFixed(2)}</div>
             </div>
             <form class="cart__summary__form">
               <p>SHIPPING</p>

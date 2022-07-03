@@ -1698,3 +1698,6 @@ footer {
 		transform: scale(.6);
 	}
 }
+.out-of-stock {
+	color: var(--jazzberry-jam);
+}
