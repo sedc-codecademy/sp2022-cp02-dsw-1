@@ -30,7 +30,7 @@ export default class CartView {
     navbarCounter();
 
     return `
-      <div class="shopping-cart__card container mt-5 rounded-3">
+      <div class="shopping-cart__card container mt-5 mb-5 rounded-3">
         <div class="row">
           <div class="col-md-8 cart">
             <div class="cart__title">
@@ -51,7 +51,7 @@ export default class CartView {
             <div class="cart__back-to-shop"><a href="/#/${shoppingCartBackRoute() || ""}" 
             class="cart__back-to-shop-link nav-link">Back to shop</a></div>
           </div >
-          <div class="col-md-4 cart__summary">
+          <div class="col-md-4  cart__summary">
             <div><h5><b>Summary</b></h5></div>
             <hr>
             <div class="row" >
@@ -79,7 +79,7 @@ export default class CartView {
               </div>
             </div>
             <a href="/#/order" class="order-now-link link-light">
-              <button class="cart__summary__form__btn">ORDER NOW</button>
+              <button class="cart__summary__form__btn mb-4">ORDER NOW</button>
             </a>
           </div>
         </div >
