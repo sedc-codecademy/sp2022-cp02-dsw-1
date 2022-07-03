@@ -66,8 +66,8 @@ export default class CartView {
               <p>SHIPPING</p>
               <select class="shipping-options" required>
                 <option value="" disabled selected>Delivery</option>
-                <option value="standard" class="text-muted">Standard-Delivery- $5.00</option>
-                <option value="express" class="text-muted">Express-Delivery-- $10.00</option>
+                <option value="standard" class="text-muted">Standard - $5.00</option>
+                <option value="express" class="text-muted">Express - $10.00</option>
               </select>
               <p>GIVE CODE</p>
                 <input class="cart__summary__form__code" placeholder="Enter your code">
