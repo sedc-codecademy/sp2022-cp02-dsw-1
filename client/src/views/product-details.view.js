@@ -128,6 +128,7 @@ export default class ProductDetailsView {
       description,
       discountPrice,
       price,
+      gender,
       sale,
       size,
       quantity,
@@ -176,7 +177,7 @@ export default class ProductDetailsView {
               </p>
               <br />
               <div class="d-flex"> 
-              ${!stock ? `<div class="out-of-stock"><h2>Out of Stock</h2><a href="/#/${shoppingCartBackRoute() || ""}" 
+              ${!stock ? `<div class="out-of-stock"><h2>Out of Stock</h2><a href="/#/${gender === "male" ? "men" : "women" || ""}" 
                         class="cart__back-to-shop-link nav-link">Back to shop</a></div>`
         : ` 
                 <button class="page-link">
