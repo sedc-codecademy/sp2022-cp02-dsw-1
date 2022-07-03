@@ -31,7 +31,7 @@ export default class HomepageView {
             <div class="row">
               <div class="col-12 col-md-6 homepage-top-section__link position-relative">
                 <a href="/#/women">
-                  <img src="../images/main-woman-medium.jpg" alt="female model" width="1000" height="1200">
+                  <img src="../images/main-woman-medium.jpg" alt="female model" width="1000" height="1500">
                 </a>
                 <div class="homepage-top-section__button-container">
                   <div class="homepage-top-section__button">
@@ -42,7 +42,7 @@ export default class HomepageView {
               </div>
               <div class="col-12 col-md-6 homepage-top-section__link position-relative">
                 <a href="/#/men">
-                  <img src="../images/main-man-medium.jpg" alt="male model" width="1000" height="1200">
+                  <img src="../images/main-man-medium.jpg" alt="male model" width="1000" height="1500">
                 </a>
                 <div class="homepage-top-section__button-container">
                   <div class="homepage-top-section__button">
