@@ -35,21 +35,69 @@ export default class ProductDetailsView {
           (locStorItems) => locStorItems._id === foundProduct._id
         );
         if (!existenceCheck) {
-          foundProduct.size = memory.size || "Not choosen";
+          foundProduct.size = memory.size;
+          if (!foundProduct.size) {
+            alert("Please select your size");
+            return;
+          }
           foundProduct.quantity = memory.count || 1;
           console.log(foundProduct);
           cartItems = [...cartItems, foundProduct];
           setCartItems(cartItems);
-        } else {
+        }
+        if (existenceCheck) {
           let filtered = cartItems.filter(
             (item) => item._id !== foundProduct._id
           );
-          foundProduct.size = memory.size || "Not choosen";
+          foundProduct.size = memory.size;
+          if (!foundProduct.size) {
+            alert("Please select your size");
+            return;
+          }
           foundProduct.quantity = memory.count || 1;
           setCartItems((cartItems = [...filtered, foundProduct]));
         }
-
+        console.log(foundProduct.size);
         document.location.hash = `/cart/${id}`;
+      });
+
+      // counterPlus
+      const plusButton = document.getElementsByClassName(`fa-plus${id}`);
+      const indexOfProduct = products.findIndex(
+        (product) => product._id === +id
+      );
+      const numberInStock = products[indexOfProduct].stock;
+
+      plusButton[0].addEventListener("click", () => {
+        let numberFromProduct = parseInt(
+          document.getElementById(`counter${id}`).innerHTML
+        );
+        if (numberFromProduct < numberInStock) {
+          let incremented = (numberFromProduct += 1);
+          document.getElementById(`counter${id}`).innerHTML =
+            incremented.toString();
+        } else {
+          alert("No more available in store :(");
+          return;
+        }
+      });
+
+      // counterMinus
+      const minusButton = document.getElementsByClassName(`fa-minus${id}`);
+
+      minusButton[0].addEventListener("click", () => {
+        let numberFromProduct = parseInt(
+          document.getElementById(`counter${id}`).innerHTML
+        );
+        if (numberFromProduct > 1) {
+          let incremented = (numberFromProduct -= 1);
+          console.log("ulazi u ovu svakako");
+          console.log(incremented, typeof incremented);
+          document.getElementById(`counter${id}`).innerHTML =
+            incremented.toString();
+        } else {
+          return;
+        }
       });
 
       // Sizes LISTENER
@@ -61,23 +109,13 @@ export default class ProductDetailsView {
           memory.size = e.target.value;
         }
       });
-
-      // addToCart({
-      //   _id: foundProduct._id,
-      //   name: foundProduct.name,
-      //   brand: foundProduct.brand,
-      //   image: foundProduct.image,
-      //   sale: foundProduct.sale,
-      //   price: foundProduct.price,
-      //   discountPrice: foundProduct.discountPrice,
-      //   stock: foundProduct.stock,
-      //   sale: foundProduct.sale || "",
-      //   quantity: 1,
-      // });
     }
   }
 
   static async render({ request: { id }, data }) {
+    window.scrollTo({
+      top: 0,
+    });
     const products = await data;
     const foundProduct = products.find((product) => product._id === +id); //PAZI NA + -ot za bekend
     if (!foundProduct) return Error404View.render();
@@ -91,7 +129,7 @@ export default class ProductDetailsView {
       price,
       sale,
       size,
-      quantity
+      quantity,
     } = foundProduct;
 
     const cartItems = getCartItems();
@@ -121,10 +159,14 @@ export default class ProductDetailsView {
               ${name}
               </h1>
               <div class="fs-1 mb-3">
-                $${discountPrice ? `${discountPrice} 
+                $${
+                  discountPrice
+                    ? `${discountPrice} 
                 <span class="text-muted text-decoration-line-through">
                   <small>$${price}</small>
-                </span>` : price}
+                </span>`
+                    : price
+                }
               </div>
               <p class="lead singleProduct__description">
                 ${description}
@@ -132,11 +174,13 @@ export default class ProductDetailsView {
               <br />
               <div class="d-flex">
                 <button class="page-link">
-                  <i onClick="decrement(${id})" class="fas fa-minus"></i>
+                  <i class="fas fa-minus fa-minus${id}"></i>
                 </button>
-                <div style="display:flex; align-items: center; justify-content: center;" class="page-link" id="counter${id}" > ${quantity ? quantity : 1} </div>
+                <div style="display:flex; align-items: center; justify-content: center;" class="page-link" id="counter${id}" > ${
+      quantity ? quantity : 1
+    } </div>
                 <button class="page-link counter__plus">
-                  <i onClick="increment(${id})" class="fas fa-plus"></i>
+                  <i" class="fas fa-plus fa-plus${id}"></i>
                 </button>
                 <select style="width: 5rem" class="form-select__singleProduct me-3 " required>
                   <option value="" disabled selected>Size</option>
