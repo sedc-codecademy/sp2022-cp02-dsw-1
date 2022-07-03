@@ -1,9 +1,17 @@
 import CartItem from "../components/cart-item.component";
 import { getCartItems } from "../local-storage";
-import { deleteCartItem, navbarCounter, shoppingCartBackRoute } from "../utils/utils"
+import {
+  deleteCartItem,
+  counterPlus,
+  counterMinus,
+  navbarCounter,
+  shoppingCartBackRoute,
+} from "../utils/utils";
 
 export default class CartView {
   static async after_render() {
+    counterPlus(CartView);
+    counterMinus(CartView);
     deleteCartItem(CartView);
   }
   static async render() {
@@ -26,13 +34,21 @@ export default class CartView {
               <div class="row">
                 <div class="col"><h4><b>Shopping Cart</b></h4></div>
                 <div class="col align-self-center text-end text-muted">
-                  ${cartItems.length > 0 ? `${cartItems.reduce((a, c) => a + c.quantity, 0)} 
-                  items` : "Empty"} 
+                  ${
+                    cartItems.length > 0
+                      ? `${cartItems.reduce((a, c) => a + c.quantity, 0)} 
+                  items`
+                      : "Empty"
+                  } 
                 </div>
               </div >
             </div >
-            ${cartItems.map((cartItem) => `${CartItem.render(cartItem)}`).join("")}
-            <div class="cart__back-to-shop"><a href="/#/${shoppingCartBackRoute() || ''}" class="cart__back-to-shop-link nav-link">Back to shop</a></div>
+            ${cartItems
+              .map((cartItem) => `${CartItem.render(cartItem)}`)
+              .join("")}
+            <div class="cart__back-to-shop"><a href="/#/${
+              shoppingCartBackRoute() || ""
+            }" class="cart__back-to-shop-link nav-link">Back to shop</a></div>
           </div >
           <div class="col-md-4 cart__summary">
             <div><h5><b>Summary</b></h5></div>
@@ -41,7 +57,9 @@ export default class CartView {
               <div class="col" style="padding-left:2vh;">
                 ITEMS ${cartItems.reduce((a, c) => a + c.quantity, 0)}
               </div>
-              <div class="col text-right">$${filteredPrice.reduce((a, c) => a + c, 0).toFixed(2)}</div>
+              <div class="col text-right">$${filteredPrice
+                .reduce((a, c) => a + c, 0)
+                .toFixed(2)}</div>
             </div>
             <form class="cart__summary__form">
               <p>SHIPPING</p>
