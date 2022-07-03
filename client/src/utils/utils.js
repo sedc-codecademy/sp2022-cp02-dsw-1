@@ -136,8 +136,7 @@ export const counterMinus = (view) => {
 };
 
 export const rerender = async (component) => {
-  document.getElementById("main-container").innerHTML =
-    await component.render();
+  document.getElementById("main-container").innerHTML = await component.render();
   await component.after_render();
 };
 
@@ -145,8 +144,27 @@ export const shoppingCartBackRoute = () => {
   const cartItems = getCartItems();
   if (cartItems.length < 1) return "";
   const lastCartItemGender = cartItems[cartItems.length - 1].gender;
-
   return lastCartItemGender === "male" ? "men" : "women";
-
-
 };
+
+export const shippingPrice = () => {
+  const shippingOptions = document.querySelector(".shipping-options")
+  // if (!shippingOptions) return;
+  if (shippingOptions) {
+    shippingOptions.addEventListener("change", (e) => {
+      const products = getCartItems();
+      let filteredPrice = products.map((x) => {
+        if (x.discountPrice == null) {
+          return x.price * x.quantity;
+        } else {
+          return x.discountPrice * x.quantity;
+        }
+      });
+      let totalPrice = Number(filteredPrice.reduce((a, c) => a + c, 0).toFixed(2))
+      let selectedOption = e.target.value
+      let selectedPrice = selectedOption === "standard" ? 5 : selectedOption === "express" ? 10 : null;
+      let updatedPrice = (selectedPrice + totalPrice).toFixed(2)
+      document.querySelector(".total-order-price").innerHTML = `$${updatedPrice}`
+    })
+  }
+}

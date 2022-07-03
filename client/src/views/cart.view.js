@@ -6,12 +6,15 @@ import {
   counterMinus,
   navbarCounter,
   shoppingCartBackRoute,
+  shippingPrice
 } from "../utils/utils";
+
 
 export default class CartView {
   static async after_render() {
     counterPlus(CartView);
     counterMinus(CartView);
+    shippingPrice();
     deleteCartItem(CartView);
   }
   static async render() {
@@ -61,15 +64,17 @@ export default class CartView {
             </div>
             <form class="cart__summary__form">
               <p>SHIPPING</p>
-              <select>
-                <option class="text-muted">Standard-Delivery- $5.00</option>
+              <select class="shipping-options" required>
+                <option value="" disabled selected>Delivery</option>
+                <option value="standard" class="text-muted">Standard-Delivery- $5.00</option>
+                <option value="express" class="text-muted">Express-Delivery-- $10.00</option>
               </select>
               <p>GIVE CODE</p>
                 <input class="cart__summary__form__code" placeholder="Enter your code">
             </form>
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
               <div class="col">TOTAL PRICE</div>
-              <div class="col text-right">$ 
+              <div class="col text-right total-order-price">$ 
                 ${filteredPrice.reduce((a, c) => a + c, 0).toFixed(2)}
               </div>
             </div>
