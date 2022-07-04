@@ -29,6 +29,11 @@ export default class ProductDetailsView {
       // addToCart LISTENER
       addToCartBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        const sizeErrorMessage = document.querySelector(".size__error-message")
+        if (sizeErrorMessage) {
+          console.log(sizeErrorMessage)
+          sizeErrorMessage.style.display = "none";
+        }
         let productNumber = document.getElementById(`counter${id}`).innerHTML;
         memory.count = parseInt(productNumber);
         let cartItems = getCartItems();
@@ -38,7 +43,9 @@ export default class ProductDetailsView {
         if (!existenceCheck) {
           foundProduct.size = memory.size;
           if (!foundProduct.size) {
-            alert("Please select your size");
+            sizeErrorMessage.style.display = "block"
+
+            // alert("Please select your size");
             return;
           }
           foundProduct.quantity = memory.count || 1;
@@ -52,7 +59,9 @@ export default class ProductDetailsView {
           );
           foundProduct.size = memory.size;
           if (!foundProduct.size) {
-            alert("Please select your size");
+            sizeErrorMessage.style.display = "block"
+
+            // alert("Please select your size");
             return;
           }
           foundProduct.quantity = memory.count || 1;
@@ -154,7 +163,7 @@ export default class ProductDetailsView {
                 alt="${name}"
               />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 single-product-info">
               <h5 class="fw-bolder fs-2">
               ${brand}
               </h5>
@@ -175,7 +184,7 @@ export default class ProductDetailsView {
               <p class="lead singleProduct__description">
                 ${description}
               </p>
-              <br />
+              <br/>
               <div class="d-flex"> 
               ${!stock ? `<div class="out-of-stock"><h2>Out of Stock</h2><a href="/#/${gender === "male" ? "men" : "women" || ""}" 
                         class="cart__back-to-shop-link nav-link">Back to shop</a></div>`
@@ -195,7 +204,8 @@ export default class ProductDetailsView {
                   <i class="bi-cart-fill me-1"></i>
                   Add to cart
                 </button>`}
-              </div>
+                </div>
+                <div class="size__error-message mt-3 mb-3 fs-5 px-3 py-2">Please choose size!</div>
             </div>
           </div>
         </div>
