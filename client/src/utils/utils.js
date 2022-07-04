@@ -68,34 +68,35 @@ export const deleteCartItem = (view) => {
 
 export const counterPlus = (view) => {
   const plusButtons = [...document.querySelectorAll(".fa-plus")];
-  console.log(plusButtons);
   if (!plusButtons) return;
+
   plusButtons.forEach((plusButton) => {
     plusButton.addEventListener("click", (ev) => {
       const id = ev.target.classList[2];
-      let numberFromProduct = parseInt(
-        document.getElementById(`counter${id}`).innerHTML
-      );
-
-      const cartItems = getCartItems();
-      if (cartItems.length > 0) {
-        const indexOfUpdate = cartItems.findIndex(
-          (cartItem) => cartItem._id === +id
+      if (document.getElementById(`counter${id}`)) {
+        let numberFromProduct = parseInt(
+          document.getElementById(`counter${id}`).innerHTML
         );
-        let helper =
-          cartItems[indexOfUpdate].quantity ===
-          cartItems[indexOfUpdate].stock;
-        if (!helper) {
-          cartItems[indexOfUpdate].quantity += 1;
-          setCartItems(cartItems);
-          numberFromProduct += 1;
-          document.getElementById(`counter${id}`).innerHTML =
-            numberFromProduct.toString();
-          rerender(view);
-        }
-        if (helper) {
-          alert("No more available in store :(");
-          return;
+        const cartItems = getCartItems();
+        if (cartItems.length > 0) {
+          const indexOfUpdate = cartItems.findIndex(
+            (cartItem) => cartItem._id === +id
+          );
+          let helper =
+            cartItems[indexOfUpdate].quantity ===
+            cartItems[indexOfUpdate].stock;
+          if (!helper) {
+            cartItems[indexOfUpdate].quantity += 1;
+            setCartItems(cartItems);
+            numberFromProduct += 1;
+            document.getElementById(`counter${id}`).innerHTML =
+              numberFromProduct.toString();
+            rerender(view);
+          }
+          if (helper) {
+            alert("No more available in store :(");
+            return;
+          }
         }
       }
     });
@@ -104,31 +105,31 @@ export const counterPlus = (view) => {
 
 export const counterMinus = (view) => {
   const minusButtons = [...document.querySelectorAll(".fa-minus")];
-  console.log(minusButtons);
   if (!minusButtons) return;
   minusButtons.forEach((minusButton) => {
     minusButton.addEventListener("click", (ev) => {
       const id = ev.target.classList[2];
-      let numberFromProduct = parseInt(
-        document.getElementById(`counter${id}`).innerHTML
-      );
-
-      const cartItems = getCartItems();
-      if (cartItems.length > 0) {
-        const indexOfUpdate = cartItems.findIndex(
-          (cartItem) => cartItem._id === +id
+      if (document.getElementById(`counter${id}`)) {
+        let numberFromProduct = parseInt(
+          document.getElementById(`counter${id}`).innerHTML
         );
-        let helper = cartItems[indexOfUpdate].quantity;
-        if (helper > 1) {
-          cartItems[indexOfUpdate].quantity -= 1;
-          setCartItems(cartItems);
-          numberFromProduct -= 1;
-          document.getElementById(`counter${id}`).innerHTML =
-            numberFromProduct.toString();
-          rerender(view);
-        }
-        if ((helper = 1)) {
-          return;
+        const cartItems = getCartItems();
+        if (cartItems.length > 0) {
+          const indexOfUpdate = cartItems.findIndex(
+            (cartItem) => cartItem._id === +id
+          );
+          let helper = cartItems[indexOfUpdate].quantity;
+          if (helper > 1) {
+            cartItems[indexOfUpdate].quantity -= 1;
+            setCartItems(cartItems);
+            numberFromProduct -= 1;
+            document.getElementById(`counter${id}`).innerHTML =
+              numberFromProduct.toString();
+            rerender(view);
+          }
+          if ((helper = 1)) {
+            return;
+          }
         }
       }
     });
@@ -136,7 +137,8 @@ export const counterMinus = (view) => {
 };
 
 export const rerender = async (component) => {
-  document.getElementById("main-container").innerHTML = await component.render();
+  document.getElementById("main-container").innerHTML =
+    await component.render();
   await component.after_render();
 };
 
@@ -148,7 +150,7 @@ export const shoppingCartBackRoute = () => {
 };
 
 export const shippingPrice = () => {
-  const shippingOptions = document.querySelector(".shipping-options")
+  const shippingOptions = document.querySelector(".shipping-options");
   // if (!shippingOptions) return;
   if (shippingOptions) {
     shippingOptions.addEventListener("change", (e) => {
@@ -161,11 +163,20 @@ export const shippingPrice = () => {
           return x.discountPrice * x.quantity;
         }
       });
-      let totalPrice = Number(filteredPrice.reduce((a, c) => a + c, 0).toFixed(2))
-      let selectedOption = e.target.value
-      let selectedShippingPrice = selectedOption === "standard" ? 5 : selectedOption === "express" ? 10 : null;
-      let updatedPrice = (selectedShippingPrice + totalPrice).toFixed(2)
-      document.querySelector(".total-order-price").innerHTML = `$${updatedPrice}`
-    })
+      let totalPrice = Number(
+        filteredPrice.reduce((a, c) => a + c, 0).toFixed(2)
+      );
+      let selectedOption = e.target.value;
+      let selectedShippingPrice =
+        selectedOption === "standard"
+          ? 5
+          : selectedOption === "express"
+          ? 10
+          : null;
+      let updatedPrice = (selectedShippingPrice + totalPrice).toFixed(2);
+      document.querySelector(
+        ".total-order-price"
+      ).innerHTML = `$${updatedPrice}`;
+    });
   }
-}
+};
