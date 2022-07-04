@@ -31,7 +31,7 @@ export default class OrderView {
                       </div>
                       <div class="form-floating mb-4">
                         <input type="tel" id="contactBlockPhone3" class="form-control" placeholder="Enter Phone Number"" />
-                        <label class="form-label" for="contactBlockPhone3">Phone (optional)</label>
+                        <label class="form-label" for="contactBlockPhone3">Phone</label>
                       </div>
                       <div class="form-floating mb-4">
                       <input type="text" id="address" name="address" class="form-control" placeholder="Address" />
@@ -65,9 +65,7 @@ export default class OrderView {
                 <div class="text-company">
                 <object id="image-logo" data="images/logo/white-logo.svg" width="100em" height="100em"> </object>
                   <h4 class="mb-4">We are more than just a company</h4>
-                  <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p class="small mb-0">ORYX caters to thoughtful shoppers who appreciate unique designs and top quality pieces you just can’t find anywhere else. We are constantly curating fresh new collections and looking for the next big thing our customers will love. Founded in London in 2016, we are proud to be your Online Clothing Shop that you can rely on for our expert service and care.</p>
                     </div>
                 </div>
               </div>
