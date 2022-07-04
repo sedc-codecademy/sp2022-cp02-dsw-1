@@ -1,6 +1,6 @@
 import Error404View from "./error404.view";
 import { getCartItems, setCartItems } from "../local-storage";
-import { shoppingCartBackRoute } from "../utils/utils"
+import { shoppingCartBackRoute } from "../utils/utils";
 
 export default class ProductDetailsView {
   static async after_render({ request: { id }, data }) {
@@ -9,6 +9,14 @@ export default class ProductDetailsView {
     });
 
     const products = await data;
+    // Check existence in Local Storage and take SIZE property
+    let existingProperty = null;
+    const cartItems = getCartItems();
+    const existItem = cartItems.find((locStorItem) => locStorItem._id === +id);
+
+    if (existItem) {
+      existingProperty = existItem.size;
+    }
 
     if (id) {
       const foundProduct = products.find((product) => product._id === +id);
@@ -19,16 +27,24 @@ export default class ProductDetailsView {
 
       // local Memory
       let memory = {
-        size: "",
+        size: existingProperty || "",
         count: foundProduct.quantity || 1,
       };
-
+      console.log(existingProperty);
       const addToCartBtn = document.querySelector(".cart__btn-add-to-cart");
       if (!addToCartBtn) return;
 
       // addToCart LISTENER
       addToCartBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        const sizeErrorMessage = document.querySelector(".size__error-message");
+        // const quantityErrorMessage = document.querySelector(".quantity__error-message");
+
+        if (sizeErrorMessage) {
+          console.log(sizeErrorMessage);
+          sizeErrorMessage.style.display = "none";
+        }
+
         let productNumber = document.getElementById(`counter${id}`).innerHTML;
         memory.count = parseInt(productNumber);
         let cartItems = getCartItems();
@@ -38,7 +54,9 @@ export default class ProductDetailsView {
         if (!existenceCheck) {
           foundProduct.size = memory.size;
           if (!foundProduct.size) {
-            alert("Please select your size");
+            sizeErrorMessage.style.display = "block";
+
+            // alert("Please select your size");
             return;
           }
           foundProduct.quantity = memory.count || 1;
@@ -52,7 +70,9 @@ export default class ProductDetailsView {
           );
           foundProduct.size = memory.size;
           if (!foundProduct.size) {
-            alert("Please select your size");
+            sizeErrorMessage.style.display = "block";
+
+            // alert("Please select your size");
             return;
           }
           foundProduct.quantity = memory.count || 1;
@@ -70,6 +90,12 @@ export default class ProductDetailsView {
       const numberInStock = products[indexOfProduct].stock;
 
       plusButton[0].addEventListener("click", () => {
+        const quantityErrorMessage = document.querySelector(".quantity__error-message");
+        if (quantityErrorMessage) {
+          quantityErrorMessage.style.display = "none";
+        }
+
+        if (!selectSize) return
         let numberFromProduct = parseInt(
           document.getElementById(`counter${id}`).innerHTML
         );
@@ -78,7 +104,9 @@ export default class ProductDetailsView {
           document.getElementById(`counter${id}`).innerHTML =
             incremented.toString();
         } else {
-          alert("No more available in store :(");
+          console.log("quantityErrorMessage", quantityErrorMessage)
+          quantityErrorMessage.style.display = "block";
+          // alert("No more available in store :(");
           return;
         }
       });
@@ -87,15 +115,21 @@ export default class ProductDetailsView {
       const minusButton = document.getElementsByClassName(`fa-minus${id}`);
 
       minusButton[0].addEventListener("click", () => {
+        const quantityErrorMessage = document.querySelector(".quantity__error-message");
+        if (quantityErrorMessage) {
+          console.log(quantityErrorMessage);
+          quantityErrorMessage.style.display = "none";
+        }
         let numberFromProduct = parseInt(
           document.getElementById(`counter${id}`).innerHTML
         );
-        if (numberFromProduct > 1) {
+        if (numberFromProduct >= 1) {
           let incremented = (numberFromProduct -= 1);
           console.log("ulazi u ovu svakako");
           console.log(incremented, typeof incremented);
           document.getElementById(`counter${id}`).innerHTML =
             incremented.toString();
+          quantityErrorMessage.style.display = "none";
         } else {
           return;
         }
@@ -132,7 +166,8 @@ export default class ProductDetailsView {
       sale,
       size,
       quantity,
-      stock
+      stock,
+      choosenSize,
     } = foundProduct;
 
     const cartItems = getCartItems();
@@ -141,8 +176,9 @@ export default class ProductDetailsView {
     );
     if (existItem) {
       quantity = existItem.quantity;
+      choosenSize = existItem.size;
     }
-    console.log("Quantity", quantity)
+
     return `
       <section class="py-5">
         <div class="container px-4 px-lg-5">
@@ -154,7 +190,7 @@ export default class ProductDetailsView {
                 alt="${name}"
               />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 single-product-info">
               <h5 class="fw-bolder fs-2">
               ${brand}
               </h5>
@@ -162,40 +198,49 @@ export default class ProductDetailsView {
               ${name}
               </h1>
               <div class="fs-1 mb-3">
-                ${!stock ? `<span class="text-muted text-decoration-line-through">
+                ${!stock
+        ? `<span class="text-muted text-decoration-line-through">
                 <small>$${price}</small>
-              </span>` : discountPrice
-        ? `$${discountPrice} 
+              </span>`
+        : discountPrice
+          ? `$${discountPrice} 
                 <span class="text-muted text-decoration-line-through">
                   <small>$${price}</small>
                 </span>`
-        : `$${price}`
+          : `$${price}`
       }
               </div>
               <p class="lead singleProduct__description">
                 ${description}
               </p>
-              <br />
+              <br/>
               <div class="d-flex"> 
-              ${!stock ? `<div class="out-of-stock"><h2>Out of Stock</h2><a href="/#/${gender === "male" ? "men" : "women" || ""}" 
+              ${!stock
+        ? `<div class="out-of-stock"><h2>Out of Stock</h2><a href="/#/${gender === "male" ? "men" : "women" || ""
+        }" 
                         class="cart__back-to-shop-link nav-link">Back to shop</a></div>`
         : ` 
                 <button class="page-link">
                   <i class="fas fa-minus fa-minus${id}"></i>
                 </button>
-                <div style="display:flex; align-items: center; justify-content: center;" class="page-link" id="counter${id}" > ${quantity ? quantity : 1}</div>
+                <div style="display:flex; align-items: center; justify-content: center;" class="page-link" id="counter${id}" > ${quantity ? quantity : 1
+        }</div>
                 <button class="page-link counter__plus">
                   <i" class="fas fa-plus fa-plus${id}"></i>
                 </button>
                 <select style="width: 5rem" class="form-select__singleProduct me-3 " required>
-                  <option value="" disabled selected>Size</option>
+                  <option value="" disabled selected>${choosenSize || "Size"
+        }</option>
                   ${size.map((s) => `<option value="${s}">${s}</option>`)}
                 </select>
                 <button class="btn btn-outline-dark flex-shrink-0 cart__btn-add-to-cart" type="button">
                   <i class="bi-cart-fill me-1"></i>
                   Add to cart
-                </button>`}
-              </div>
+                </button>`
+      }
+                </div>
+                <div class="size__error-message mt-3 mb-3 fs-5 px-3 py-2">Please choose size!</div>
+                <div class="quantity__error-message mt-3 mb-3 fs-5 px-3 py-2">No more items available in store<i class="bi bi-emoji-frown"></i></div>
             </div>
           </div>
         </div>
