@@ -9,6 +9,14 @@ export default class ProductDetailsView {
     });
 
     const products = await data;
+    // Check existence in Local Storage and take SIZE property
+    let existingProperty = null;
+    const cartItems = getCartItems();
+    const existItem = cartItems.find((locStorItem) => locStorItem._id === +id);
+
+    if (existItem) {
+      existingProperty = existItem.size;
+    }
 
     if (id) {
       const foundProduct = products.find((product) => product._id === +id);
@@ -19,10 +27,10 @@ export default class ProductDetailsView {
 
       // local Memory
       let memory = {
-        size: "",
+        size: existingProperty || "",
         count: foundProduct.quantity || 1,
       };
-
+      console.log(existingProperty);
       const addToCartBtn = document.querySelector(".cart__btn-add-to-cart");
       if (!addToCartBtn) return;
 
