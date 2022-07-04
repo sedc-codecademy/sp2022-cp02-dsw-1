@@ -73,6 +73,7 @@ export const counterPlus = (view) => {
   plusButtons.forEach((plusButton) => {
     plusButton.addEventListener("click", (ev) => {
       const id = ev.target.classList[2];
+      console.log("id", id)
       if (document.getElementById(`counter${id}`)) {
         let numberFromProduct = parseInt(
           document.getElementById(`counter${id}`).innerHTML
@@ -109,6 +110,7 @@ export const counterMinus = (view) => {
   minusButtons.forEach((minusButton) => {
     minusButton.addEventListener("click", (ev) => {
       const id = ev.target.classList[2];
+      console.log("ID".id)
       if (document.getElementById(`counter${id}`)) {
         let numberFromProduct = parseInt(
           document.getElementById(`counter${id}`).innerHTML
@@ -171,8 +173,8 @@ export const shippingPrice = () => {
         selectedOption === "standard"
           ? 5
           : selectedOption === "express"
-          ? 10
-          : null;
+            ? 10
+            : null;
       let updatedPrice = (selectedShippingPrice + totalPrice).toFixed(2);
       document.querySelector(
         ".total-order-price"
