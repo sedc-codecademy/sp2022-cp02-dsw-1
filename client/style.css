@@ -996,7 +996,7 @@ footer {
 }
 .singleProduct__custom_img {
 	height: 700px;
-	width: 500px;
+	width: fit-content;
 	border-radius: 0.4px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	object-fit: cover;

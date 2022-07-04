@@ -183,9 +183,9 @@ export default class ProductDetailsView {
       <section class="py-5">
         <div class="container px-4 px-lg-5">
           <div class="row gx-4 gx-lg-5 align-items-center">
-            <div style="text-align: center;" class="col-md-6 img-fluid">
+            <div class="col-md-6 img-fluid">
               <img 
-                class="mb-5 mb-md-0 singleProduct__custom_img"
+                class="mb-5 mb-md-0 singleProduct__custom_img" width="1500"
                 src="${image}"
                 alt="${name}"
               />
