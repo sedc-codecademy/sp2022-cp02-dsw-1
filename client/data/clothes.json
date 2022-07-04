@@ -21,7 +21,7 @@
 		"brand": "Bershka",
 		"gender": "female",
 		"sale": false,
-		"stock": 12,
+		"stock": null,
 		"discountPrice": null,
 		"size": [ "xs", "s", "m" ],
 		"description": "Designed for the jet-setter in mind, our shirt is the ideal blend of comfort and style. Built for the man who’s in demand, this classic design will keep you looking presentable on the go, with a gentle fabric for all-day comfort. Because you won’t perform at your best if you’re irritated by your clothing. Our shirt is a sleek take on a well-loved classic featuring a tried-and-tested spread collar and a slim fit styling.",
@@ -36,7 +36,7 @@
 		"gender": "female",
 		"sale": false,
 		"discountPrice": null,
-		"stock": null,
+		"stock": 12,
 		"size": [ "xs", "l", "xl" ],
 		"description": "Designed for the jet-setter in mind, our shirt is the ideal blend of comfort and style. Built for the man who’s in demand, this classic design will keep you looking presentable on the go, with a gentle fabric for all-day comfort. Because you won’t perform at your best if you’re irritated by your clothing. Our shirt is a sleek take on a well-loved classic featuring a tried-and-tested spread collar and a slim fit styling.",
 		"image": "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
@@ -372,7 +372,7 @@
 		"gender": "male",
 		"sale": false,
 		"discountPrice": null,
-		"stock": 5,
+		"stock": null,
 		"size": [ "xs", "s", "m", "l", "xl" ],
 		"description": "Designed for the jet-setter in mind, our shirt is the ideal blend of comfort and style. Built for the man who’s in demand, this classic design will keep you looking presentable on the go, with a gentle fabric for all-day comfort. Because you won’t perform at your best if you’re irritated by your clothing. Our shirt is a sleek take on a well-loved classic featuring a tried-and-tested spread collar and a slim fit styling.",
 		"image": "https://images.unsplash.com/photo-1507081323647-4d250478b919?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"

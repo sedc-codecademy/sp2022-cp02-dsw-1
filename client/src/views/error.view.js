@@ -7,7 +7,7 @@ export default class ErrorView {
             <div class="error">
                 
                 
-               <h3>Something went wrong</h3>
+               <h3 class='error-title'>Something went wrong</h3>
                     <p>Please try again</p>
             </div>
             <div class="stack-container-error">
