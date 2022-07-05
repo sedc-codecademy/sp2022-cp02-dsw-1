@@ -1,5 +1,10 @@
-import { parseRequestUrl, getAllProducts, reveal, navbarCounter } from "./utils/utils.js";
-import { getCartItems } from "./local-storage"
+import {
+  parseRequestUrl,
+  getAllProducts,
+  reveal,
+  navbarCounter,
+} from "./utils/utils.js";
+import { getCartItems } from "./local-storage";
 import HomepageView from "./views/homepage.view.js";
 import ContactView from "./views/contact.view.js";
 import CartView from "./views/cart.view.js";
@@ -15,7 +20,8 @@ import FilteredProductsView from "./views/filtered-products.view.js";
 import SearchFilteredProductsView from "./views/search-filtered-products.view.js";
 import RegisterView from "./views/register.view.js";
 import ErrorView from "./views/error.view.js";
-import TeamView  from "./views/team.view.js";
+import TeamView from "./views/team.view.js";
+import TermsAndConditions from "./views/terms-and-conditions.view.js";
 const routes = {
   "/": HomepageView,
   "/search/:id": SearchFilteredProductsView,
@@ -36,8 +42,9 @@ const routes = {
   // "/product-details": ProductDetailsView
   "/faq": FaqView,
   "/register": RegisterView,
-  "/error" :ErrorView,
-  "/team" :TeamView
+  "/error": ErrorView,
+  "/team": TeamView,
+  "/terms-and-conditions": TermsAndConditions,
 };
 
 export default class App {

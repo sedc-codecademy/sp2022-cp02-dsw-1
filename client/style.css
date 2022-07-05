@@ -734,6 +734,13 @@ footer {
 	background-color: #00aff0;
 	color: inherit;
 }
+.oryx-footer-text {
+	text-decoration: none;
+	color: var(--white);
+}
+.oryx-footer-text:hover {
+	color: var(--white);
+}
 @media only screen and (max-width: 1199.2px) {
 	.footer-div-img {
 		width: 15rem;
@@ -967,6 +974,10 @@ footer {
 /* ***************************************************** */
 /* ******************    Products    ******************* */
 /* ***************************************************** */
+.filtered-buttons-section {
+	display: flex;
+	justify-content: center;
+}
 .filtered_buttons_products {
 	display: flex;
 	justify-content: center;
@@ -987,6 +998,16 @@ footer {
 }
 .btn-category-filter:hover {
 	box-shadow: inset 0px -4px 20px 4px var(--sage);
+}
+@media only screen and (min-width: 350px) {
+	.btn-category-filter {
+		flex: 0 0 26%;
+	}
+}
+@media only screen and (min-width: 850px) {
+	.btn-category-filter {
+		flex: 0 0 0;
+	}
 }
 /* ***************************************************** */
 /* ***************  Single Product Details    **************** */
@@ -1631,12 +1652,11 @@ footer {
 	transition: 0.3s ease;
 }
 .error {
-	width: 100%;
-	padding: 40px;
+	margin-top: 0;
 	text-align: center;
 }
 .error h1 {
-	font-size: 125px;
+	font-size: 300px;
 	padding: 0;
 	margin: 0;
 	font-weight: 700;
@@ -1644,7 +1664,7 @@ footer {
 .error h2 {
 	margin: -30px 0 0 0;
 	padding: 0px;
-	font-size: 47px;
+	font-size: 1000px;
 	letter-spacing: 12px;
 }
 .perspec {

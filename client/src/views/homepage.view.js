@@ -82,7 +82,7 @@ export default class HomepageView {
                     <p>
                       ORYX caters to thoughtful shoppers who appreciate unique designs and top quality pieces
                       you just can’t find anywhere else. We are constantly curating fresh new collections
-                      and looking for the next big thing our customers will love. Founded in London in 2016, 
+                      and looking for the next big thing our customers will love. Founded in Skopje, Macedonia in 2016, 
                       we are proud to be your Online Clothing Shop that you can rely on for our expert service
                       and care.
                     </p>
