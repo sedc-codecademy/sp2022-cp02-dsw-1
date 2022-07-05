@@ -50,20 +50,18 @@ export default class FilteredProductsView {
     });
 
     return `
-    <div class="filtered_buttons_products mt-5">
-    ${filteredButtons}
-   
-    </div>
-    </div>
+            <section class="filtered-buttons-section container">
+              <div class="filtered_buttons_products mt-5">
+                ${filteredButtons}
+              </div>
+            </section>
             <section style="width: 100% ;" class="py-5">
-
                 <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5 mt-5'>
                     <div class="row__products gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
                         ${filteredData}
                     </div>
                 </div>
                 <div class="container load-more-btn"><a href="#" id="loadMore"><button type="button" class="btn btn-outline-light btn-dark btn-create-new">Load More</button></a></div>
-               
             </section>    
               
        `;

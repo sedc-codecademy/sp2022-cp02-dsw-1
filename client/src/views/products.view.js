@@ -45,10 +45,11 @@ export default class ProductsView {
       });
 
       return `
-          <div class="filtered_buttons_products mt-5">
-          ${filteredButtons}
-         
-          </div>
+          <section class="filtered-buttons-section container">
+            <div class="filtered_buttons_products mt-5">
+              ${filteredButtons}
+            </div>
+          </section>
               <section style="width: 100% ;" class="py-5">
 
                 <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5 mt-5'>
