@@ -1,6 +1,6 @@
 export default class TeamView {
     static render() {
-      return`
+        return `
       
       <section class="h-100 gradient-form mt-5">
     <div class="container py-5 h-100 shadow-lg p-3 mb-5 bg-body rounded">
@@ -16,7 +16,7 @@ export default class TeamView {
                   <div class="row  team-wrapper">
                       <div class="col-md-4 d-flex">
                           <div class="card mb-3">
-                              <img class="card-img-top" src="images/team/vedra.jpg" alt="vedra">
+                              <img class="card-img-top" src="../images/team/vedra.jpg" alt="vedra">
                               <div class="card-body py-3">
                                   <h5 class="mb-0">Vedra Stojanovska</h5>
                                   
@@ -28,7 +28,7 @@ export default class TeamView {
                       </div>
                       <div class="col-md-4 d-flex">
                           <div class="card mb-3">
-                              <img class="card-img-top" src="images/team/zoran.jpg" alt="zoran">
+                              <img class="card-img-top" src="../images/team/zoran.jpg" alt="zoran">
                               <div class="card-body py-3">
                                   <h5 class="mb-0">Zoran Karbev</h5>
                                   
@@ -40,7 +40,7 @@ export default class TeamView {
                       </div>
                       <div class="col-md-4 d-flex">
                           <div class="card mb-3">
-                              <img class="card-img-top" src="images/team/Linkedin_Pic.jpg" alt="boris">
+                              <img class="card-img-top" src="../images/team/Linkedin_Pic.jpg" alt="boris">
                               <div class="card-body py-3">
                                   <h5 class="mb-0">Boris Stevanovic</h5>
                                   
@@ -52,7 +52,7 @@ export default class TeamView {
                       </div>
                       <div class="col-md-4 d-flex">
                           <div class="card mb-3">
-                              <img class="card-img-top" src="images/team/acko2.jpg" alt="acko">
+                              <img class="card-img-top" src="../images/team/acko2.jpg" alt="acko">
                               <div class="card-body py-3">
                                   <h5 class="mb-0">Aleksandar Ichev</h5>
                                 
@@ -64,7 +64,7 @@ export default class TeamView {
                       </div>
                       <div class="col-md-4 d-flex">
                           <div class="card mb-3">
-                              <img class="card-img-top" src="images/team/IMG_6760.png" alt="anastasija">
+                              <img class="card-img-top" src="../images/team/IMG_6760.png" alt="anastasija">
                               <div class="card-body py-3">
                                   <h5 class="mb-0">Anstasija Dimkovska</h5>
                                   
@@ -76,7 +76,7 @@ export default class TeamView {
                       </div>
                       <div class="col-md-4 d-flex">
                           <div class="card mb-3">
-                              <img class="card-img-top" src="images/team/hacci1.jpeg" alt="hacci">
+                              <img class="card-img-top" src="../images/team/hacci1.jpeg" alt="hacci">
                               <div class="card-body py-3">
                                   <h5 class="mb-0">Hacci Korbayram</h5>
                                 
@@ -96,4 +96,5 @@ export default class TeamView {
     </div>
     </div>
   </section>
-      `}}
+      `}
+}
