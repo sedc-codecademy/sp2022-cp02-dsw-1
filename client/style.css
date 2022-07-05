@@ -1652,8 +1652,6 @@ footer {
 	transition: 0.3s ease;
 }
 .error {
-	/* width: 400px; */
-	/* padding: 40px; */
 	margin-top: 0;
 	text-align: center;
 }
@@ -1776,4 +1774,9 @@ footer {
 .team-wrapper {
 	display: flex;
 	width: 150%;
+}
+.team-view_img {
+	max-width: 100%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
 }
