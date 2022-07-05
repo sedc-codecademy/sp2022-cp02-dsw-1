@@ -63,7 +63,7 @@ export default class CartView {
         .toFixed(2)}</div>
             </div>
             <form class="cart__summary__form">
-              <p>SHIPPING</p>
+              <p>SHIPPING*</p>
               <select class="shipping-options" required>
                 <option value="" disabled selected>Delivery</option>
                 <option value="standard" class="text-muted">Standard - $5.00</option>
@@ -81,6 +81,8 @@ export default class CartView {
             <a href="/#/order" class="order-now-link link-light">
               <button class="cart__summary__form__btn mb-4">ORDER NOW</button>
             </a>
+            <div class="shipping__error-message mt-3 mb-3 fs-6">* Select delivery method
+            </div>
           </div>
         </div >
       </div >

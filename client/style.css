@@ -974,7 +974,12 @@ footer {
 /* ***************************************************** */
 /* ******************    Products    ******************* */
 /* ***************************************************** */
+.filtered-buttons-section {
+	display: flex;
+	justify-content: center;
+}
 .filtered_buttons_products {
+
   display: flex;
   justify-content: center;
   gap: 0.5em;
@@ -991,9 +996,20 @@ footer {
   -webkit-transition: ease-out 0.4s;
   -moz-transition: ease-out 0.4s;
   transition: ease-out 0.4s;
+
 }
 .btn-category-filter:hover {
   box-shadow: inset 0px -4px 20px 4px var(--sage);
+}
+@media only screen and (min-width: 350px) {
+	.btn-category-filter {
+		flex: 0 0 26%;
+	}
+}
+@media only screen and (min-width: 850px) {
+	.btn-category-filter {
+		flex: 0 0 0;
+	}
 }
 /* ***************************************************** */
 /* ***************  Single Product Details    **************** */
@@ -1642,9 +1658,11 @@ footer {
   transition: 0.3s ease;
 }
 .error {
+
   width: 400px;
   padding: 40px;
   text-align: center;
+
 }
 .error h1 {
   font-size: 125px;

@@ -4,6 +4,8 @@ export default class FilteredProductsView {
     console.log("ID", id);
     const mainCategory =
       resource === "men" ? "male" : resource === "women" ? "female" : "sale";
+    const categoryHeader =
+      resource === "men" ? "MEN'S COLLECTION" : resource === "women" ? "WOMEN'S COLLECTION" : "COLLECTION ON SALE";
     console.log("Category", mainCategory);
     const products = await data;
     const filteredData = products
@@ -50,20 +52,21 @@ export default class FilteredProductsView {
     });
 
     return `
-    <div class="filtered_buttons_products mt-5">
-    ${filteredButtons}
-   
-    </div>
-    </div>
+            <div class="col">
+              <h2 class="text-center homepage__offers_H2 mt-4 mb-2 fs-1">${categoryHeader}</h2>
+            </div>
+            <section class="filtered-buttons-section container">
+              <div class="filtered_buttons_products mt-2">
+                ${filteredButtons}
+              </div>
+            </section>
             <section style="width: 100% ;" class="py-5">
-
-                <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5 mt-5'>
-                    <div class="row__products gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
-                        ${filteredData}
-                    </div>
+              <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5'>
+                <div class="row__products gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
+                  ${filteredData}
                 </div>
-                <div class="container load-more-btn"><a href="#" id="loadMore"><button type="button" class="btn btn-outline-light btn-dark btn-create-new">Load More</button></a></div>
-               
+              </div>
+              <div class="container load-more-btn"><a href="#" id="loadMore"><button type="button" class="btn btn-outline-light btn-dark btn-create-new">Load More</button></a></div>
             </section>    
               
        `;
