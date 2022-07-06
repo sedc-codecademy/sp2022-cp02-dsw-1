@@ -48,14 +48,14 @@ export default class ProductsView {
 
       return `
               <div class="col">
-                <h2 class="text-center homepage__offers_H2 mt-4 mb-2 fs-1">${categoryHeader}</h2>
+                <h2 class="text-center homepage__offers_H2 mt-4 mt-lg-5 mb-2 fs-1">${categoryHeader}</h2>
               </div>
               <section class="filtered-buttons-section container">
                 <div class="filtered_buttons_products mt-2">
                   ${filteredButtons}
                 </div>
               </section>
-              <section style="width: 100% ;" class="py-5">
+              <section style="width: 100% ;" class="pt-3 pt-lg-5">
                 <div style="width: 100% justify-content: center ;" class='container px-4 px-lg-5'>
                     <div class="row__products gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
                         ${filteredProducts}
