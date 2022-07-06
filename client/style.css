@@ -1148,9 +1148,14 @@ footer {
 	background-color: rgba(230, 229, 229, 0.1);
 }
 .cart__close-btn {
-	margin-left: auto;
-	margin-right: 1rem;
 	cursor: pointer;
+	margin-left: auto;
+}
+@media screen and (min-width: 450px) {
+	.cart__close-btn {
+		/* margin-left: auto; */
+		margin-right: 1rem;
+	}
 }
 .shopping-cart__img {
 	width: 6rem;
