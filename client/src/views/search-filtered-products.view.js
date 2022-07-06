@@ -77,7 +77,7 @@ export default class SearchFilteredProductsView {
           </div>
         </div>
       </section>
-      <section class="homepage-middle-section container py-3">
+      <section class="homepage-middle-section container pt-3">
       <div class="container">
         <div class="row  justify-content-center">
           <div class="col">
