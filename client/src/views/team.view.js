@@ -19,8 +19,9 @@ export default class TeamView {
                                         <h5 class="mt-2 mb-0">VEDRA STOJANOVSKA</h5>
                                         <p class="mb-0">Web Developer</p>
                                     </div>
-                                    <div class="card-footer pt-0 border-top-0">
-                                    <a href="#">email@email.com</a>
+                                    <div class="team-view-container ">
+                                    <a href="https://www.linkedin.com/in/vedra-stojanovska-339b1b1b3/" target="_blank" class="fab fa-linkedin-in social-links-team-view"></a>
+                                    <a href="mailto: vedrastojanovska@gmail.com" target="_blank" class="fa fa-envelope social-links-team-view"></a>
                                     </div>
                                 </div>
                             </div>
@@ -28,13 +29,14 @@ export default class TeamView {
                             <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
                                 <div class="card mb-3">
                                     <img class="card-img-top team-view_img" src="../images/team/zoran.jpg" alt="zoran">
-                                    <div class="card-body py-3">
+                                    <div class="card-body pt-3">
                                         <h5 class="mt-2 mb-0">ZORAN KARBEV</h5>
                                         <p class="mb-0">Web Developer & Designer</p>                                      
                                     </div>
-                                    <div class="card-footer pt-0 border-top-0">
-                                        <a href="#">email@email.com</a>
-                                    </div>
+                                    <div class="team-view-container ">
+                                    <a href="https://www.linkedin.com/in/zoran-karbev/" target="_blank"class="fab fa-linkedin-in social-links-team-view"></a>
+                                    <a href="mailto: zorankarbev@gmail.com" target="_blank" class="fa fa-envelope social-links-team-view"></a>
+                                        </div>
                                 </div>
                             </div>
                             
@@ -45,8 +47,10 @@ export default class TeamView {
                                         <h5 class="mt-2 mb-0">BORIS STEFANOVIC</h5>
                                         <p class="mb-0">Web Developer</p>                                         
                                     </div>
-                                    <div class="card-footer pt-0 border-top-0">
-                                        <a href="#">email@email.com</a>
+                                    <div class="team-view-container ">
+                                      <a href="https://www.linkedin.com/in/boris-stevanovic-715a801b7/" target="_blank" class="fab fa-linkedin-in social-links-team-view"></a>
+                                      <a href="mailto: borisstevanovic0810@gmail.com" target="_blank" class="fa fa-envelope social-links-team-view"></a>
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -56,10 +60,12 @@ export default class TeamView {
                                     <img class="card-img-top team-view_img" src="../images/team/acko2.jpg" alt="acko">
                                     <div class="card-body py-3">
                                         <h5 class="mt-2 mb-0">ALEKSANDAR ICHEV</h5>
-                                        <p class="mb-0">Web Developer</p>                                     
+                                        <p class="mb-0">MERN Developer</p>                                     
                                     </div>
-                                    <div class="card-footer pt-0 border-top-0">
-                                        <a href="#">email@email.com </a>
+                                    <div class="team-view-container">
+                                       <a href="#" target="_blank" class="fab fa-linkedin-in social-links-team-view"></a>
+                                       <a href="mailto: ackowwokca@gmail.com" target="_blank" class="fa fa-envelope social-links-team-view"></a>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -71,8 +77,10 @@ export default class TeamView {
                                         <h5 class="mt-2 mb-0">ANASTASIJA DIMKOVSKA</h5>
                                         <p class="mb-0">Web Developer</p>                                         
                                     </div>
-                                    <div class="card-footer pt-0 border-top-0">
-                                        <a href="#">email@email.com</a>
+                                    <div class="team-view-container ">
+                                      <a href="https://www.linkedin.com/in/anastasija-dimkovska-3b3850197/" target="_blank" class="fab fa-linkedin-in social-links-team-view"></a>
+                                      <a href="mailto: anastasijad53@gmail.com" target="_blank" class="fa fa-envelope social-links-team-view"></a>
+                                   
                                     </div>
                                 </div>
                             </div>
@@ -84,8 +92,10 @@ export default class TeamView {
                                         <h5 class="mt-2 mb-0">HACCI KORBAYRAM</h5>
                                         <p class="mb-0">Web Developer</p>                                     
                                     </div>
-                                    <div class="card-footer pt-0 border-top-0">
-                                        <a href="#">email@email.com </a>
+                                    <div class="team-view-container "">
+                                       <a href="https://www.linkedin.com/in/hacci-korbayram-147987240/" target="_blank" class="fab fa-linkedin-in social-links-team-view"></a>
+                                       <a href="mailto:hacci_mk@hotmail.com" target="_blank" class="fa fa-envelope social-links-team-view"></a>
+                                    
                                     </div>
                                 </div>
                             </div>
@@ -97,8 +107,10 @@ export default class TeamView {
                                         <h5 class="mt-2 mb-0">DIMITAR EFTIMOV</h5>
                                         <p class="mb-0">Web Developer</p>                                     
                                     </div>
-                                    <div class="card-footer pt-0 border-top-0">
-                                        <a href="#">email@email.com </a>
+                                    <div class="team-view-container ">
+                                       <a href="#" target="_blank" class="fab fa-linkedin-in social-links-team-view"></a>
+                                       <a href="mailto: dimitar_eftimov@hotmail.com" target="_blank" class="fa fa-envelope social-links-team-view"></a>
+                                       
                                     </div>
                                 </div>    
                             </div>
