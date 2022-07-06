@@ -545,7 +545,7 @@ h6 {
 	font-weight: 700;
 	font-size: 14px;
 	padding: 0.1em;
-	top: -0.7em;
+	top: -0.6em;
 	right: -0.6em;
 	z-index: 9999;
 }
@@ -1301,15 +1301,40 @@ footer {
 	display: none;
 	animation: slidein 0.7s;
 }
-.bi-emoji-frown::before {
-	padding-left: 0.6em;
-}
 @keyframes slidein {
 	0% {
 		transform: translateX(350px);
 	}
 	100% {
 		transform: translateX(0px);
+	}
+}
+.cart-container {
+	position: relative;
+}
+.quantity-cart__error-message {
+	position: absolute;
+	background-color: var(--jazzberry-jam);
+	color: var(--cultured);
+	text-align: center;
+	font-size: 12px;
+	border-radius: 3px;
+	display: none;
+	animation: slideincart 1.2s;
+	bottom: 120%;
+	z-index: 1;
+	padding: 0.5em 1em;
+	animation: slidein 1.2s;
+}
+.bi-emoji-frown::before {
+	padding-left: 0.6em;
+}
+@keyframes slideincart {
+	0% {
+		transform: translateX(4000%);
+	}
+	100% {
+		transform: translateY(0%);
 	}
 }
 /* ***************************************************** */
