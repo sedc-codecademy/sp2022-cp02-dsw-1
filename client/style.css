@@ -800,6 +800,13 @@ footer {
 		transform: translateX(160px);
 	}
 }
+.our-partners a {
+	text-decoration: none;
+}
+.partner-logos {
+	max-width: 100% !important;
+	height: auto !important;
+}
 /* ***************************************************** */
 /* *******************    Homepage    ****************** */
 /* ***************************************************** */
