@@ -49,7 +49,7 @@ export default class RegisterView {
                 <div class="text-company">
                 <object data="images/logo/white-logo.svg" width="100em" height="100em"> </object>
                   <h4 class="mb-4">We are more than just a company</h4>
-                  <p class="small mb-0">ORYX caters to thoughtful shoppers who appreciate unique designs and top quality pieces you just can’t find anywhere else. We are constantly curating fresh new collections and looking for the next big thing our customers will love. Founded in London in 2016, we are proud to be your Online Clothing Shop that you can rely on for our expert service and care.</p>
+                  <p class="small mb-0">ORYX caters to thoughtful shoppers who appreciate unique designs and top quality pieces you just can’t find anywhere else. We are constantly curating fresh new collections and looking for the next big thing our customers will love. Founded in Skopje, Macedonia in 2016, we are proud to be your Online Clothing Shop that you can rely on for our expert service and care.</p>
                     </div>
                 </div>
               </div>
