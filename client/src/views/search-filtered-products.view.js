@@ -57,7 +57,7 @@ export default class SearchFilteredProductsView {
       return `<section style="width: 100% ;">
         <div
           style="width: 100% justify-content: center ;"
-          class="container px-4 px-lg-5  div-no-products-found pt-5"
+          class="container px-4 px-lg-5  div-no-products-found pt-3 pt-lg-5"
         >
           <div class="first-line"></div>
           <div class="first-line-children">
@@ -75,13 +75,15 @@ export default class SearchFilteredProductsView {
               <li>Keep your search term simple as our search facility works best with shorter description.</li>
             </ul>
           </div>
+          <div class="second-line"></div>
         </div>
+
       </section>
-      <section class="homepage-middle-section container py-3">
+      <section class="homepage-middle-section container pt-4">
       <div class="container">
         <div class="row  justify-content-center">
           <div class="col">
-            <h2 class="homepage__offers_H2 mb-2 px-4 pb-4 fs-1">YOU MAY ALSO LIKE</h2>
+            <h2 class="homepage__offers_H2 mb-2 px-4 pb-4 fs-1">THE CLOTHES YOU ARE LOOKING FOR</h2>
           </div>
         </div>
         <div class= "mt-3">
