@@ -3,10 +3,14 @@ export default class ProductCard {
     return `
       <div class="col mb-5 card-container" data-id="${_id}">
         <div class="product-card h-100">
-          ${sale ? `<!-- Sale badge-->
+          ${
+            sale
+              ? `<!-- Sale badge-->
           <div class="product-card__badge text-white position-absolute" style="top: 0.5rem; right: 0rem">
             Sale
-          </div>` : ""}
+          </div>`
+              : ""
+          }
           <a href="/#/product/${_id}">
             <img class="card-img-top" src="${image}" alt="${name}"/>
           </a>
@@ -19,9 +23,11 @@ export default class ProductCard {
               <h6>${brand}</h6>
               <!-- Product price-->
       
-              $${discountPrice ?
-        `${discountPrice} <span class="text-muted text-decoration-line-through"><small>$${price}</small></span>`
-        : price}
+              $${
+                discountPrice
+                  ? `${discountPrice} <span class="text-muted text-decoration-line-through"><small>$${price}</small></span>`
+                  : price
+              }
               
             </div>
           </div>

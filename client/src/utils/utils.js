@@ -72,8 +72,13 @@ export const counterPlus = (view) => {
 
   plusButtons.forEach((plusButton) => {
     plusButton.addEventListener("click", (ev) => {
+
       const id = ev.target.classList[2];
-      console.log("id", id)
+      const quantityErrorMessage = document.getElementById(`${id}-error-quantity`);
+      if (quantityErrorMessage) {
+        quantityErrorMessage.style.display = "none";
+      }
+
       if (document.getElementById(`counter${id}`)) {
         let numberFromProduct = parseInt(
           document.getElementById(`counter${id}`).innerHTML
@@ -95,11 +100,13 @@ export const counterPlus = (view) => {
             rerender(view);
           }
           if (helper) {
-            alert("No more available in store :(");
+            quantityErrorMessage.style.display = "block";
+            // alert("No more available in store :(");
             return;
           }
         }
       }
+
     });
   });
 };
@@ -110,7 +117,6 @@ export const counterMinus = (view) => {
   minusButtons.forEach((minusButton) => {
     minusButton.addEventListener("click", (ev) => {
       const id = ev.target.classList[2];
-      console.log("ID".id)
       if (document.getElementById(`counter${id}`)) {
         let numberFromProduct = parseInt(
           document.getElementById(`counter${id}`).innerHTML
@@ -154,8 +160,18 @@ export const shoppingCartBackRoute = () => {
 export const shippingPrice = () => {
   const shippingOptions = document.querySelector(".shipping-options");
   // if (!shippingOptions) return;
+  // const quantityErrorMessage = document.getElementById(`${id}-error-quantity`)
+  const quantityErrorMessage = document.querySelector(".quantity-cart__error-message");
+  if (quantityErrorMessage) {
+    quantityErrorMessage.style.display = "none";
+  }
   if (shippingOptions) {
     shippingOptions.addEventListener("change", (e) => {
+      const quantityErrorMessage = document.querySelector(".quantity-cart__error-message");
+      if (quantityErrorMessage) {
+        quantityErrorMessage.style.display = "none";
+      }
+
       const cartItems = getCartItems();
       if (cartItems.length < 1) return;
       let filteredPrice = cartItems.map((x) => {

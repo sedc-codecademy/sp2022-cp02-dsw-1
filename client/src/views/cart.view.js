@@ -9,7 +9,6 @@ import {
   shippingPrice
 } from "../utils/utils";
 
-
 export default class CartView {
   static async after_render() {
     counterPlus(CartView);
@@ -40,8 +39,7 @@ export default class CartView {
                   ${cartItems.length > 0
         ? `${cartItems.reduce((a, c) => a + c.quantity, 0)} 
                   items`
-        : "Empty"
-      } 
+        : "Empty"} 
                 </div>
               </div >
             </div >
