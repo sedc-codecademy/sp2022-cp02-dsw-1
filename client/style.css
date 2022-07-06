@@ -232,6 +232,10 @@ h6 {
   background-color: var(--jazzberry-jam);
   color: var(--white);
 }
+.btn-outline:focus {
+  background-color: var(--jazzberry-jam);
+  color: var(--white);
+}
 .form-control-input::placeholder {
   color: transparent;
   font-size: 1em;
@@ -1681,6 +1685,41 @@ footer {
   -webkit-animation: tiltcard 0.5s ease-in-out 1s forwards;
   animation: tiltcard 0.5s ease-in-out 1s forwards;
   position: absolute;
+}
+.div-no-products-found {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.first-line {
+  background-color: var(--jazzberry-jam);
+  height: 0.2vh;
+}
+.first-line-children {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.first-line-children i {
+  color: var(--jazzberry-jam);
+}
+.first-line-children h3 {
+  margin-bottom: 0px;
+}
+.second-line {
+  background-color: var(--jazzberry-jam);
+  height: 0.3vh;
+}
+.second-line-children {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.second-line-children ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 @-webkit-keyframes tiltcard {
   0% {
