@@ -5,10 +5,12 @@ export default class HomepageView {
     const random12Products = [...Array(products.length).keys()]
       .sort(() => 0.5 - Math.random())
       .slice(0, 12)
-      .map(index => products[index]);
-    const random12ProductCards = random12Products.map((product) => {
-      return ProductCard.render(product);
-    }).join("");
+      .map((index) => products[index]);
+    const random12ProductCards = random12Products
+      .map((product) => {
+        return ProductCard.render(product);
+      })
+      .join("");
 
     $(document).ready(function () {
       $(".card-container").slice(0, 24).show();
@@ -21,6 +23,41 @@ export default class HomepageView {
         if ($(".card-container:hidden").length === 0) {
           $("#loadMore").hide();
         }
+      });
+    });
+
+    $(document).ready(function () {
+      $(".items").slick({
+        infinite: true,
+        speed: 800,
+        autoplay: false,
+        autoplaySpeed: 4000,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+          {
+            breakpoint: 767.2,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 991.2,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 1320,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+            },
+          },
+        ],
       });
     });
 
@@ -101,6 +138,90 @@ export default class HomepageView {
                   </div>  
               </div>
           </div>
+        </section>
+        <section>
+            <div class="container testimonial-container reveal">
+                <div class="row mb-5 justify-content-center reveal">
+                  <div class="col">
+                    <h2 class="text-center homepage__offers_H2 mt-4 mb-2">TURNING VISITORS INTO CUSTOMERS</h2>
+                  </div>
+                </div>
+              <div class="items">  
+  
+  
+                  <div class="testimonial">
+                        <p class="description">
+                        My experience with Oryx was positive from beginning to end. No hesitation. I would highly recommend them to anyone attending a wedding!
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="../images/testimonials/person-one.jpg" alt="" style="height: 100px;"></div>
+                            <h3 class="title">Tao Baozhai</h3>
+                            <span class="post">LAWYER</span>
+                        </div>
+                  </div>
+
+                  <div class="testimonial">
+                        <p class="description">
+                        If natural fabrics and bohemian silhouettes are your thing, look no further than Oryx. Their sweet, classic designs are nothing short of dreamy.
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="../images/testimonials/person-two.jpg" alt="" style="height: 100px;"></div>
+                            <h3 class="title">Ella Marshall</h3>
+                            <span class="post">ACCOUTANT</span>
+                        </div>
+                  </div>
+
+                  <div class="testimonial">
+                        <p class="description">
+                        I have only good things to say about these guys!. They are really easy to communicate and discuss briefs with and honest about their products.
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="../images/testimonials/person-three.jpg" alt="" style="height: 100px;"></div>
+                            <h3 class="title">Roy Vanderlon</h3>
+                            <span class="post">SOFTWARE DEVELOPER</span>
+                        </div>
+                  </div>
+
+
+                  <div class="testimonial">
+                        <p class="description">
+                        We have been using Oryx for several years and will continue to do so, for all  of our  needs and the service we have received from the team is second to none.
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="../images/testimonials/person-four.jpg" alt="" style="height: 100px;"></div>
+                            <h3 class="title">Josh Williamson</h3>
+                            <span class="post">ARTIST</span>
+                        </div>
+                  </div>
+
+
+
+                  <div class="testimonial">
+                        <p class="description">
+                        If natural fabrics and bohemian silhouettes are your thing, look no further than Oryx. Their sweet, classic designs are nothing short of dreamy.
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="../images/testimonials/person-five.jpg" alt="" style="height: 100px;"></div>
+                            <h3 class="title">Ugunu Nasaki</h3>
+                            <span class="post">TEACHER</span>
+                        </div>
+                  </div>
+
+
+                    <div class="testimonial">
+                      <p class="description">
+                      My experience with Oryx was positive from beginning to end. No hesitation. I would highly recommend them to anyone attending a wedding!
+                      </p>
+                      <div class="testimonial-content">
+                          <div class="pic"><img src="../images/testimonials/person-six.jpg" alt="" style="height: 100px;"></div>
+                          <h3 class="title">Monica Doe</h3>
+                          <span class="post">NURSE</span>
+                      </div>
+                  </div>
+   
+
+              </div> 
+            </div>
         </section>
         <!--End of Homepage About -->
         `;
