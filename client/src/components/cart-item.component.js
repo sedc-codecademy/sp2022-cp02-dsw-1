@@ -14,7 +14,7 @@ export default class CartItem {
     }) {
         return `
                 <div class="row">
-                    <div class="row cart__main align-items-center">
+                    <div class="row cart__main align-items-center ">
                         <div class="col-2">
                             <a href="/#/product/${itemId}" class="shopping-cart__first-link">
                                 <img class="shopping-cart__img" src="${image}" alt="${name}">
@@ -29,7 +29,7 @@ export default class CartItem {
                             </div>
                             <div class="row text-muted size${itemId}">Size: ${size} </div>
                         </div>
-                        <div class="col d-flex justify-content-center cart-container">
+                        <div class="col d-flex justify-content-center cart-container py-0">
                             <button class="page-link">
                                 <i class="fas fa-minus ${itemId}"></i>
                             </button>
@@ -39,7 +39,7 @@ export default class CartItem {
                             </button> 
                             <div class="quantity-cart__error-message" id="${itemId}-error-quantity"">No more items available in store<i class="bi bi-emoji-frown"></i></div>
                         </div>
-                        <div class="col d-flex">$${discountPrice
+                        <div class="col d-flex ps-0">$${discountPrice
                 ? (discountPrice * quantity).toFixed(2)
                 : (price * quantity).toFixed(2)
             }

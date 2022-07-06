@@ -1189,7 +1189,7 @@ footer {
 .cart__back-to-shop-link:hover,
 .cart__back-to-shop-link:focus,
 .cart__back-to-shop-link:visited {
-	margin-top: 1.5rem;
+	/* margin-top: 1.5rem; */
 	color: var(--black-olive);
 	text-decoration: none !important;
 }
