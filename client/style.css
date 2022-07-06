@@ -1085,6 +1085,7 @@ footer {
 .load-more-btn {
 	display: flex;
 	justify-content: center;
+	padding-bottom: 2.7em;
 }
 .load-more-btn button:focus {
 	background-color: #212529;
@@ -1707,7 +1708,7 @@ footer {
 }
 .second-line {
 	background-color: var(--jazzberry-jam);
-	height: 0.3vh;
+	height: 0.2vh;
 }
 .second-line-children {
 	display: flex;
@@ -1830,7 +1831,6 @@ footer {
 	/* padding-top: 1px; */
 	/* font-size: 5px; */ /* transition: all 0.3s ease 0s; */
 }
-
 .team-view-container {
 	display: flex;
 	flex-direction: row;

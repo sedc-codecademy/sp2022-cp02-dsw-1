@@ -269,7 +269,7 @@ export default class ProductDetailsView {
       <div class="container">
         <div class="row  justify-content-center">
           <div class="col">
-            <h2 class="homepage__offers_H2 mb-2 px-4 pb-4 fs-1">YOU MAY ALSO LIKE</h2>
+            <h2 class="homepage__offers_H2 mb-2 px-4 pb-4 fs-1">EXPLORE YOUR TRUE STYLE</h2>
           </div>
         </div>
         <div class= "mt-3">
