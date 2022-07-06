@@ -30,7 +30,6 @@ export default class ProductDetailsView {
         size: existingProperty || "",
         count: foundProduct.quantity || 1,
       };
-      console.log(existingProperty);
       const addToCartBtn = document.querySelector(".cart__btn-add-to-cart");
       if (!addToCartBtn) return;
 
@@ -41,7 +40,6 @@ export default class ProductDetailsView {
         // const quantityErrorMessage = document.querySelector(".quantity__error-message");
 
         if (sizeErrorMessage) {
-          console.log(sizeErrorMessage);
           sizeErrorMessage.style.display = "none";
         }
 
@@ -60,7 +58,6 @@ export default class ProductDetailsView {
             return;
           }
           foundProduct.quantity = memory.count || 1;
-          console.log(foundProduct);
           cartItems = [...cartItems, foundProduct];
           setCartItems(cartItems);
         }
@@ -78,7 +75,6 @@ export default class ProductDetailsView {
           foundProduct.quantity = memory.count || 1;
           setCartItems((cartItems = [...filtered, foundProduct]));
         }
-        console.log(foundProduct.size);
         document.location.hash = `/cart/${id}`;
       });
 
@@ -104,7 +100,6 @@ export default class ProductDetailsView {
           document.getElementById(`counter${id}`).innerHTML =
             incremented.toString();
         } else {
-          console.log("quantityErrorMessage", quantityErrorMessage)
           quantityErrorMessage.style.display = "block";
           // alert("No more available in store :(");
           return;
@@ -117,7 +112,6 @@ export default class ProductDetailsView {
       minusButton[0].addEventListener("click", () => {
         const quantityErrorMessage = document.querySelector(".quantity__error-message");
         if (quantityErrorMessage) {
-          console.log(quantityErrorMessage);
           quantityErrorMessage.style.display = "none";
         }
         let numberFromProduct = parseInt(
@@ -125,8 +119,6 @@ export default class ProductDetailsView {
         );
         if (numberFromProduct >= 1) {
           let incremented = (numberFromProduct -= 1);
-          console.log("ulazi u ovu svakako");
-          console.log(incremented, typeof incremented);
           document.getElementById(`counter${id}`).innerHTML =
             incremented.toString();
           quantityErrorMessage.style.display = "none";
