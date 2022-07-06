@@ -90,7 +90,7 @@ export default class SearchFilteredProductsView {
           </div>
         </div>
       </div>
-    </section>      
+    </section>;
       `;
     }
   }
