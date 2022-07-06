@@ -17,6 +17,14 @@ export default class SearchFilteredProductsView {
       })
       .join("");
 
+    const random12Products = [...Array(products.length).keys()]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 12)
+      .map(index => products[index]);
+    const random12ProductCards = random12Products.map((product) => {
+      return ProductCard.render(product);
+    }).join("");
+
     $(document).ready(function () {
       $(".card-container").slice(0, 24).show();
       if ($(".card-container").length <= 24) {
@@ -46,10 +54,10 @@ export default class SearchFilteredProductsView {
               
        `;
     } else {
-      return `<section style="width: 100% ; height: 500px" class="py-5">
+      return `<section style="width: 100% ;">
         <div
           style="width: 100% justify-content: center ;"
-          class="container px-4 px-lg-5  div-no-products-found"
+          class="container px-4 px-lg-5  div-no-products-found pt-5"
         >
           <div class="first-line"></div>
           <div class="first-line-children">
@@ -68,7 +76,22 @@ export default class SearchFilteredProductsView {
             </ul>
           </div>
         </div>
-      </section>; `;
+      </section>
+      <section class="homepage-middle-section container py-3">
+      <div class="container">
+        <div class="row  justify-content-center">
+          <div class="col">
+            <h2 class="homepage__offers_H2 mb-2 px-4 pb-4 fs-1">YOU MAY ALSO LIKE</h2>
+          </div>
+        </div>
+        <div class= "mt-3">
+          <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          ${random12ProductCards}
+          </div>
+        </div>
+      </div>
+    </section>      
+      `;
     }
   }
 }
