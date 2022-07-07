@@ -70,7 +70,7 @@ export default class SearchFilteredProductsView {
           <div class="first-line"></div>
           <div class="first-line-children">
           <i class='fas fa-exclamation-circle' style='font-size:48px;'></i>
-          <h3>Please enter your favourite brand or peace of clothing you are looking for </h3>
+          <h3>Please enter your favourite brand or piece of clothing you are looking for </h3>
           </div>
           <div class="second-line"></div>
           <div class="second-line-children">
