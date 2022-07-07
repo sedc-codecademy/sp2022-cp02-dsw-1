@@ -124,7 +124,7 @@ export default class HomepageView {
                         My experience with Oryx was positive from beginning to end. No hesitation. I would highly recommend them to anyone attending a wedding!
                         </p>
                         <div class="testimonial-content">
-                            <div class="pic"><img src="../images/testimonials/person-one.jpg" alt="" style="height: 100px;"></div>
+                            <div class="pic"><img src="../images/testimonial/person-one.jpg" alt="" style="height: 100px;"></div>
                             <h3 class="title">Tao Baozhai</h3>
                             <span class="post">LAWYER</span>
                         </div>
@@ -135,7 +135,7 @@ export default class HomepageView {
                         If natural fabrics and bohemian silhouettes are your thing, look no further than Oryx. Their sweet, classic designs are nothing short of dreamy.
                         </p>
                         <div class="testimonial-content">
-                            <div class="pic"><img src="../images/testimonials/person-two.jpg" alt="" style="height: 100px;"></div>
+                            <div class="pic"><img src="../images/testimonial/person-two.jpg" alt="" style="height: 100px;"></div>
                             <h3 class="title">Ella Marshall</h3>
                             <span class="post">ACCOUTANT</span>
                         </div>
@@ -146,7 +146,7 @@ export default class HomepageView {
                         I have only good things to say about these guys!. They are really easy to communicate and discuss briefs with and honest about their products.
                         </p>
                         <div class="testimonial-content">
-                            <div class="pic"><img src="../images/testimonials/person-three.jpg" alt="" style="height: 100px;"></div>
+                            <div class="pic"><img src="../images/testimonial/person-three.jpg" alt="" style="height: 100px;"></div>
                             <h3 class="title">Roy Vanderlon</h3>
                             <span class="post">SOFTWARE DEVELOPER</span>
                         </div>
@@ -158,7 +158,7 @@ export default class HomepageView {
                         We have been using Oryx for several years and will continue to do so, for all  of our  needs and the service we have received from the team is second to none.
                         </p>
                         <div class="testimonial-content">
-                            <div class="pic"><img src="../images/testimonials/person-four.jpg" alt="" style="height: 100px;"></div>
+                            <div class="pic"><img src="../images/testimonial/person-four.jpg" alt="" style="height: 100px;"></div>
                             <h3 class="title">Josh Williamson</h3>
                             <span class="post">ARTIST</span>
                         </div>
@@ -171,7 +171,7 @@ export default class HomepageView {
                         If natural fabrics and bohemian silhouettes are your thing, look no further than Oryx. Their sweet, classic designs are nothing short of dreamy.
                         </p>
                         <div class="testimonial-content">
-                            <div class="pic"><img src="../images/testimonials/person-five.jpg" alt="" style="height: 100px;"></div>
+                            <div class="pic"><img src="../images/testimonial/person-five.jpg" alt="" style="height: 100px;"></div>
                             <h3 class="title">Ugunu Nasaki</h3>
                             <span class="post">TEACHER</span>
                         </div>
@@ -183,7 +183,7 @@ export default class HomepageView {
                       My experience with Oryx was positive from beginning to end. No hesitation. I would highly recommend them to anyone attending a wedding!
                       </p>
                       <div class="testimonial-content">
-                          <div class="pic"><img src="../images/testimonials/person-six.jpg" alt="" style="height: 100px;"></div>
+                          <div class="pic"><img src="../images/testimonial/person-six.jpg" alt="" style="height: 100px;"></div>
                           <h3 class="title">Monica Doe</h3>
                           <span class="post">NURSE</span>
                       </div>
