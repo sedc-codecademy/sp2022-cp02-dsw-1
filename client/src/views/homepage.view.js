@@ -109,41 +109,11 @@ export default class HomepageView {
           </div>
         </section>
         <!--End of Homepage Middle Section -->
-        <!-- Homepage About  -->
-        <section>
-          <div class="container homepage__about pb-5 d-flex gap-3 reveal">
-              <div class="row justify-content-around">
-                <div class="container col-12 col-lg-6 justify-content-center" >
-                    <h3 class="text-center my-4">WHAT WE ARE ALL ABOUT</h3>
-                    <div class="text-center pl-5">
-                    <p>
-                      ORYX caters to thoughtful shoppers who appreciate unique designs and top quality pieces
-                      you just can’t find anywhere else. We are constantly curating fresh new collections
-                      and looking for the next big thing our customers will love. Founded in Skopje, Macedonia in 2016, 
-                      we are proud to be your Online Clothing Shop that you can rely on for our expert service
-                      and care.
-                    </p>
-                    <p>
-                      Our Mission is to make a difference through our branding by staying ahead of the fashion
-                      trends, defining style and giving customers what they want.
-                    </p>
-                    <p>                    
-                      Our Vision is to change the way our society connects with the fashion industry by 
-                      providing our customers with products that are ethically and responsibly sourced.
-                    </p> 
-                    </div>                  
-                  </div>
-                  <div class="homepage__about__img__div col-12 col-lg-6 d-flex justify-content-center pt-4">
-                    <img class="rounded-1 shadow-lg mb-5 bg-body homepage__about__img" src=https://images.unsplash.com/photo-1531629685690-9137e85a4c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 alt="WHAT WE ARE ALL ABOUT" >
-                  </div>  
-              </div>
-          </div>
-        </section>
         <section>
             <div class="container testimonial-container reveal">
                 <div class="row mb-5 justify-content-center reveal">
                   <div class="col">
-                    <h2 class="text-center homepage__offers_H2 mt-4 mb-2">TURNING VISITORS INTO CUSTOMERS</h2>
+                    <h4 class="text-center homepage__offers_H4 mt-4 mb-2">TURNING VISITORS INTO CUSTOMERS</h4>
                   </div>
                 </div>
               <div class="items">  
@@ -223,6 +193,37 @@ export default class HomepageView {
               </div> 
             </div>
         </section>
+        <!-- Homepage About  -->
+        <section>
+          <div class="container homepage__about pb-5 mt-5 d-flex gap-3 reveal">
+              <div class="row justify-content-around">
+                <div class="container col-12 col-lg-6 justify-content-center" >
+                    <h3 class="text-center my-4">WHAT WE ARE ALL ABOUT</h3>
+                    <div class="text-center pl-5">
+                    <p>
+                      ORYX caters to thoughtful shoppers who appreciate unique designs and top quality pieces
+                      you just can’t find anywhere else. We are constantly curating fresh new collections
+                      and looking for the next big thing our customers will love. Founded in Skopje, Macedonia in 2016, 
+                      we are proud to be your Online Clothing Shop that you can rely on for our expert service
+                      and care.
+                    </p>
+                    <p>
+                      Our Mission is to make a difference through our branding by staying ahead of the fashion
+                      trends, defining style and giving customers what they want.
+                    </p>
+                    <p>                    
+                      Our Vision is to change the way our society connects with the fashion industry by 
+                      providing our customers with products that are ethically and responsibly sourced.
+                    </p> 
+                    </div>                  
+                  </div>
+                  <div class="homepage__about__img__div col-12 col-lg-6 d-flex justify-content-center pt-4">
+                    <img class="rounded-1 shadow-lg mb-5 bg-body homepage__about__img" src=https://images.unsplash.com/photo-1531629685690-9137e85a4c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 alt="WHAT WE ARE ALL ABOUT" >
+                  </div>  
+              </div>
+          </div>
+        </section>
+        
         <!--End of Homepage About -->
         `;
   }
