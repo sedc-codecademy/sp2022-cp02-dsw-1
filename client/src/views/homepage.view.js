@@ -102,7 +102,7 @@ export default class HomepageView {
               </div>
             </div>
             <div class= "mt-3">
-              <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center reveal">
+            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center reveal">
               ${random12ProductCards}
               </div>
             </div>
@@ -110,7 +110,7 @@ export default class HomepageView {
         </section>
         <!--End of Homepage Middle Section -->
         <section>
-            <div class="container testimonial-container reveal">
+            <div class="container testimonial-container reveal mb-0">
                 <div class="row mb-5 justify-content-center reveal">
                   <div class="col">
                     <h4 class="text-center homepage__offers_H4 mt-4 mb-2">TURNING VISITORS INTO CUSTOMERS</h4>
@@ -195,7 +195,7 @@ export default class HomepageView {
         </section>
         <!-- Homepage About  -->
         <section>
-          <div class="container homepage__about pb-5 mt-5 d-flex gap-3 reveal">
+          <div class="container homepage__about pb-3 mt-5 d-flex gap-3 reveal">
               <div class="row justify-content-around">
                 <div class="container col-12 col-lg-6 justify-content-center" >
                     <h3 class="text-center my-4">WHAT WE ARE ALL ABOUT</h3>
