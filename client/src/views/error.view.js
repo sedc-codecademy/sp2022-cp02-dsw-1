@@ -1,6 +1,8 @@
 export default class ErrorView {
     static render() {
-    
+        window.scrollTo({
+            top: 0,
+        });
         return `
             <div class="error">
             <div class="container-error">

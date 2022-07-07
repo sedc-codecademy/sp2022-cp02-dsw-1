@@ -11,12 +11,18 @@ import {
 
 export default class CartView {
   static async after_render() {
+    window.scrollTo({
+      top: 0,
+    });
     counterPlus(CartView);
     counterMinus(CartView);
     shippingPrice();
     deleteCartItem(CartView);
   }
   static async render() {
+    window.scrollTo({
+      top: 0,
+    });
     const cartItems = getCartItems();
     const filteredPrice = cartItems.map((x) => {
       if (x.discountPrice == null) {

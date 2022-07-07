@@ -1,6 +1,9 @@
 export default class TeamView {
-  static render() {
-    return `
+    static render() {
+        window.scrollTo({
+            top: 0,
+        });
+        return `
       
     <section class="h-100 gradient-form mt-5 team-view">
         <div class="container py-5 h-100 shadow-lg p-3 mb-5 bg-body rounded">
@@ -121,5 +124,5 @@ export default class TeamView {
         </div>
     </section>
       `;
-  }
+    }
 }
