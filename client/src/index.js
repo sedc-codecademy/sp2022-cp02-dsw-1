@@ -79,6 +79,12 @@ export default class App {
         document.getElementById("q").value = "";
       });
 
+    document.querySelector(".footer-links").addEventListener("click", e => {
+      if (e.target.tagName === "A") {
+        window.scrollTo(0, 0);
+      }
+    });
+
     window.addEventListener("load", this.router);
     window.addEventListener("hashchange", this.router);
     window.addEventListener("scroll", reveal);
