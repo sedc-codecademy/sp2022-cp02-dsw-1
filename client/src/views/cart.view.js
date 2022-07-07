@@ -11,9 +11,6 @@ import {
 
 export default class CartView {
   static async after_render() {
-    window.scrollTo({
-      top: 0,
-    });
     counterPlus(CartView);
     counterMinus(CartView);
     shippingPrice();
