@@ -74,12 +74,15 @@ export default class App {
       .addEventListener("submit", async (e) => {
         e.preventDefault();
         let searchKeyword = document.getElementById("q").value;
+        if (!searchKeyword) {
+          searchKeyword = Math.random();
+        }
         document.location.hash = `/search/${searchKeyword}`;
         console.log(searchKeyword);
         document.getElementById("q").value = "";
       });
 
-    document.querySelector(".footer-links").addEventListener("click", e => {
+    document.querySelector(".footer-links").addEventListener("click", (e) => {
       if (e.target.tagName === "A") {
         window.scrollTo(0, 0);
       }
