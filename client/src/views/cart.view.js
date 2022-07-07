@@ -17,6 +17,9 @@ export default class CartView {
     deleteCartItem(CartView);
   }
   static async render() {
+    window.scrollTo({
+      top: 0,
+    });
     const cartItems = getCartItems();
     const filteredPrice = cartItems.map((x) => {
       if (x.discountPrice == null) {

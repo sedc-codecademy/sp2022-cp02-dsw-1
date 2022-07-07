@@ -2,6 +2,9 @@ import ProductCard from "../components/product-card.component";
 
 export default class SearchFilteredProductsView {
   static async render({ request: { id, resource }, data }) {
+    window.scrollTo({
+      top: 0,
+    });
     resource === "search" ? "search" : null;
     const products = await data;
     const filteredData = products

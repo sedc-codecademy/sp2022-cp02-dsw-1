@@ -1,5 +1,8 @@
 export default class Error404View {
     static render() {
+        window.scrollTo({
+            top: 0,
+        });
         return `
             <div class="error">
             <div class="d-flex align-items-center justify-content-center vh-100">

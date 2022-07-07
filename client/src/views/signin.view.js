@@ -1,5 +1,8 @@
 export default class SigninView {
   static render() {
+    window.scrollTo({
+      top: 0,
+    });
     return `<section class="h-100 gradient-form mt-5">
     <div class="container py-5 h-100 shadow-lg p-3 mb-5 bg-body rounded">
       <div class="row d-flex justify-content-center align-items-center h-100 ">
